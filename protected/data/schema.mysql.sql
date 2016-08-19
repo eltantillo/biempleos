@@ -3,19 +3,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema biempleos
+-- Schema x-empleos
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `biempleos` ;
+DROP SCHEMA IF EXISTS `x-empleos` ;
 
-CREATE SCHEMA IF NOT EXISTS `biempleos` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `biempleos` ;
+CREATE SCHEMA IF NOT EXISTS `x-empleos` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `x-empleos` ;
 
 -- -----------------------------------------------------
--- Table `biempleos`.`empresas`
+-- Table `x-empleos`.`empresas`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`empresas` ;
+DROP TABLE IF EXISTS `x-empleos`.`empresas` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`empresas` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`empresas` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(64) NOT NULL,
   `activa` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -24,11 +24,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`localidades`
+-- Table `x-empleos`.`localidades`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`localidades` ;
+DROP TABLE IF EXISTS `x-empleos`.`localidades` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`localidades` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`localidades` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empresa` INT UNSIGNED NOT NULL,
   `calle` VARCHAR(128) NOT NULL,
@@ -43,16 +43,16 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`localidades` (
   INDEX `fk_localidades_empresas1_idx` (`id_empresa` ASC) ,
   CONSTRAINT `fk_localidades_empresas1`
     FOREIGN KEY (`id_empresa`)
-    REFERENCES `biempleos`.`empresas` (`id`))
+    REFERENCES `x-empleos`.`empresas` (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`vacantes`
+-- Table `x-empleos`.`vacantes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`vacantes` ;
+DROP TABLE IF EXISTS `x-empleos`.`vacantes` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`vacantes` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`vacantes` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empresa` INT UNSIGNED NOT NULL,
   `id_localidad` INT UNSIGNED NOT NULL,
@@ -68,19 +68,19 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`vacantes` (
   INDEX `fk_vacantes_localidades1_idx` (`id_localidad` ASC) ,
   CONSTRAINT `fk_vacantes_empresas1`
     FOREIGN KEY (`id_empresa`)
-    REFERENCES `biempleos`.`empresas` (`id`),
+    REFERENCES `x-empleos`.`empresas` (`id`),
   CONSTRAINT `fk_vacantes_localidades1`
     FOREIGN KEY (`id_localidad`)
-    REFERENCES `biempleos`.`localidades` (`id`))
+    REFERENCES `x-empleos`.`localidades` (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`aspirantes`
+-- Table `x-empleos`.`aspirantes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`aspirantes` ;
+DROP TABLE IF EXISTS `x-empleos`.`aspirantes` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`aspirantes` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`aspirantes` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `datos` LONGTEXT NULL,
   `foto` LONGTEXT NULL,
@@ -89,11 +89,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`lista_aspirantes`
+-- Table `x-empleos`.`lista_aspirantes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`lista_aspirantes` ;
+DROP TABLE IF EXISTS `x-empleos`.`lista_aspirantes` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`lista_aspirantes` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`lista_aspirantes` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_vacante` INT UNSIGNED NOT NULL,
   `id_aspirante` INT UNSIGNED NOT NULL,
@@ -107,19 +107,19 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`lista_aspirantes` (
   INDEX `fk_lista_aspirantes_aspirantes1_idx` (`id_aspirante` ASC) ,
   CONSTRAINT `fk_lista_aspirantes_vacantes1`
     FOREIGN KEY (`id_vacante`)
-    REFERENCES `biempleos`.`vacantes` (`id`),
+    REFERENCES `x-empleos`.`vacantes` (`id`),
   CONSTRAINT `fk_lista_aspirantes_aspirantes1`
     FOREIGN KEY (`id_aspirante`)
-    REFERENCES `biempleos`.`aspirantes` (`id`))
+    REFERENCES `x-empleos`.`aspirantes` (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`usuarios_empresas`
+-- Table `x-empleos`.`usuarios_empresas`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`usuarios_empresas` ;
+DROP TABLE IF EXISTS `x-empleos`.`usuarios_empresas` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_empresas` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`usuarios_empresas` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empresa` INT UNSIGNED NOT NULL,
   `usuario` VARCHAR(16) NOT NULL,
@@ -129,16 +129,16 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_empresas` (
   INDEX `fk_usuarios_empresas_empresas1_idx` (`id_empresa` ASC) ,
   CONSTRAINT `fk_usuarios_empresas_empresas1`
     FOREIGN KEY (`id_empresa`)
-    REFERENCES `biempleos`.`empresas` (`id`))
+    REFERENCES `x-empleos`.`empresas` (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`usuarios_aspirantes`
+-- Table `x-empleos`.`usuarios_aspirantes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`usuarios_aspirantes` ;
+DROP TABLE IF EXISTS `x-empleos`.`usuarios_aspirantes` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_aspirantes` (
+CREATE TABLE IF NOT EXISTS `x-empleos`.`usuarios_aspirantes` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_aspirante` INT UNSIGNED NOT NULL,
   `correo` VARCHAR(254) NOT NULL UNIQUE,
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_aspirantes` (
   INDEX `fk_usuarios_aspirantes_aspirantes_idx` (`id_aspirante` ASC) ,
   CONSTRAINT `fk_usuarios_aspirantes_aspirantes`
     FOREIGN KEY (`id_aspirante`)
-    REFERENCES `biempleos`.`aspirantes` (`id`))
+    REFERENCES `x-empleos`.`aspirantes` (`id`))
 ENGINE = InnoDB;
 
 

@@ -68,19 +68,16 @@ class EmpresasController extends Controller
 		$usuario = usuarios_empresas::model()->findByAttributes(array('id'=>Yii::app()->user->id));
         	$usuario->setScenario('actualizar');
 		$empresa = $this->loadModel($usuario->id_empresa);
-        
+
 		if(isset($_POST['usuarios_empresas']))
 		{
 			$usuario->attributes=$_POST['usuarios_empresas'];
             if($usuario->validate()){
                 $usuario->contrasena = md5($usuario->newPassword);
-                if($usuario->save()) {
-                    Yii::app()->user->setFlash('success', "Se ha cambiado la contraseña");
-                    $this->redirect(array('actualizar','msg'=>'successfully changed password'));
-                } else {
-                    Yii::app()->user->setFlash('error', "Ocurrio un error al cambiar la contraseña");
+                if($usuario->save())
+				    $this->redirect(array('actualizar','msg'=>'successfully changed password'));
+                else
                     $this->redirect(array('actualizar','msg'=>'password not changed'));
-                }
             }
 		}
 

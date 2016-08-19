@@ -4,6 +4,20 @@ class WebServiceController extends Controller{
 	private $separadorPrimario = '>';
 	private $separadorSecundario = '<';
 
+	public function actionPayPal(){
+		if(isset($_GET['success']) && (bool)$_GET['success'] === true){
+			if (PayPal::process($_GET['paymentId'], $_GET['PayerID'])){
+				echo "Payment was made.";
+			}
+			else{
+				echo "There was an error with the payment.";
+			}
+		}
+		else{
+			PayPal::checkout('Producto', 10.5);
+		}
+	}
+
 	public function actionListaVacantes(){
 		if (isset($_POST['fallout4'])){
 			$busqueda = Functions::decifrar($_POST['busqueda']);
@@ -97,7 +111,7 @@ class WebServiceController extends Controller{
 			$password = md5(Functions::decifrar($_POST['pass']));
 			$gcmKey   = Functions::decifrar($_POST['gcmKey']);
 
-			$usuario = usuarios_aspirantes::model()->findByAttributes(array('email'=>$email));
+			$usuario = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
 
 			if ($usuario == NULL){
 				$aspirante = new aspirantes;
@@ -135,7 +149,7 @@ class WebServiceController extends Controller{
 			echo Functions::cifrar("exito");
 		}
 		else{
-			$this->render('actualizarsolicitud');
+			$this->render('borrarusuario');
 		}
 	}
 
@@ -364,7 +378,9 @@ class WebServiceController extends Controller{
 			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 
-			unlink($aspirante->foto);
+			if (file_exists($aspirante->foto)){
+				unlink($aspirante->foto);
+			}
 
 			$aspirante->datos = $solicitud;
 			$aspirante->foto  = NULL;
@@ -379,7 +395,7 @@ class WebServiceController extends Controller{
 			}
 		}
 		else{
-			$this->render('recuperarcontrasena');
+			$this->render('borrarusuario');
 		}
 	}
 

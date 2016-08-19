@@ -34,11 +34,6 @@ $this->menu=array(
         <?php echo Yii::app()->user->getFlash('success'); ?>
     </div>
     <?php endif; ?>
-    <?php if(Yii::app()->user->hasFlash('error')): ?>
-    <div class="flash-error">
-        <?php echo Yii::app()->user->getFlash('error'); ?>
-    </div>
-    <?php endif; ?>
 
 	<div class="form-group v-center1">
 		<?php echo $form->labelEx($usuario,'oldPassword',array('class'=>'control-label col-sm-4')); ?>
