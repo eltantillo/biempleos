@@ -7,6 +7,6 @@ return array(
 	'connectionString' => 'mysql:host=localhost;dbname=biempleos',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => '123',
+	'password' => '',
 	'charset' => 'utf8',
 );
