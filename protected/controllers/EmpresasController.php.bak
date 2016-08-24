@@ -68,7 +68,7 @@ class EmpresasController extends Controller
 		$usuario = usuarios_empresas::model()->findByAttributes(array('id'=>Yii::app()->user->id));
         	$usuario->setScenario('actualizar');
 		$empresa = $this->loadModel($usuario->id_empresa);
-        
+
 		if(isset($_POST['usuarios_empresas']))
 		{
 			$usuario->attributes=$_POST['usuarios_empresas'];

@@ -6353,3 +6353,45 @@ Stack trace:
 REQUEST_URI=/x-empleos/empresas/registro
 HTTP_REFERER=http://localhost/x-empleos/
 ---
+2016/08/19 15:45:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "paypal"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('paypal')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/biempleos/paypal
+---
+2016/08/19 15:46:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "PayPal"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('PayPal')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/biempleos/PayPal
+---
+2016/08/19 15:46:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ListaVacantes"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('ListaVacantes')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/biempleos/ListaVacantes
+---
+2016/08/19 15:46:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "DetalleVacante"' in C:\wamp\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('DetalleVacante')
+#1 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/biempleos/DetalleVacante
+---
+2016/08/24 21:29:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "index" solicitada.' in C:\wamp\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\wamp\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\wamp\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('webservice')
+#3 C:\wamp\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp\www\biempleos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/biempleos/webservice
+---
