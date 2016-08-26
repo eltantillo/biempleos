@@ -68,10 +68,10 @@ class usuarios_empresas extends CActiveRecord
 			'id' => 'Id',
 			'id_empresa' => 'Id Empresa',
 			'usuario' => 'Correo',
-			'contrasena' => 'Contraseña',
-            		'repeatPassword' => 'Confirmar Contraseña',
-            		'oldPassword' => 'Contraseña Actual',
-            		'newPassword' => 'Contraseña Nueva',
+			'contrasena' => 'ContraseÃ±a',
+            		'repeatPassword' => 'Confirmar ContraseÃ±a',
+            		'oldPassword' => 'ContraseÃ±a Actual',
+            		'newPassword' => 'ContraseÃ±a Nueva',
 		);
 	}
 

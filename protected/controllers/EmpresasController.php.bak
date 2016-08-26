@@ -75,10 +75,10 @@ class EmpresasController extends Controller
             if($usuario->validate()){
                 $usuario->contrasena = md5($usuario->newPassword);
                 if($usuario->save()) {
-                    Yii::app()->user->setFlash('success', "Se ha cambiado la contraseña");
+                    Yii::app()->user->setFlash('success', "Se ha cambiado la contraseÃ±a");
                     $this->redirect(array('actualizar','msg'=>'successfully changed password'));
                 } else {
-                    Yii::app()->user->setFlash('error', "Ocurrio un error al cambiar la contraseña");
+                    Yii::app()->user->setFlash('error', "Ocurrio un error al cambiar la contraseÃ±a");
                     $this->redirect(array('actualizar','msg'=>'password not changed'));
                 }
             }
