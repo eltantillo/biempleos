@@ -360,7 +360,7 @@ class WebServiceController extends Controller{
 			        <p>Gracias por utilizar nuestros servicios.<br>With Love: BiEmpleos &hearts;</p>
 			        </body>
 			        </html>');
-			}
+                echo Functions::cifrar("exito");
 			else{
 				echo Functions::cifrar("error");
 			}

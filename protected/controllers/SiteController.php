@@ -124,4 +124,35 @@ class SiteController extends Controller
         $model=new usuarios_empresas('recover');
         $this->render('recover',array('model'=>$model));
     }
+    
+    /**
+    *  Post Recover Password
+    */
+    public function actionPostRecover() {
+    	foreach ($_POST["usuarios_empresas"] as $mail) {
+    		$email = $mail;
+			$usuario = usuarios_empresas::model()->findByAttributes(array('usuario'=>$email));
+    	}
+
+		if ($usuario != null){
+			Mailer::sendMail(
+				"Restablecimiento de la cuenta",
+				$email ,
+				"BiEmpleos",
+				"noreply@biempleos.com",
+				'<html>
+		        <body>
+		        <h1>Estimado usuario</h1>
+		        <p>Usted ha indicado que ha olvidado su contrase&ntilde;a, por favor utilice el siguiente enlace para cambiarla</p>
+		        <p><a href="' . Yii::app()->request->baseUrl . "/site/recover?id=" . md5($usuario->usuario . $usuario->contrasena) . '">' . Yii::app()->request->baseUrl . "/site/recover?id=" . md5($usuario->usuario . $usuario->contrasena) . '</a></p>
+		        <p>Si usted no solicit&oacute; el cambio de contrase&ntilde;a, por favor ignore este correo electr&oacute;nico</p>
+		        <p>Gracias por utilizar nuestros servicios.<br>With Love: BiEmpleos &hearts;</p>
+		        </body>
+		        </html>');
+        	$this->render('postRecover');
+		}
+		else{
+			echo "El usuario no existe";
+		}
+    }
 }

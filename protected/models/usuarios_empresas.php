@@ -36,7 +36,7 @@ class usuarios_empresas extends CActiveRecord
 			array('oldPassword, newPassword, repeatPassword', 'required', 'on'=>'actualizar'),
             array('usuario', 'unique', 'message'=>"Esta cuenta ya fue registrada"),
 			array('id_empresa', 'length', 'max'=>10),
-			array('usuario', 'length', 'max'=>64),
+			array('usuario', 'length', 'max'=>264),
 			array('contrasena, oldPassword, repeatPassword, newPassword', 'length', 'max'=>32),
             array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Passwords don't match",'on'=>'registrar'),
             array('oldPassword', 'findPasswords', 'on' => 'actualizar'),

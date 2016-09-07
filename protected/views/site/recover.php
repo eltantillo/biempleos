@@ -10,13 +10,13 @@ $this->breadcrumbs=array(
 ?>
 
 <h1 class="text-center">¿No puedes iniciar sesión?</h1>
-<p class="text-center">Si has olvidado tu contraseña ingresa tu correo para restablecerla</p>
+<p class="text-center">Si has olvidado tu contraseña ingresa tu correo para restablecerla.</p>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'recover-form',
     'enableAjaxValidation'=>false,
-    //'action' => $this->createUrl('site/recover'),
+    'action' => $this->createUrl('site/postrecover'),
 )); ?>
 
 	<div class="form-group col-xs-offset-3 col-xs-6 col-md-offset-4 col-md-4">
