@@ -36,7 +36,7 @@ class PayPal{
 		$itemList->setItems([$item]);
 
 		$details = new Details();
-		$details->setSubtotal($price);z
+		$details->setSubtotal($price);
 
 		$amount = new Amount();
 		$amount->setCurrency('MXN')

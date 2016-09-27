@@ -361,6 +361,7 @@ class WebServiceController extends Controller{
 			        </body>
 			        </html>');
                 echo Functions::cifrar("exito");
+            }
 			else{
 				echo Functions::cifrar("error");
 			}
