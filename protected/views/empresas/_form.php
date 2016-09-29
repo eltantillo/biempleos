@@ -7,9 +7,6 @@
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
-    'htmlOptions'=>array(
-        'class'=>'form-horizontal',
-    ),
 )); ?>
 
 	<p class="note">Los campos marcados son <span class="required">*</span> son obligatorios.</p>
@@ -21,53 +18,51 @@
     </div>
     <?php endif; ?>
 
-	<div class="form-group v-center1">
-		<?php echo $form->labelEx($empresa,'nombre',array('class'=>'control-label col-sm-4')); ?>
-        <div class="col-sm-6">
-            <?php echo $form->textField($empresa,'nombre',array('size'=>60,'maxlength'=>64,'class'=>'form-control')); ?>
-        </div>
+	<div class="form-group">
+		<?php echo $form->labelEx($empresa,'nombre'); ?>
+        <?php echo $form->textField($empresa,'nombre',array('size'=>60,'maxlength'=>64,'class'=>'form-control')); ?>
 	</div>
     <div class="form-group">
-        <?php echo $form->error($empresa,'nombre',array('class'=>'col-sm-offset-4 col-sm-6 errorMessage')); ?>
+        <?php echo $form->error($empresa,'nombre',array('class'=>'errorMessage')); ?>
     </div>
 
-	<div class="form-group v-center1">
-		<?php echo $form->labelEx($usuario,'usuario',array('class'=>'control-label col-sm-4')); ?>
-        <div class="col-sm-6">
-            <?php echo $form->textField($usuario,'usuario',array('size'=>60,'maxlength'=>16,'class'=>'form-control')); ?>
-        </div>
+	<div class="form-group">
+		<?php echo $form->labelEx($usuario,'usuario'); ?>
+        <?php echo $form->textField($usuario,'usuario',array('size'=>60,'maxlength'=>16,'class'=>'form-control')); ?>
 	</div>
     <div class="form-group">
-        <?php echo $form->error($usuario,'usuario',array('class'=>'col-sm-offset-4 col-sm-6 errorMessage')); ?>
+        <?php echo $form->error($usuario,'usuario',array('class'=>'errorMessage')); ?>
     </div>
 
-	<div class="form-group v-center1">
-		<?php echo $form->labelEx($usuario,'contrasena',array('class'=>'control-label col-sm-4')); ?>
-        <div class="col-sm-6">
-            <?php echo $form->passwordField($usuario,'contrasena',array('size'=>60,'maxlength'=>32,'class'=>'form-control')); ?>
-        </div>
+	<div class="form-group">
+		<?php echo $form->labelEx($usuario,'contrasena'); ?>
+        <?php echo $form->passwordField($usuario,'contrasena',array('size'=>60,'maxlength'=>32,'class'=>'form-control')); ?>
 	</div>
     <div class="form-group">
-        <?php echo $form->error($usuario,'contrasena',array('class'=>'col-sm-offset-4 col-sm-6 errorMessage')); ?>
+        <?php echo $form->error($usuario,'contrasena',array('class'=>'errorMessage')); ?>
     </div>
     
-    <div class="form-group v-center1">
-        <?php echo $form->labelEx($usuario,'repeatPassword',array('class'=>'control-label col-sm-4')); ?>
-        <div class="col-sm-6">
-            <?php echo $form->passwordField($usuario,'repeatPassword',array('size'=>60,'maxlength'=>32,'class'=>'form-control')); ?>
-        </div>
+    <div class="form-group">
+        <?php echo $form->labelEx($usuario,'repeatPassword'); ?>
+        <?php echo $form->passwordField($usuario,'repeatPassword',array('size'=>60,'maxlength'=>32,'class'=>'form-control')); ?>
     </div>
     <div class="form-group">
-        <?php echo $form->error($usuario,'repeatPassword',array('class'=>'col-sm-offset-4 col-sm-6 errorMessage')); ?>
+        <?php echo $form->error($usuario,'repeatPassword',array('class'=>'errorMessage')); ?>
     </div>
     
-    <div class="row">
+    <div class="form-group">
         Aqui va PAYPAL
     </div>
     
-	<div class="form-group buttons v-center1">
-        <div class="col-sm-offset-4 col-sm-6">
-            <?php echo CHtml::submitButton($empresa->isNewRecord ? 'Registrar' : 'Actualizar',array('class'=>'btn btn-default')); ?>
+    <?php if($empresa->isNewRecord): ?>
+    <div class="checkbox required">
+        <label><input type="checkbox"> He leido los <a href="#">terminos y condiciones</a> y la <a href="#">politica de privacidad</a> de BIE<span class="required">*</span></label>
+    </div>
+    <?php endif; ?>
+    <br>
+	<div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+            <?php echo CHtml::submitButton($empresa->isNewRecord ? 'Enviar' : 'Actualizar',array('class'=>'btn-enviar bttn-largo bttn-red')); ?>
         </div>
 	</div>
 

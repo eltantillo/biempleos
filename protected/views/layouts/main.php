@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.loadmask.css">
     
+    <link rel="icon" type="image/png" href="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png">
+    
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -22,61 +24,23 @@
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <?php echo CHtml::link(Yii::app()->name,array('/site/index'),array('class'=>'navbar-brand')); ?>
+        <div class="col-xs-2 col-sm-offset-1 col-md-offset-2">
+            <?php 
+            $img = "<img src=\"" . Yii::app()->request->baseUrl . "/images/logo.png\" class='img-logo'>";
+            echo CHtml::link($img,array('/site/index')); 
+            ?>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
+        <div class="col-xs-10 col-sm-8 col-md-6 top-menu">
+            <ul class="pull-right ghost-center">
                 <li><?php echo CHtml::link('Acerca de',array('/site/page/view/about')); ?></li> 
-                <?php if(!Yii::app()->user->isGuest):?>
-                <li><?php echo CHtml::link('Perfil',array('/empresas/index'));?></li>
-                <li><?php echo CHtml::link('Cerrar Sesión',array('/site/logout')); ?></li>
-                <? else:?>
-                <li class="dropdown hidden-xs">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Iniciar Sesión</a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <?php $this->renderPartial('/site/login',array('model'=>new LoginForm),false,true);?>
-                        </li>
-                    </ul>
-                </li>
-                <li class="visible-xs-block">
-                    <a data-toggle="collapse" data-target="#sesion" href="#">Iniciar Sesión</a>
-                    <div class="collapse" id="sesion">
-                        <?php /*$this->renderPartial('/site/login',array('model'=>new LoginForm),false,true);*/?>
-                    </div>
-                </li>
-                <?php endif?>
             </ul>
         </div>
     </div>
 </nav>
 
 
-<div class="container" id="page">
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		));*/ ?><!-- breadcrumbs -->
-	<?php endif?>
-
-    
-    
+<div class="container-fluid">
 	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<!--div id="footer">
-		Copyright &copy; <!--?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<!--?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
 </div><!-- page -->
 
 </body>

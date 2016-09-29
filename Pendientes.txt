@@ -1,0 +1,99 @@
+[] Decidir posibles cambios
+    [] A la BD, Actualizar BD y Yii si hay cambios
+        [] Agregar tabla Citas
+        [] Verificar cambios con ON DELETE [ CASCADE | SET NULL ]
+            revisar biempleos.sql
+    [] ? Traductor Español - Ingles
+    [] ? Funcion de correos
+        Una opcion adicional para conversar entre la empresa y el aspirante
+    [] Confirmar Funciones con ?
+    
+[] Pantallas
+    [] Inicio
+    [x] Recover
+    [] Empresas
+        [] Update
+        [x] Registro
+        [] Pagos Paypal
+    [] Localidades
+        [] Create
+        [] Update
+        [] Index
+    [] Vacantes
+        [] Create
+        [] Update
+        [] Index
+    [] Lista Aspirantes
+        [] Index
+        [] Ver Citas - nombre provisional
+        [] Crear Citas - nombre provisional
+        
+[] Acciones de Pantallas
+    [] Inicio
+        Falta confirmar
+    [x] Recover
+        [x] Recuperación de Contraseña por correo
+    [] Empresas
+        [] Update
+            Debe hacer edición de los campos de usuarios_empresa y empresa, omitir los ids
+        [x] Registro
+            El registro de una empresa con datos de usuario_empresa y empresa, omitir los ids
+        [] Pagos Paypal
+            Cuando se pague paypal habilitar funciones
+            Cada que acceda a estas funciones verificar si aun puede utilizarlas
+    [] Localidades
+        [] Create
+            ? Habilitar si hay pago paypal
+        [] Update
+            ? Habilitar si hay pago paypal
+        [] Index
+            Aquí se debe visualizar todos los locales
+                No es necesario verificar pago
+            Eliminación
+                ? Habilitar si hay pago paypal
+    [] Vacantes
+        [] Create
+            Habilitar si hay pago paypal
+        [] Update
+            Habilitar si hay pago paypal
+        [] Index
+            Visualizar vacantes activas
+                Habilitar si hay pago paypal
+            ? Visualizar historial de vacantes
+                No es necesario verificar pago
+            Eliminación
+                Habilitar si hay pago paypal
+    [] Lista Aspirantes
+        [] Index
+            Visualizar aspirantes de vacantes
+                No es necesario verificar pago
+        [] Ver Citas - nombre provisional
+            No es necesario verificar pago
+            ? Editar
+                Habilitar si hay pago paypal
+        [] Crear Citas - nombre provisional
+            Habilitar si hay pago paypal
+
+
+Cada una de las acciones debe mostrar algún mesnaje de éxito o error
+NO SE DEBEN ELIMINAR:
+    Empresa
+    Usuarios empresa
+    Aspirante
+    Usuario aspirante
+
+SE PERMITE ELIMINAR:
+    Localidades
+    Vacantes
+    Lista aspirantes
+    
+Si localidad muere
+    muere vacante
+Si vacante muere
+    muere lista aspirante
+    
+Nivel de imporancia:
+1         Empresa            Aspirante
+2   U. empresa  Local       U. aspirante
+3              Vacante
+4                   L. aspirantes

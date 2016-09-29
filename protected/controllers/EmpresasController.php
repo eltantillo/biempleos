@@ -2,7 +2,7 @@
 
 class EmpresasController extends Controller
 {
-	public $layout='//layouts/column2';
+    public $layout='//layouts/column2';
 	private $_model;
 
 	public function filters()

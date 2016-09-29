@@ -233,6 +233,56 @@ div.search-form
 *   CSS for Navigation bar
 *
 */
+.navbar-default .img-logo {
+    height: 70px;
+    width: auto;
+    margin: 6px 0px;
+}
+.top-menu {
+    position: relative;
+}
+.top-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.top-menu ul li {
+    display: inline-block;
+}
+
+.top-menu ul li a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.ghost-center li {
+  position: relative;
+}
+.ghost-center li::before {
+  content: " " !important;
+  display: inline-block !important;
+  height: 100% !important;
+  width: 1% !important;
+  vertical-align: middle !important;
+}
+.ghost-center a {
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.navbar-default {
+    color: white !important;
+    background-color: black !important;
+}
+
+.navbar-default a, .navbar-default a:hover {
+    color: white !important;
+}
+
 #myNavbar ul.dropdown-menu, #myNavbar div#sesion {
     padding: 15px 30px 0px;
 }
@@ -248,30 +298,50 @@ div.search-form
 *   CSS for Forms
 *
 */
-@media(min-width:768px) {
-    .v-center1 {
-        display: flex !important;
-        align-items: center;
-    }
-
-    .v-center1 label {
-        padding-top: 0 !important;
-    }
-
-    .v-center1 div {
-        padding-left: 0 !important;
-    }
-}
-
-.form-group {
-    margin-bottom: 0 !important;
-}
-
 .errorMessage {
     margin-bottom: 7px;
 }
 
+.required label {
+    margin-left: 30px;
+}
 
+.required a, .required a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.btn-enviar {
+    width: 100%;
+    display: inline-block;
+    font-weight: bold;
+    padding: 7px 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.bttn-red {
+    color: white;
+    background-color: red;
+}
+
+.bttn-largo {
+    font-size: x-large;
+}
+
+.bttn-normal {
+    font-size: normal;
+}
 
 .loading {
     background: url('../images/loading.gif') no-repeat;
