@@ -122,7 +122,7 @@ DROP TABLE IF EXISTS `x-empleos`.`usuarios_empresas` ;
 CREATE TABLE IF NOT EXISTS `x-empleos`.`usuarios_empresas` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empresa` INT UNSIGNED NOT NULL,
-  `usuario` VARCHAR(16) NOT NULL,
+  `usuario` VARCHAR(256) NOT NULL,
   `contrasena` VARCHAR(32) NOT NULL,
   `activo` BOOLEAN NOT NULL DEFAULT TRUE,
   PRIMARY KEY (`id`) ,

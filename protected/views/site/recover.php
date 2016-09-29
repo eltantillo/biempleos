@@ -16,6 +16,7 @@ $this->breadcrumbs=array(
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'recover-form',
     'enableAjaxValidation'=>false,
+    'action' => $this->createUrl('site/postrecover'),
 )); ?>
 
 	<div class="form-group col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
