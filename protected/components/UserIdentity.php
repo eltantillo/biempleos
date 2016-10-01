@@ -34,4 +34,11 @@ class UserIdentity extends CUserIdentity
 	public function getId(){
 		return $this->_id;
 	}
+    
+    public static function createAuthenticatedIdentity($username)
+    {
+        $identity=new self($username,'');
+        $identity->errorCode=self::ERROR_NONE;
+        return $identity;
+    }
 }

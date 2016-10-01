@@ -40,18 +40,20 @@
 
 
 <div class="container-fluid">
+    <?php if(Yii::app()->user->hasFlash('success')): ?>
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <?php echo Yii::app()->user->getFlash('success'); ?>
+    </div>
+    <?php endif; ?>
+    <?php if(Yii::app()->user->hasFlash('error')): ?>
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <?php echo Yii::app()->user->getFlash('error'); ?>
+    </div>
+    <?php endif; ?>
 	<?php echo $content; ?>
 </div><!-- page -->
 
 </body>
 </html>
-
-<script>
-    $(".btn-group > .btn").click(function(){
-        $(this).addClass("focus").siblings().removeClass("focus");
-    });
-    
-    $('#myNavbar a.dropdown-toggle').click(function() {
-        $('.dropdown-menu').first().stop(true, true).slideToggle('fast');
-    });
-</script>

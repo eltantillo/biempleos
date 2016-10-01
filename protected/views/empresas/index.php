@@ -1,5 +1,5 @@
 <?php
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Perfil Empresa',
 );
 
@@ -64,4 +64,5 @@ $this->menu=array(
         ),
     ));
 ?>
-</div>
+</div>*/?>
+<h1>Inicio</h1>

@@ -16,6 +16,7 @@ class usuarios_empresas extends CActiveRecord
     public $repeatPassword;
     public $newPassword;
     public $oldPassword;
+    
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,10 +38,13 @@ class usuarios_empresas extends CActiveRecord
             array('usuario', 'unique', 'message'=>"Esta cuenta ya fue registrada"),
 			array('id_empresa', 'length', 'max'=>10),
 			array('usuario', 'length', 'max'=>264),
+            array('usuario', 'email', 'allowEmpty'=>false, 'pattern'=>'/^[\w.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/', 'message'=>'Introduce un correo válido'),
+            //array('usuario', 'exist', 'allowEmpty'=>false, 'message'=>'Este usuario ya existe. Utiliza otro'),
 			array('contrasena, oldPassword, repeatPassword, newPassword', 'length', 'max'=>32),
-            array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Passwords don't match",'on'=>'registrar'),
+            array('contrasena', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida'),
+            array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Las contraseñas no coinciden",'on'=>'registrar'),
             array('oldPassword', 'findPasswords', 'on' => 'actualizar'),
-            array('repeatPassword', 'compare', 'compareAttribute'=>'newPassword', 'message'=>"Passwords don't match",'on'=>'actualizar'),
+            array('repeatPassword', 'compare', 'compareAttribute'=>'newPassword', 'message'=>"Las contraseñas no coinciden",'on'=>'actualizar'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_empresa, usuario, contrasena', 'safe', 'on'=>'search'),
@@ -69,9 +73,9 @@ class usuarios_empresas extends CActiveRecord
 			'id_empresa' => 'Id Empresa',
 			'usuario' => 'Correo',
 			'contrasena' => 'Contraseña',
-            		'repeatPassword' => 'Confirmar Contraseña',
-            		'oldPassword' => 'Contraseña Actual',
-            		'newPassword' => 'Contraseña Nueva',
+            'repeatPassword' => 'Confirmar Contraseña',
+            'oldPassword' => 'Contraseña Actual',
+            'newPassword' => 'Contraseña Nueva',
 		);
 	}
 

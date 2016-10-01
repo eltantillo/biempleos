@@ -125,7 +125,8 @@ div.flash-success a
 
 div.form .rememberMe label
 {
-	display: inline;
+	display: inline-block;
+    cursor: pointer;
 }
 
 div.view
@@ -309,6 +310,16 @@ div.search-form
 .required a, .required a:hover {
     color: red;
     text-decoration: none;
+}
+
+.has-feedback label~.form-control-feedback {
+    top: 22px !important;
+}
+
+div.checkbox > span.glyphicon-warning-sign {
+    right: initial !important;
+    left: -7px !important;
+    top: -8px !important;
 }
 
 .btn-enviar {
