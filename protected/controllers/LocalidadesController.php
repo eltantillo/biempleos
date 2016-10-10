@@ -64,11 +64,15 @@ class LocalidadesController extends Controller
 
 		if(isset($_POST['localidades']))
 		{
-			$sessionUser = usuarios_empresas::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-			$model->id_empresa = $sessionUser->id_empresa;
+			$usuario = Yii::app()->user->id->usuario;
 			$model->attributes=$_POST['localidades'];
+            $model->id_empresa = $usuario->id_empresa;
 			if($model->save())
-				$this->redirect(Yii::app()->request->baseUrl . '/empresas/index');//$this->redirect(array('view','id'=>$model->id));
+                Yii::app()->user->setFlash('success', "Se ha agregado el local con éxito");
+            else
+                Yii::app()->user->setFlash('error', "Ocurrio un problema y no se guardo el local.<br>Intentalo más tarde.");
+            
+            $this->redirect(array('empresas/index'));//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -91,7 +95,11 @@ class LocalidadesController extends Controller
 		{
 			$model->attributes=$_POST['localidades'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                Yii::app()->user->setFlash('success', "Se ha agregado el local con éxito");
+            else
+                Yii::app()->user->setFlash('error', "Ocurrio un problema y no se guardo el local.<br>Intentalo más tarde.");
+            
+            $this->redirect(array('empresas/index'));//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(

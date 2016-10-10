@@ -34,17 +34,20 @@ class usuarios_empresas extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('usuario, contrasena, repeatPassword', 'required', 'on'=>'registrar'),
+            array('contrasena', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida', 'on'=>'registrar'),
+            array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Las contraseñas no coinciden", 'on'=>'registrar'),
+            
 			array('oldPassword, newPassword, repeatPassword', 'required', 'on'=>'actualizar'),
+            array('oldPassword', 'application.components.validator.checkPassword'),
+            array('newPassword', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida', 'on'=>'actualizar'),
+            array('repeatPassword', 'compare', 'compareAttribute'=>'newPassword', 'message'=>"Las contraseñas no coinciden", 'on'=>'actualizar'),
+            
             array('usuario', 'unique', 'message'=>"Esta cuenta ya fue registrada"),
 			array('id_empresa', 'length', 'max'=>10),
 			array('usuario', 'length', 'max'=>264),
             array('usuario', 'email', 'allowEmpty'=>false, 'pattern'=>'/^[\w.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/', 'message'=>'Introduce un correo válido'),
             //array('usuario', 'exist', 'allowEmpty'=>false, 'message'=>'Este usuario ya existe. Utiliza otro'),
 			array('contrasena, oldPassword, repeatPassword, newPassword', 'length', 'max'=>32),
-            array('contrasena', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida'),
-            array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Las contraseñas no coinciden",'on'=>'registrar'),
-            array('oldPassword', 'findPasswords', 'on' => 'actualizar'),
-            array('repeatPassword', 'compare', 'compareAttribute'=>'newPassword', 'message'=>"Las contraseñas no coinciden",'on'=>'actualizar'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_empresa, usuario, contrasena', 'safe', 'on'=>'search'),
@@ -109,14 +112,6 @@ class usuarios_empresas extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-    
-    //matching the old password with your existing password.
-    public function findPasswords($attribute, $params)
-    {
-        $usuario = usuarios_empresas::model()->findByPk(Yii::app()->user->id);
-        if ($usuario->contrasena !== md5($this->oldPassword))
-        	$this->addError($attribute, 'Old password is incorrect.');
-    }
 
 	/**
 	 * Returns the static model of the specified AR class.

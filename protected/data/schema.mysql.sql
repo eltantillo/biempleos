@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `x-empleos`.`vacantes` (
   `sueldo` INT UNSIGNED NOT NULL,
   `ofrece` LONGTEXT NOT NULL,
   `requisitos` LONGTEXT NOT NULL,
-  `disponibilidad` INT UNSIGNED NOT NULL,
+  `disponibilidad` BOOLEAN NOT NULL,
   `fecha_publicacion` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `activa` BOOLEAN NOT NULL DEFAULT TRUE,
   PRIMARY KEY (`id`) ,
@@ -122,7 +122,7 @@ DROP TABLE IF EXISTS `x-empleos`.`usuarios_empresas` ;
 CREATE TABLE IF NOT EXISTS `x-empleos`.`usuarios_empresas` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empresa` INT UNSIGNED NOT NULL,
-  `usuario` VARCHAR(256) NOT NULL,
+  `usuario` VARCHAR(264) NOT NULL,
   `contrasena` VARCHAR(32) NOT NULL,
   `activo` BOOLEAN NOT NULL DEFAULT TRUE,
   PRIMARY KEY (`id`) ,

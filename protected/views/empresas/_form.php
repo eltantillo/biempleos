@@ -25,11 +25,6 @@
 	<p class="note">Los campos marcados son <span class="required">*</span> son obligatorios.</p>
 
 	<?php /*echo $form->errorSummary(array($empresa,$usuario));*/ ?>
-    <?php if(Yii::app()->user->hasFlash('success')): ?>
-    <!--div class="flash-success">
-        <?php echo Yii::app()->user->getFlash('success'); ?>
-    </div-->
-    <?php endif; ?>
 
 	<div class="form-group">
 		<?php echo $form->labelEx($empresa,'nombre'); ?>
@@ -105,7 +100,7 @@
     <?php if($empresa->isNewRecord): ?>
     $('input[name=terminos]').change(function(){
         $('div.checkbox').removeClass('has-error');
-        $('div.checkbox > span').removeClass('glyphicon glyphicon-warning-sign form-control-feedback');
+        $('div.checkbox > span').removeClass('glyphicon glyphicon-exclamation-sign form-control-feedback');
         valid = valid && $(this).is(':checked');
     });
     <?php endif; ?>
@@ -113,7 +108,7 @@
     $('#empresas-form').submit(function() {
         if(!$('input[name=terminos]').is(':checked')) {
             $('div.checkbox').addClass('has-error');
-            $('div.checkbox > span').addClass('glyphicon glyphicon-warning-sign form-control-feedback');
+            $('div.checkbox > span').addClass('glyphicon glyphicon-exclamation-sign form-control-feedback');
         }
         return valid;
     });

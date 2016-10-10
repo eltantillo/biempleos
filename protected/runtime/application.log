@@ -7113,3 +7113,1596 @@ Stack trace:
 REQUEST_URI=/empresas/index
 in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (107)
 in C:\wamp64\www\biempleos\index.php (13)
+2016/10/01 15:57:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/10/01 15:57:26 [error] [php] Undefined variable: user (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:19)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#1 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#3 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#4 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#6 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/registro
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (19)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/02 16:48:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/10/06 01:18:15 [error] [php] Invalid argument supplied for foreach() (C:\wamp64\www\biempleos\protected\views\empresas\index.php:85)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (85)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 01:18:16 [error] [php] Invalid argument supplied for foreach() (C:\wamp64\www\biempleos\protected\views\empresas\index.php:85)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (85)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 01:18:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:19:49 [error] [php] Invalid argument supplied for foreach() (C:\wamp64\www\biempleos\protected\views\empresas\index.php:85)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (85)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 01:21:56 [error] [php] Invalid argument supplied for foreach() (C:\wamp64\www\biempleos\protected\views\empresas\index.php:115)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (115)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 01:40:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:47:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:48:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:52:16 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:52:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:53:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:53:20 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:53:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:53:48 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:55:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:56:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:57:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:57:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 01:59:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 02:02:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 02:03:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 02:03:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 02:04:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 02:09:51 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:10:59 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:11:15 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:11:45 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:12:17 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:12:30 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:12:49 [error] [php] Cannot modify header information - headers already sent by (output started at C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1) (C:\wamp64\www\yii\framework\web\CHttpRequest.php:860)
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(48): VacantesController->redirect()
+#1 unknown(0): VacantesController->{closure}()
+#2 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(143): call_user_func()
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (48)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 02:13:24 [error] [php] Use of undefined constant string - assumed 'string' (C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code:1)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched()
+#1 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed()
+#2 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter()
+#3 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/06 06:47:29 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: bootstrap' in C:\wamp64\www\yii\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\components\Controller.php(28): CClientScript->registerCoreScript('bootstrap')
+#1 C:\wamp64\www\yii\framework\web\CController.php(306): Controller->beforeAction(Object(CInlineAction))
+#2 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('localidades/cre...')
+#11 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/localidades/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/06 06:58:22 [error] [exception.CException] exception 'CException' with message 'There is no CClientScript package: bootstrap' in C:\wamp64\www\yii\framework\web\CClientScript.php:598
+Stack trace:
+#0 C:\wamp64\www\biempleos\protected\views\layouts\main.php(21): CClientScript->registerCoreScript('bootstrap')
+#1 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#2 C:\wamp64\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#3 C:\wamp64\www\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#4 C:\wamp64\www\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="col...')
+#5 C:\wamp64\www\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="col...')
+#6 C:\wamp64\www\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#7 C:\wamp64\www\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 C:\wamp64\www\biempleos\protected\views\layouts\column2.php(6): CBaseController->endContent()
+#9 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#10 C:\wamp64\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#11 C:\wamp64\www\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#12 C:\wamp64\www\biempleos\protected\controllers\LocalidadesController.php(76): CController->render('create', Array)
+#13 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): LocalidadesController->actionCreate()
+#14 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('localidades/cre...')
+#24 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/localidades/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/08 00:49:04 [error] [exception.CException] exception 'CException' with message 'SiteController no ha podido encontrar la vista "empresas/index" solicitada.' in C:\wamp64\www\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(782): CController->renderPartial('empresas/index', NULL, true)
+#1 C:\wamp64\www\biempleos\protected\controllers\SiteController.php(40): CController->render('empresas/index')
+#2 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp64\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#8 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/
+HTTP_REFERER=http://biempleos/site/login
+---
+2016/10/08 00:49:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/10/08 00:53:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "empresas" solicitada.' in C:\wamp64\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(270): CController->missingAction('empresas')
+#1 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('empresas')
+#2 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/empresas/i...')
+#3 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/empresas/index
+HTTP_REFERER=http://biempleos/site/login
+---
+2016/10/08 01:18:44 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'México' for column 'pais' at row 1. La sentencia SQL ejecutada fue: INSERT INTO `localidades` (`activa`, `id_empresa`, `calle`, `numero`, `colonia`, `codigo_postal`, `pais`, `estado`, `ciudad`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8).
+in C:\wamp64\www\biempleos\protected\controllers\LocalidadesController.php (70)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 01:18:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'México' for column 'pais' at row 1. The SQL statement executed was: INSERT INTO `localidades` (`activa`, `id_empresa`, `calle`, `numero`, `colonia`, `codigo_postal`, `pais`, `estado`, `ciudad`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8)' in C:\wamp64\www\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\wamp64\www\biempleos\protected\controllers\LocalidadesController.php(70): CActiveRecord->save()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): LocalidadesController->actionCreate()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('localidades/cre...')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/localidades/create
+HTTP_REFERER=http://biempleos/localidades/create
+---
+2016/10/08 03:25:10 [error] [exception.CException] exception 'CException' with message 'La propiedad "usuarios_empresas"."id_empresas" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresas')
+#1 C:\wamp64\www\biempleos\protected\components\UserIdentity.php(29): CActiveRecord->__get('id_empresas')
+#2 C:\wamp64\www\biempleos\protected\models\LoginForm.php(54): UserIdentity->authenticate()
+#3 C:\wamp64\www\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\wamp64\www\yii\framework\validators\CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\wamp64\www\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\wamp64\www\biempleos\protected\controllers\SiteController.php(105): CModel->validate()
+#7 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp64\www\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/site/login
+HTTP_REFERER=http://biempleos/site/login
+---
+2016/10/08 04:05:45 [error] [php] Invalid argument supplied for foreach() (C:\wamp64\www\biempleos\protected\views\empresas\index.php:86)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (86)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:05:51 [error] [php] Invalid argument supplied for foreach() (C:\wamp64\www\biempleos\protected\views\empresas\index.php:86)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (86)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:10:13 [error] [php] Trying to get property of non-object (C:\wamp64\www\biempleos\protected\views\empresas\index.php:119)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (119)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:13:08 [error] [php] Trying to get property of non-object (C:\wamp64\www\biempleos\protected\views\empresas\index.php:120)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (120)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:14:24 [error] [php] Illegal string offset 'calle' (C:\wamp64\www\biempleos\protected\views\empresas\index.php:119)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (119)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:19:27 [error] [php] Object of class localidades could not be converted to string (C:\wamp64\www\biempleos\protected\views\empresas\index.php:119)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (119)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:20:55 [error] [php] Use of undefined constant id - assumed 'id' (C:\wamp64\www\biempleos\protected\views\empresas\index.php:120)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (120)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (116)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:28:56 [error] [php] Trying to get property of non-object (C:\wamp64\www\biempleos\protected\controllers\VacantesController.php:74)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): VacantesController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): VacantesController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): VacantesController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): VacantesController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/vacantes/create
+in C:\wamp64\www\biempleos\protected\controllers\VacantesController.php (74)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/08 04:33:56 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\biempleos\protected\views\empresas\index.php(84): CWebUser->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#3 C:\wamp64\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#4 C:\wamp64\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#5 C:\wamp64\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): CController->render('index', Array)
+#7 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#8 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#17 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/index')
+#18 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/empresas/index
+HTTP_REFERER=http://biempleos/site/login
+---
+2016/10/08 17:32:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/gii/default/login
+---
+2016/10/09 02:32:40 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."usuario" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('usuario')
+#1 C:\wamp64\www\biempleos\protected\views\empresas\index.php(69): CWebUser->__get('usuario')
+#2 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#3 C:\wamp64\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#4 C:\wamp64\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#5 C:\wamp64\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): CController->render('index', Array)
+#7 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#8 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#17 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/index')
+#18 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/empresas/index
+HTTP_REFERER=http://biempleos/site/login
+---
+2016/10/09 02:33:23 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\biempleos\protected\views\empresas\index.php(70): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#3 C:\wamp64\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#4 C:\wamp64\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#5 C:\wamp64\www\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(116): CController->render('index', Array)
+#7 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#8 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#17 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/index')
+#18 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/empresas/index
+HTTP_REFERER=http://biempleos/site/login
+---
+2016/10/09 03:54:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "update" solicitada.' in C:\wamp64\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(270): CController->missingAction('update')
+#1 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#2 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/update')
+#3 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/empresas/update/12
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/09 03:55:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "update" solicitada.' in C:\wamp64\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(270): CController->missingAction('update')
+#1 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#2 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/update')
+#3 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/empresas/update/12
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 00:51:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/10/10 06:13:42 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:13:48 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:14:12 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:14:17 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:14:55 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:16:44 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:23:31 [error] [exception.CException] exception 'CException' with message 'El alias "application.components.checkPassword" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.' in C:\wamp64\www\yii\framework\YiiBase.php:323
+Stack trace:
+#0 C:\wamp64\www\yii\framework\validators\CValidator.php(174): YiiBase::import('application.com...', true)
+#1 C:\wamp64\www\yii\framework\base\CModel.php(287): CValidator::createValidator('application.com...', Object(usuarios_empresas), 'oldPassword', Array)
+#2 C:\wamp64\www\yii\framework\base\CModel.php(260): CModel->createValidators()
+#3 C:\wamp64\www\yii\framework\base\CModel.php(304): CModel->getValidators('oldPassword')
+#4 C:\wamp64\www\yii\framework\web\helpers\CHtml.php(1513): CModel->isAttributeRequired('oldPassword')
+#5 C:\wamp64\www\yii\framework\web\widgets\CActiveForm.php(600): CHtml::activeLabelEx(Object(usuarios_empresas), 'oldPassword', Array)
+#6 C:\wamp64\www\biempleos\protected\views\empresas\actualizar.php(43): CActiveForm->labelEx(Object(usuarios_empresas), 'oldPassword', Array)
+#7 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require('C:\\wamp64\\www\\b...')
+#8 C:\wamp64\www\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\wamp64\\www\\b...', Array, true)
+#9 C:\wamp64\www\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\wamp64\\www\\b...', Array, true)
+#10 C:\wamp64\www\yii\framework\web\CController.php(782): CController->renderPartial('actualizar', Array, true)
+#11 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(97): CController->render('actualizar', Array)
+#12 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionActualizar()
+#13 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#15 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#16 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#17 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#18 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#19 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('actualizar')
+#22 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/actual...')
+#23 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/empresas/actualizar/12
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 06:25:13 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:25:42 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:28:24 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:28:30 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:29:43 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:41:10 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:49:04 [error] [php] Object of class usuarios_empresas could not be converted to string (C:\wamp64\www\biempleos\protected\components\validator\checkPassword.php:27)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CBaseController.php(126): require()
+#1 C:\wamp64\www\yii\framework\web\CBaseController.php(95): EmpresasController->renderInternal()
+#2 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#3 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#4 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(97): EmpresasController->render()
+#5 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionActualizar()
+#6 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#8 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#11 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#14 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#15 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/actualizar/12
+in C:\wamp64\www\biempleos\protected\components\validator\checkPassword.php (27)
+in C:\wamp64\www\biempleos\protected\views\empresas\actualizar.php (48)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (97)
+2016/10/10 06:53:43 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 06:55:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "checkPwd" solicitada.' in C:\wamp64\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(270): CController->missingAction('checkPwd')
+#1 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('checkPwd')
+#2 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/checkP...')
+#3 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/empresas/checkPwd
+HTTP_REFERER=http://biempleos/empresas/actualizar/12
+---
+2016/10/10 06:56:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "checkPwd" solicitada.' in C:\wamp64\www\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(270): CController->missingAction('checkPwd')
+#1 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('checkPwd')
+#2 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/checkP...')
+#3 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/empresas/checkPwd
+HTTP_REFERER=http://biempleos/empresas/actualizar/12
+---
+2016/10/10 06:58:20 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 07:01:50 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 16:50:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/10/10 16:50:49 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd?password=asd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 16:52:00 [error] [php] Undefined variable: usuario (C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php:117)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/checkPwd?password=asd
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (117)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/10 17:58:29 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 17:59:54 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 18:01:36 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 18:01:58 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 18:02:02 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 18:03:19 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 18:04:00 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/update')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/update/1
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 18:04:25 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\base\CComponent.php(612): eval()
+#3 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(392): CComponent->evaluateExpression('localidades::mo...', Array)
+#4 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(CWebUser))
+#5 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(CWebUser), Object(VacantesController), Object(CInlineAction), '::1', 'GET')
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 21:31:11 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(73): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): VacantesController->actionCreate()
+#3 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#13 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 21:31:53 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(76): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): VacantesController->actionCreate()
+#3 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#13 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---
+2016/10/10 21:31:57 [error] [exception.CException] exception 'CException' with message 'La propiedad "empresas"."id_empresa" no se encuentra definida.' in C:\wamp64\www\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('id_empresa')
+#1 C:\wamp64\www\biempleos\protected\controllers\VacantesController.php(76): CActiveRecord->__get('id_empresa')
+#2 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): VacantesController->actionCreate()
+#3 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vacantes/create')
+#13 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/vacantes/create
+HTTP_REFERER=http://biempleos/empresas/index
+---

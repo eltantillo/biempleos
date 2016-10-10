@@ -16,10 +16,10 @@ class EmpresasController extends Controller
 		return array(
 			array('allow',
 				'actions'=>array('registro'),
-				'users'=>array('?'),
+                'users'=>array('?'),
 			),
 			array('allow',
-				'actions'=>array('actualizar','index','suscripcion'),
+				'actions'=>array('actualizar','index','suscripcion','checkPwd'),
 				'users'=>array('@'),
 			),
             array('deny',
@@ -28,6 +28,9 @@ class EmpresasController extends Controller
                 'deniedCallback'=>function(){ 
                     Yii::app()->controller->redirect(array('empresas/index'));
                 }
+			),
+            array('deny',
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -54,7 +57,7 @@ class EmpresasController extends Controller
 				$exito = $exito && $usuario->save();
 				if($exito) {
                     //autologin http://www.yiiframework.com/forum/index.php/topic/9525-auto-login-after-registration-fake-login/
-                    Yii::app()->user->login(UserIdentity::createAuthenticatedIdentity($usuario->usuario),60*20);
+                    Yii::app()->user->login(UserIdentity::createAuthenticatedIdentity($usuario->usuario),0);
                     $this->redirect(array('empresas/suscripcion'));
                 }
 			}
@@ -73,9 +76,7 @@ class EmpresasController extends Controller
 
 	public function actionActualizar()
 	{
-		$usuario = usuarios_empresas::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-        	$usuario->setScenario('actualizar');
-		$empresa = $this->loadModel($usuario->id_empresa);
+		$usuario = new usuarios_empresas('actualizar');
         
 		if(isset($_POST['usuarios_empresas']))
 		{
@@ -84,16 +85,14 @@ class EmpresasController extends Controller
                 $usuario->contrasena = md5($usuario->newPassword);
                 if($usuario->save()) {
                     Yii::app()->user->setFlash('success', "Se ha cambiado la contraseña");
-                    $this->redirect(array('actualizar','msg'=>'successfully changed password'));
                 } else {
-                    Yii::app()->user->setFlash('error', "Ocurrio un error al cambiar la contraseña");
-                    $this->redirect(array('actualizar','msg'=>'password not changed'));
+                    Yii::app()->user->setFlash('error', "Ocurrio un error y no se pudo cambiar la contraseña.<br>Intentalo más tarde.");
                 }
+                $this->redirect(array('empresas/index'));
             }
 		}
 
 		$this->render('actualizar',array(
-			'empresa'=>$empresa,
 			'usuario'=>$usuario,
 		));
 	}
@@ -111,6 +110,13 @@ class EmpresasController extends Controller
 			'usuario'=>$usuario,
             'dataProvider'=>$dataProvider,*/
 		));
+    }
+    
+    public function actionCheckPwd() {
+        if(isset($_POST['password']))
+            echo Yii::app()->user->usuario->contrasena === md5($_POST['password']) ? "true":"false";
+        else
+            echo "error";
     }
 
 	public function loadModel($id_empresa)

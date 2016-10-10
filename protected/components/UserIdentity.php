@@ -27,6 +27,8 @@ class UserIdentity extends CUserIdentity
 		else{
 			$this->errorCode=self::ERROR_NONE;
 			$this->_id = $user->id;
+            $this->setState('usuario', $user);
+            $this->setState('empresa', empresas::model()->findByPk($user->id_empresa));
 		}
 		return !$this->errorCode;
 	}

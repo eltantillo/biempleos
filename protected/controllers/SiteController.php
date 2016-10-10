@@ -29,17 +29,18 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		if(!Yii::app()->user->isGuest) {
-            $usuario = usuarios_empresas::model()->findByAttributes(array("id" => Yii::app()->user->id));
+		/*if(!Yii::app()->user->isGuest) {
+            /*$usuario = usuarios_empresas::model()->findByAttributes(array("id" => Yii::app()->user->id));
             $localidades = localidades::model()->findByAttributes(array("id_empresa" => $usuario->id_empresa));
             
             if ($localidades != null)
                 $this->render('indexEmpresa');
             else
                 $this->redirect(Yii::app()->request->baseUrl . '/localidades/create');
-        } else {
+            $this->render('/empresas/index');
+        } else {*/
             $this->renderPartial('index');
-        }
+        //}
 	}
 
 	/**
@@ -102,7 +103,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(array('empresas/index'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

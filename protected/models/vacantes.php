@@ -8,11 +8,12 @@
  * @property string $id_empresa
  * @property string $id_localidad
  * @property string $puesto
- * @property string $sueldo
+ * @property integer $sueldo
  * @property string $ofrece
  * @property string $requisitos
- * @property string $disponibilidad
+ * @property boolean $disponibilidad
  * @property string $fecha_publicacion
+ * @property boolean $activa
  */
 class vacantes extends CActiveRecord
 {
@@ -32,9 +33,12 @@ class vacantes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_empresa, id_localidad, puesto, sueldo, ofrece, requisitos, disponibilidad', 'required'),
-			array('id_empresa, id_localidad, sueldo, disponibilidad', 'length', 'max'=>10),
+			array('id_empresa, id_localidad, puesto, sueldo, ofrece, requisitos', 'required'),
+			array('id_empresa, id_localidad', 'length', 'max'=>10),
 			array('puesto', 'length', 'max'=>20),
+            array('sueldo', 'numerical', 'integerOnly'=>true),
+            array('activa', 'boolean'),
+            array('disponibilidad', 'boolean'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_empresa, id_localidad, puesto, sueldo, ofrece, requisitos, disponibilidad, fecha_publicacion', 'safe', 'on'=>'search'),
@@ -63,7 +67,7 @@ class vacantes extends CActiveRecord
 		return array(
 			'id' => 'Id',
 			'id_empresa' => 'Id Empresa',
-			'id_localidad' => 'Id Localidad',
+			'id_localidad' => 'Local',
 			'puesto' => 'Puesto',
 			'sueldo' => 'Sueldo',
 			'ofrece' => 'Ofrece',

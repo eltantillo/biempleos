@@ -30,10 +30,23 @@ class VacantesController extends Controller
 	 */
 	public function accessRules()
 	{
-		return array(
+        return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','index','view','admin','delete'),
+				'actions'=>array('index','view','admin','delete'),
 				'users'=>array('@'),
+			),
+            array('allow',
+                'actions'=>array('create','update'),
+				'expression'=>"localidades::model()->findByAttributes(array('id_empresa'=>Yii::app()->user->empresa->id, 'activa'=>true)) != null",
+                'users'=>array('@'),
+			),
+            array('deny',
+                'actions'=>array('create','update'),
+                'users'=>array('@'),
+                'deniedCallback'=>function(){
+                    Yii::app()->user->setFlash('modal', "Para crear vacantes debes añadir al menos una localidad");
+                    Yii::app()->controller->redirect(array('localidades/create'));
+                }
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -57,11 +70,10 @@ class VacantesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$usuario     = usuarios_empresas::model()->findByAttributes(array('id'=>Yii::app()->user->id));
-		$localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$usuario->id_empresa));
+		$localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>Yii::app()->user->empresa->id));
 		$model       = new vacantes;
 
-		$model->id_empresa = $usuario->id_empresa;
+		$model->id_empresa = Yii::app()->user->empresa->id;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -70,10 +82,14 @@ class VacantesController extends Controller
 		{
 			$model->attributes=$_POST['vacantes'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+                Yii::app()->user->setFlash('success', "La vacante se ha sido creada");
+            else
+                Yii::app()->user->setFlash('error', "Ocurrio un problema y no se pudo guardar la vacante.<br>Intentalo más tarde.");
+				
+            $this->redirect(array('empresas/index'));
 		}
 
-		$this->renderPartial('create',array(
+		$this->render('create',array(
 			'model'=>$model,
 			'localidades'=>$localidades,
 		));

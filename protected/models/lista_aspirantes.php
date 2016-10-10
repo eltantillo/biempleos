@@ -9,6 +9,7 @@
  * @property string $id_aspirante
  * @property string $cita
  * @property string $fecha_creacion
+ * @property boolean $activa
  */
 class lista_aspirantes extends CActiveRecord
 {
@@ -29,6 +30,7 @@ class lista_aspirantes extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('cita, fecha_creacion', 'safe'),
+            array('activa', 'boolean'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_vacante, id_aspirante, cita, fecha_creacion', 'safe', 'on'=>'search'),

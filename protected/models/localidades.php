@@ -5,14 +5,15 @@
  *
  * The followings are the available columns in table 'localidades':
  * @property string $id
- * @property string $id_empresa
+ * @property integer $id_empresa
  * @property string $calle
- * @property string $numero
+ * @property integer $numero
  * @property string $colonia
- * @property string $codigo_postal
- * @property string $pais
- * @property string $estado
- * @property string $ciudad
+ * @property integer $codigo_postal
+ * @property integer $pais
+ * @property integer $estado
+ * @property integer $ciudad
+ * @property boolean $activa
  */
 class localidades extends CActiveRecord
 {
@@ -33,8 +34,9 @@ class localidades extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_empresa, calle, numero, colonia, codigo_postal, pais, estado, ciudad', 'required'),
-			array('id_empresa, numero, codigo_postal, pais, estado, ciudad', 'length', 'max'=>10),
+			array('id_empresa, numero, codigo_postal, pais, estado, ciudad', 'numerical', 'integerOnly'=>true),
 			array('calle, colonia', 'length', 'max'=>128),
+            array('activa', 'boolean'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, id_empresa, calle, numero, colonia, codigo_postal, pais, estado, ciudad', 'safe', 'on'=>'search'),
