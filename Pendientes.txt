@@ -11,22 +11,23 @@
     [x] Recover
     [x] Login
     [] Empresas
-        [] Update
+        [x] Cambiar contraseña
         [x] Registro
         [] Suscripcion
-        [] Inicio
+        [x] Inicio
     [] Localidades
-        [] Create
-        [] Update
-        [] Index
+        [x] Create
+        [x] Update
     [] Vacantes
-        [] Create
-        [] Update
-        [] Index
+        [x] Create
+        [x] Update
     [] Lista Aspirantes
         [] Index
         [] Ver Citas - nombre provisional
         [] Crear Citas - nombre provisional
+    [] Historial
+        [] Vacantes
+        [] Aspirantes
         
 [] Acciones de Pantallas
     [] Inicio
@@ -34,37 +35,30 @@
     [x] Recover
         [x] Recuperación de Contraseña por correo
     [] Empresas
-        [] Update
-            Debe hacer edición de los campos de usuarios_empresa y empresa, omitir los ids
+        [x] Cambiar contraseña
         [x] Registro
             El registro de una empresa con datos de usuario_empresa y empresa, omitir los ids
         [] Suscripcion
             Cuando se pague paypal habilitar funciones
             Cada que acceda a estas funciones verificar si aun puede utilizarlas
         [] Inicio
-            Visualización de las acciones se pueden realizar
+            Visualización de vacantes y locales tanto activas no activas, datos de la empresa
+            Enlaces de cambiar contraseña, crear y editar locales y vacantes, historial y lista aspirantes
+            Acciones:
+                Cambiar activo de vacantes y locales
+                Finalizacion de vacantes - terminar de buscar aspirantes
+                No se pueden crear vacantes
+                    Si no hay al menos 1 local activo
     [] Localidades
-        [] Create
+        [x] Create
             ? Habilitar si hay pago paypal
-        [] Update
+        [x] Update
             ? Habilitar si hay pago paypal
-        [] Index
-            Aquí se debe visualizar todos los locales
-                No es necesario verificar pago
-            Eliminación
-                ? Habilitar si hay pago paypal
     [] Vacantes
-        [] Create
+        [x] Create
             Habilitar si hay pago paypal
-        [] Update
+        [x] Update
             Habilitar si hay pago paypal
-        [] Index
-            Visualizar vacantes activas
-                Habilitar si hay pago paypal
-            ? Visualizar historial de vacantes
-                No es necesario verificar pago
-            Eliminación
-                Habilitar si hay pago paypal
     [] Lista Aspirantes
         [] Index
             Visualizar aspirantes de vacantes
@@ -75,6 +69,13 @@
                 Habilitar si hay pago paypal
         [] Crear Citas - nombre provisional
             Habilitar si hay pago paypal
+    [] Historial
+        [] Vacantes
+            Visualizar las vacantes creadas
+            Debe mostrar cuando se creo y cuando termino y mostrar los aspirantes que aplicaron y quienes fueron citados con fecha
+        [] Aspirantes
+            Mostrar todos los aspirantes que hayan aplicado a alguna vacante de la empresa y mostrar que vacantes aplicaron,
+            si fueron citados mostrar fecha de la cita
 
 
 Cada una de las acciones debe mostrar algún mesnaje de éxito o error

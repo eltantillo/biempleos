@@ -67,9 +67,18 @@ $this->menu=array(
 </div>*/
 $empresa = Yii::app()->user->empresa;
 $usuario = Yii::app()->user->usuario;
-$vacantes = vacantes::model()->findAllByAttributes(array('id_empresa'=>$empresa->id, 'activa'=>true));
-$localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$empresa->id, 'activa'=>true));
+$vacantes = vacantes::model()->findAllByAttributes(array('id_empresa'=>$empresa->id));
+$localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$empresa->id));
 ?>
+<script>
+$(document).ready(function() {
+    $('#lista_vacante, #lista_locales').on('show.bs.collapse', function(e) {
+        $(e.target).prevUntil('.panel','.list-group-item').addClass('active');
+    }).on('hide.bs.collapse', function(e) {
+        $(e.target).prevUntil('.panel','.list-group-item').removeClass('active');
+    });
+});
+</script>
 <h1>Inicio</h1>
 <div class="row">
     <div class="col-sm-7">
@@ -81,55 +90,46 @@ $localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$em
                         <?php echo CHtml::link("<span class='glyphicon glyphicon-plus'></span>",array('vacantes/create'),array('class'=>'panel-agregar')); ?>
                     </h4>
                 </div>
-                <div id="vacantes" class="panel-collapse collapse in table-responsive">
-                    <table class="table table-striped">
-                        <script>
-                            function mifuncion(obj) {
-                                if(obj.classList.contains('glyphicon-expand'))
-                                    obj.setAttribute("class","glyphicon glyphicon-collapse-down");
-                                else if(obj.classList.contains('glyphicon-collapse-down'))
-                                    obj.setAttribute("class","glyphicon glyphicon-expand");
-                            }
-                        </script>
-                            <?php
-                            if($vacantes) {
-                                echo "<thead><tr><th>Puesto</th><th>Publicación</th></tr></thead><tbody>";
-                                foreach($vacantes as $v) {
-                                    $local = localidades::model()->findByPk($v->id_localidad);
-                                    echo "<tr><td><span class='glyphicon glyphicon-expand' data-toggle='collapse' data-target='#collapse".$v->id."' onclick='mifuncion(this)'></span> " . CHtml::link($v->puesto, array('vacantes/view', 'id'=>$v->id), array('class'=>'prueba')) . "</td>";
-                                    echo "<td>$v->fecha_publicacion</td>";
-                                    echo "<td>" . CHtml::link("<span class='glyphicon glyphicon-edit'></span>", array('vacantes/update', 'id'=>$v->id)) . "</td></tr>";
-                                    echo "<tr id='collapse".$v->id."' class='collapse'>
-                                            <td colspan='3' class='info-vacante'>
-                                                <div class='row'>
-                                                    <label class='col-sm-5'>Sueldo</label>
-                                                    <span class='col-sm-7'>$$v->sueldo.00</span>
-                                                </div>
-                                                <div class='row'>
-                                                    <label class='col-sm-5'>Localidad</label>
-                                                    <span class='col-sm-7'>$local->calle #$local->numero, $local->colonia CP: $local->codigo_postal</span>
-                                                </div>
-                                                <div class='row'>
-                                                    <label class='col-sm-5'>Requisitos</label>
-                                                    <span class='col-sm-7'>$v->requisitos</span>
-                                                </div>
-                                                <div class='row'>
-                                                    <label class='col-sm-5'>Ofrecimiento</label>
-                                                    <span class='col-sm-7'>$v->ofrece</span>
-                                                </div>
-                                                <div class='row'>
-                                                    <label class='col-sm-5'>Disponibilidad</label>
-                                                    <span class='col-sm-7'>".($v->disponibilidad ? "Si":"No")."</span>
-                                                </div>
-                                            </td>
-                                          </tr>";
-                                }
-                                echo "</tbody>";
-                            } else {
-                                echo "<tbody><tr><td>No hay vacantes</td><tr></tbody>";
-                            }
-                            ?>
-                    </table>
+                <div id="vacantes" class="panel-collapse collapse in">
+                    <div id="lista_vacante" class="list-group">
+                        <?php if($vacantes): ?>
+                        <?php foreach($vacantes as $v): ?>
+                        <?php $local = localidades::model()->findByPk($v->id_localidad); ?>
+                        <div class="panel relative">
+                            <a data-toggle="collapse" data-parent="#lista_vacante" href="#vacante<?php echo $v->id; ?>" class="list-group-item">
+                                <h4 class="list-group-item-heading"><?php echo $v->puesto; ?></h4>
+                                <p class="list-group-item-text"><?php echo $v->activa ? "Habilitado":"Deshabilitado"; ?></p>
+                            </a>
+                            <a href="#" class="btn btn-danger btn-top-right">Deshabilitar</a>
+                            <div id="vacante<?php echo $v->id; ?>" class="relative collapse">
+                                <dl>
+                                    <dt>Sueldo</dt>
+                                    <dd>$<?php echo $v->sueldo; ?>.00</dd>
+                                    <dt>Localidad</dt>
+                                    <dd><?php echo "$local->calle #$local->numero, $local->colonia CP: $local->codigo_postal"; ?></dd>
+                                    <dt>Requisitos</dt>
+                                    <dd><?php echo $v->requisitos; ?></dd>
+                                    <dt>Ofrecimiento</dt>
+                                    <dd><?php echo $v->ofrece; ?></dd>
+                                    <dt>Disponibilidad</dt>
+                                    <dd><?php echo $v->disponibilidad ? "Si":"No"; ?></dd>
+                                </dl>
+                                <div class="btn-top-right">
+                                    <?php
+                                    if($v->activa)
+                                        echo CHtml::link('Ver Aspirantes',array('vacantes/view', 'id'=>$v->id), array('class'=>'btn btn-primary')) . "<br>";
+                                    echo CHtml::link('Editar',array('vacantes/update', 'id'=>$v->id), array('class'=>'btn btn-success')) . "<br>";
+                                    if($v->activa)
+                                        echo CHtml::link('Finalizar',array('vacantes/finalizar', 'id'=>$v->id), array('class'=>'btn btn-danger', 'confirm'=>'¿Seguro que quieres finalizar la busqueda de aspirantes para esta vacante?')) . "<br>";
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                        <?php else: ?>
+                        <p class="list-group-item list-group-item-text text-center">Agrega alguna vacante</p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,10 +139,10 @@ $localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$em
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#historial">Perfil</a>
+                        <a data-toggle="collapse" href="#perfil">Perfil</a>
                     </h4>
                 </div>
-                <div id="historial" class="panel-collapse collapse in">
+                <div id="perfil" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <div class="hidden-xs">
                             <?php
@@ -172,21 +172,25 @@ $localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$em
                         <?php echo CHtml::link("<span class='glyphicon glyphicon-plus'></span>",array('localidades/create'),array('class'=>'panel-agregar')); ?>
                     </h4>
                 </div>
-                <div id="localidades" class="panel-collapse collapse in table-responsive">
-                    <table class="table table-striped">
-                        <tbody>
-                            <?php
-                            if($localidades) {
-                                foreach($localidades as $local) {
-                                    echo "<tr><td>$local->calle #$local->numero, $local->colonia CP: $local->codigo_postal</td>";
-                                    echo "<td>" . CHtml::link("<span class='glyphicon glyphicon-edit'></span>", array('localidades/update', 'id'=>$local->id)) . "</td></tr>";
-                                }
-                            } else {
-                                echo "<tr><td>No hay localidades</td></tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                <div id="lista_locales" class="list-group">
+                    <?php if($localidades): ?>
+                    <?php foreach($localidades as $local): ?>
+                    <div class="panel relative">
+                        <a data-toggle="collapse" data-parent="#lista_locales" href="#local<?php echo $local->id; ?>" class="list-group-item">
+                            <h4 class="list-group-item-heading"><?php echo "$local->calle #$local->numero, $local->colonia CP: $local->codigo_postal"; ?></h4>
+                            <p class="list-group-item-text"><?php echo $local->activa ? "Habilitado":"Deshabilitado"; ?></p>
+                        </a>
+                        <div id="local<?php echo $local->id; ?>" class="relative collapse">
+                            <div class="btn-group btn-group-justified">
+                                <a href="#" class="btn btn-danger">Deshabilitar</a>
+                                <a href="#" class="btn btn-success">Editar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                    <?php else: ?>
+                    <p class="list-group-item list-group-item-text text-center">No hay locales registrados</p>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="panel panel-default">
@@ -196,7 +200,14 @@ $localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$em
                     </h4>
                 </div>
                 <div id="historial" class="panel-collapse collapse in">
-                    <div class="panel-body">Historial Pendiente</div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <p class="list-group-item-text"><span class="glyphicon glyphicon-new-window"></span> Ver historial de vacantes</p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <p class="list-group-item-text"><span class="glyphicon glyphicon-new-window"></span> Ver historial de aspirantes</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

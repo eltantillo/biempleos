@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `x-empleos`.`vacantes` (
   `requisitos` LONGTEXT NOT NULL,
   `disponibilidad` BOOLEAN NOT NULL,
   `fecha_publicacion` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_finalizacion` TIMESTAMP NULL,
   `activa` BOOLEAN NOT NULL DEFAULT TRUE,
   PRIMARY KEY (`id`) ,
   INDEX `fk_vacantes_empresas1_idx` (`id_empresa` ASC) ,

@@ -13,6 +13,7 @@
  * @property string $requisitos
  * @property boolean $disponibilidad
  * @property string $fecha_publicacion
+ * @property string $fecha_finalizacion
  * @property boolean $activa
  */
 class vacantes extends CActiveRecord
@@ -74,6 +75,7 @@ class vacantes extends CActiveRecord
 			'requisitos' => 'Requisitos',
 			'disponibilidad' => 'Disponibilidad',
 			'fecha_publicacion' => 'Fecha Publicacion',
+            'fecha_finalizacion' => 'Fecha Finalizacion',
 		);
 	}
 

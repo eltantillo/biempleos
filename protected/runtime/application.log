@@ -8706,3 +8706,34 @@ Stack trace:
 REQUEST_URI=/vacantes/create
 HTTP_REFERER=http://biempleos/empresas/index
 ---
+2016/10/11 07:14:36 [error] [php] Undefined variable: local (C:\wamp64\www\biempleos\protected\views\empresas\index.php:110)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(869): EmpresasController->renderFile()
+#1 C:\wamp64\www\yii\framework\web\CController.php(782): EmpresasController->renderPartial()
+#2 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(112): EmpresasController->render()
+#3 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionIndex()
+#4 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): EmpresasController->runAction()
+#6 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\wamp64\www\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): EmpresasController->filterAccessControl()
+#9 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\wamp64\www\yii\framework\web\CController.php(265): EmpresasController->runActionWithFilters()
+#12 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): EmpresasController->run()
+#13 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/empresas/index
+in C:\wamp64\www\biempleos\protected\views\empresas\index.php (110)
+in C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php (112)
+in C:\wamp64\www\biempleos\index.php (13)
+2016/10/11 07:14:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/empresas/index
+---
