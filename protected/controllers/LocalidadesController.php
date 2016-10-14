@@ -32,7 +32,7 @@ class LocalidadesController extends Controller
 	{
 		return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','index','view','admin','delete'),
+				'actions'=>array('create','update','index','view','admin','delete','activo'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -156,6 +156,13 @@ class LocalidadesController extends Controller
 			'model'=>$model,
 		));
 	}
+    
+    public function actionActivo() {
+        $model = $this->loadModel();
+        $model->activo = !$model->activo;
+        if(!$model->save())
+            throw new CHttpException(500,'Ocurrio un problema al guardarlo en la base de datos.');
+    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

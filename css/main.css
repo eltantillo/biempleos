@@ -234,8 +234,60 @@ div.search-form
  *  CSS for User panel
  *
  */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to { 
+    -webkit-transform: rotate(360deg);
+  }
+}
+.loading {
+    font-size: x-large;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    color: white;
+    top: 0;
+    z-index: 2;
+}
+
+.loading.in {
+    display: block !important;
+}
+
+.loading > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.loading span.glyphicon {
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 1s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: rotate;
+    animation-duration: 1s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
 .panel p.text-center {
     cursor: default;
+}
+
+.panel-heading + div {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    overflow: auto;
+}
+
+.panel-heading + div::-webkit-scrollbar {
+    display: none;
 }
 
 .panel-heading .panel-agregar {
@@ -262,7 +314,8 @@ div.search-form
 }
 
 .relative dl {
-    padding: 13px 0 0 20px;
+    padding: 13px 0 20px 20px;
+    margin: 0 !important;
 }
 
 .relative .btn-top-right {
@@ -399,10 +452,4 @@ div.checkbox > span.glyphicon-warning-sign {
 
 .bttn-normal {
     font-size: normal;
-}
-
-.loading {
-    background: url('../images/loading.gif') no-repeat;
-    width: 16px;
-    height: 16px;
 }

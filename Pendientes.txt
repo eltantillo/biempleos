@@ -15,10 +15,10 @@
         [x] Registro
         [] Suscripcion
         [x] Inicio
-    [] Localidades
+    [x] Localidades
         [x] Create
         [x] Update
-    [] Vacantes
+    [x] Vacantes
         [x] Create
         [x] Update
     [] Lista Aspirantes
@@ -41,7 +41,7 @@
         [] Suscripcion
             Cuando se pague paypal habilitar funciones
             Cada que acceda a estas funciones verificar si aun puede utilizarlas
-        [] Inicio
+        [x] Inicio
             Visualización de vacantes y locales tanto activas no activas, datos de la empresa
             Enlaces de cambiar contraseña, crear y editar locales y vacantes, historial y lista aspirantes
             Acciones:

@@ -32,7 +32,7 @@ class VacantesController extends Controller
 	{
         return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','admin','delete'),
+				'actions'=>array('index','view','admin','delete','finalizar','activo'),
 				'users'=>array('@'),
 			),
             array('allow',
@@ -171,6 +171,20 @@ class VacantesController extends Controller
 			'model'=>$model,
 		));
 	}
+    
+    public function actionFinalizar() {
+        $model = $this->loadModel();
+        $model->fecha_finalizacion = date("Y-m-d H:i:s");
+        if(!$model->save())
+            throw new CHttpException(500,'Ocurrio un problema al guardarlo en la base de datos.');
+    }
+    
+    public function actionActivo() {
+        $model = $this->loadModel();
+        $model->activo = !$model->activo;
+        if(!$model->save())
+            throw new CHttpException(500,'Ocurrio un problema al guardarlo en la base de datos.');
+    }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

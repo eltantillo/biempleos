@@ -67,7 +67,7 @@ $this->menu=array(
 </div>*/
 $empresa = Yii::app()->user->empresa;
 $usuario = Yii::app()->user->usuario;
-$vacantes = vacantes::model()->findAllByAttributes(array('id_empresa'=>$empresa->id));
+$vacantes = vacantes::model()->findAllByAttributes(array('id_empresa'=>$empresa->id, 'fecha_finalizacion'=>null));
 $localidades = localidades::model()->findAllByAttributes(array('id_empresa'=>$empresa->id));
 ?>
 <script>
@@ -77,9 +77,123 @@ $(document).ready(function() {
     }).on('hide.bs.collapse', function(e) {
         $(e.target).prevUntil('.panel','.list-group-item').removeClass('active');
     });
+    
+    var active = false;
+    $(window).click(function() {
+        if(active)
+            $('#temporaryModal').effect('shake');
+    });
+    
+    $('#pruebaBoton').click(function(e){
+        var item = $(this).data('item');
+        
+        if($(this).hasClass('btn-danger')) {
+            $(this).removeClass('btn-danger');
+            $(this).addClass('btn-primary');
+            $(this).text('Habilitar');
+        } else if($(this).hasClass('btn-primary')) {
+            $(this).removeClass('btn-primary');
+            $(this).addClass('btn-danger');
+            $(this).text('Deshabilitar');
+        }
+        
+        var text = "a[href='" + item + "'] p.list-group-item-text";
+        if($(text).text() == 'Habilitado')
+            $(text).text('Deshabilitado');
+        else if($(text).text() == 'Deshabilitado')
+            $(text).text('Habilitado');
+    });
+
+    $('#temporaryModal .modal-content').click(function(e){
+        active = false;
+    });
+    
+    $('#temporaryModal').on('show.bs.modal', function(e) {
+        $('#delete').data('url', $(e.relatedTarget).data('url'));
+        $('#delete').data('item', $(e.relatedTarget).data('item'));
+        $('#delete').data('action', $(e.relatedTarget).data('action'));
+        $('#delete').data('activateBy', $(e.relatedTarget));
+        
+        if($(e.relatedTarget).data('action') == "finalizar")
+            $('#temporaryModal .modal-body').text('¿Estas seguro que quieres finalizar la busqueda de aspirantes de esta vacante?');
+        else if($(e.relatedTarget).data('action') == "deshabilitar")
+            $('#temporaryModal .modal-body').text('¿Estas seguro que quieres habilitarlo?');
+        else if($(e.relatedTarget).data('action') == "habilitar")
+            $('#temporaryModal .modal-body').text('¿Estas seguro que quieres deshabilitarlo?');
+        
+    }).on('shown.bs.modal', function() {
+        active = true;
+    }).on('hidden.bs.modal', function() {
+        active = false;
+    });
+    
+    $('#delete, #cancel').click(function(e) {
+        if($(this).is('#delete')) {
+            var item = $(this).data('item');
+            var action = $(this).data('action');
+            $.ajax({
+                url: $(this).data('url'),
+                beforeSend: function() {
+                    $(item).parent().children().last().addClass('in');
+                },
+                success: function(r) {
+                    switch(action){
+                        case "finalizar":
+                            $(item).collapse('hide');
+                            $(item).parent().on('hidden.bs.collapse', function(e) {
+                                if ($(this).is(e.target))
+                                    $(this).remove();
+                                $(item).parent().collapse('hide');
+                            });
+                            break;
+                            
+                        case "deshabilitar":
+                            var btn = $('#delete').data('activateBy');
+                            $(btn).removeClass('btn-danger');
+                            $(btn).addClass('btn-primary');
+                            $(btn).text('Habilitar');
+                            $(btn).data('action','habilitar');
+                            
+                            var text = "a[href='" + item + "'] p.list-group-item-text";
+                            $(text).text("Deshabilitado");
+                            break;
+                            
+                        case "habilitar":
+                            var btn = $('#delete').data('activateBy');
+                            $(btn).removeClass('btn-primary');
+                            $(btn).addClass('btn-danger');
+                            $(btn).text('Deshabilitar');
+                            $(btn).data('action','deshabilitar');
+                            
+                            var text = "a[href='" + item + "'] p.list-group-item-text";
+                            $(text).text('Habilitado');
+                            break;
+                    }
+                    $(item).parent().children().last().removeClass('in');
+                },
+                error: function() {
+                    $("<div class='alert alert-danger fade in'><button type='button' class='close' data-dismiss='alert' aria-label='close'>&times;</button>Ocurrio un problema. Intentalo más tarde recargando la página</div>").insertAfter('#temporaryModal');
+                    $(item).parent().children().last().removeClass('in');
+                }
+            });
+        }
+    });
 });
 </script>
-<h1>Inicio</h1>
+<!-- Modal -->
+<div class="modal fade" id="temporaryModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="temporaryModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                ¿Estas seguro que quieres finalizar la busqueda de aspirantes de esta vacante?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="delete" class="btn btn-primary" data-dismiss="modal">Finalizar</button>
+                <button type="button" id="cancel" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-7">
         <div class="panel-group">
@@ -90,17 +204,18 @@ $(document).ready(function() {
                         <?php echo CHtml::link("<span class='glyphicon glyphicon-plus'></span>",array('vacantes/create'),array('class'=>'panel-agregar')); ?>
                     </h4>
                 </div>
-                <div id="vacantes" class="panel-collapse collapse in">
+                <div id="vacantes" class="panel-collapse collapse in" style="max-height:400px">
                     <div id="lista_vacante" class="list-group">
                         <?php if($vacantes): ?>
                         <?php foreach($vacantes as $v): ?>
                         <?php $local = localidades::model()->findByPk($v->id_localidad); ?>
-                        <div class="panel relative">
+                        <div class="panel relative collapse in">
                             <a data-toggle="collapse" data-parent="#lista_vacante" href="#vacante<?php echo $v->id; ?>" class="list-group-item">
                                 <h4 class="list-group-item-heading"><?php echo $v->puesto; ?></h4>
                                 <p class="list-group-item-text"><?php echo $v->activa ? "Habilitado":"Deshabilitado"; ?></p>
                             </a>
-                            <a href="#" class="btn btn-danger btn-top-right">Deshabilitar</a>
+                            <button class="btn btn-danger btn-top-right" data-item="#vacante<?php echo $v->id; ?>" data-toggle="modal" data-target="#temporaryModal" data-url="<?php echo Yii::app()->createUrl('vacantes/activo', array('id'=>$v->id)); ?>" data-action="<?php echo $v->activa ? "deshabilitar":"habilitar"; ?>"><?php echo $v->activa ? "Deshabilitar":"Habilitar"; ?></button>
+                            
                             <div id="vacante<?php echo $v->id; ?>" class="relative collapse">
                                 <dl>
                                     <dt>Sueldo</dt>
@@ -119,9 +234,15 @@ $(document).ready(function() {
                                     if($v->activa)
                                         echo CHtml::link('Ver Aspirantes',array('vacantes/view', 'id'=>$v->id), array('class'=>'btn btn-primary')) . "<br>";
                                     echo CHtml::link('Editar',array('vacantes/update', 'id'=>$v->id), array('class'=>'btn btn-success')) . "<br>";
-                                    if($v->activa)
-                                        echo CHtml::link('Finalizar',array('vacantes/finalizar', 'id'=>$v->id), array('class'=>'btn btn-danger', 'confirm'=>'¿Seguro que quieres finalizar la busqueda de aspirantes para esta vacante?')) . "<br>";
                                     ?>
+                                    <?php if($v->activa): ?>
+                                    <button class="btn btn-danger" data-item="#vacante<?php echo $v->id; ?>" data-toggle="modal" data-target="#temporaryModal" data-url="<?php echo Yii::app()->createUrl('vacantes/finalizar', array('id'=>$v->id)); ?>" data-action="finalizar">Finalizar</button><br>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="loading">
+                                <div>
+                                    <span class="glyphicon glyphicon-refresh"></span> Cargando...
                                 </div>
                             </div>
                         </div>
@@ -168,11 +289,11 @@ $(document).ready(function() {
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#localidades">Localidades</a>
+                        <a data-toggle="collapse" href="#lista_locales">Localidades</a>
                         <?php echo CHtml::link("<span class='glyphicon glyphicon-plus'></span>",array('localidades/create'),array('class'=>'panel-agregar')); ?>
                     </h4>
                 </div>
-                <div id="lista_locales" class="list-group">
+                <div id="lista_locales" class="list-group" style="max-height:300px">
                     <?php if($localidades): ?>
                     <?php foreach($localidades as $local): ?>
                     <div class="panel relative">
@@ -182,8 +303,13 @@ $(document).ready(function() {
                         </a>
                         <div id="local<?php echo $local->id; ?>" class="relative collapse">
                             <div class="btn-group btn-group-justified">
-                                <a href="#" class="btn btn-danger">Deshabilitar</a>
-                                <a href="#" class="btn btn-success">Editar</a>
+                                <a href="#" class="btn btn-danger" data-item="#local<?php echo $local->id; ?>" data-toggle="modal" data-target="#temporaryModal" data-url="<?php echo Yii::app()->createUrl('localidades/activo', array('id'=>$local->id)); ?>" data-action="<?php echo $local->activa ? "deshabilitar":"habilitar"; ?>"><?php echo $local->activa ? "Deshabilitar":"Habilitar"; ?></a>
+                                <?php echo CHtml::link('Editar', array('localidades/update', 'id'=>$local->id), array('class'=>'btn btn-success')); ?>
+                            </div>
+                        </div>
+                        <div class="loading">
+                            <div>
+                                <span class="glyphicon glyphicon-refresh"></span> Cargando...
                             </div>
                         </div>
                     </div>
