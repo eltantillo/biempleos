@@ -83,26 +83,6 @@ $(document).ready(function() {
         if(active)
             $('#temporaryModal').effect('shake');
     });
-    
-    $('#pruebaBoton').click(function(e){
-        var item = $(this).data('item');
-        
-        if($(this).hasClass('btn-danger')) {
-            $(this).removeClass('btn-danger');
-            $(this).addClass('btn-primary');
-            $(this).text('Habilitar');
-        } else if($(this).hasClass('btn-primary')) {
-            $(this).removeClass('btn-primary');
-            $(this).addClass('btn-danger');
-            $(this).text('Deshabilitar');
-        }
-        
-        var text = "a[href='" + item + "'] p.list-group-item-text";
-        if($(text).text() == 'Habilitado')
-            $(text).text('Deshabilitado');
-        else if($(text).text() == 'Deshabilitado')
-            $(text).text('Habilitado');
-    });
 
     $('#temporaryModal .modal-content').click(function(e){
         active = false;
@@ -182,7 +162,7 @@ $(document).ready(function() {
 </script>
 <!-- Modal -->
 <div class="modal fade" id="temporaryModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="temporaryModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 ¿Estas seguro que quieres finalizar la busqueda de aspirantes de esta vacante?
