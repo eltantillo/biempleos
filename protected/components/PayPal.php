@@ -18,8 +18,19 @@ class PayPal{
 
 		$paypal = new \PayPal\Rest\ApiContext(
 		new \PayPal\Auth\OAuthTokenCredential(
-			'AR9zeq_hE6dp42MjbG6QARQnlMkCIkGFTsQTTSjJyIgwOvKZiB2yL49L6BSVjqXXuC7SU7GQYN7rz5pB',
-			'EF5M7H-oXJD5YyjNyDik4SbS9z5HCUvpRebboAZSjLcIQeqyHwlOE2oigWXr7w3dLykT39mL7TlhM6x9'
+			'Af42Rxbu9dUiCjLoMc9rNp3JODNNTpw8llq9hoa08ZvG_qcj1oExQkJnYSHM_Zfl4lwU0ksO1-RBgoME',
+			'EG0jm0p_Fk5ol62uUu1gSeYiZ0hITwNkQNLcTRT-RBIC9vNOZBEEJqthFsehefgTy9821ccqd8_r6Q_-'
+			)
+		);
+
+		$paypal->setConfig(
+			array(
+				'mode' => 'live',
+				'log.LogEnabled' => true,
+				'log.FileName' => '../PayPal.log',
+				'log.LogLevel' => 'DEBUG',
+				'validation.level' => 'log',
+				'cache.enabled' => true,
 			)
 		);
 
@@ -28,9 +39,9 @@ class PayPal{
 
 		$item = new Item();
 		$item->setName($product)
-		     ->setCurrency('MXN')
-		     ->setQuantity(1)
-		     ->setPrice($price);
+			 ->setCurrency('MXN')
+			 ->setQuantity(1)
+			 ->setPrice($price);
 
 		$itemList = new ItemList();
 		$itemList->setItems([$item]);
@@ -40,24 +51,24 @@ class PayPal{
 
 		$amount = new Amount();
 		$amount->setCurrency('MXN')
-		       ->setTotal($price)
-		       ->setDetails($details);
+			   ->setTotal($price)
+			   ->setDetails($details);
 
 		$transaction = new Transaction();
 		$transaction->setAmount($amount)
-		            ->setItemList($itemList)
-		            ->setDescription('Pay for Something')
-		            ->setInvoiceNumber(uniqid());
+					->setItemList($itemList)
+					->setDescription('Pay for Something')
+					->setInvoiceNumber(uniqid());
 
 		$redirectUrls = new RedirectUrls();
 		$redirectUrls->setReturnUrl($successUrl)
-		             ->setCancelUrl($failureUrl);
+					 ->setCancelUrl($failureUrl);
 
 		$payment = new Payment();
 		$payment->setIntent('sale')
-		        ->setPayer($payer)
-		        ->setRedirectUrls($redirectUrls)
-		        ->setTransactions([$transaction]);
+				->setPayer($payer)
+				->setRedirectUrls($redirectUrls)
+				->setTransactions([$transaction]);
 
 		try {
 			$payment->create($paypal);
@@ -73,8 +84,19 @@ class PayPal{
 	public static function process($paymentID, $payerID){
 		$paypal = new \PayPal\Rest\ApiContext(
 		new \PayPal\Auth\OAuthTokenCredential(
-			'AR9zeq_hE6dp42MjbG6QARQnlMkCIkGFTsQTTSjJyIgwOvKZiB2yL49L6BSVjqXXuC7SU7GQYN7rz5pB',
-			'EF5M7H-oXJD5YyjNyDik4SbS9z5HCUvpRebboAZSjLcIQeqyHwlOE2oigWXr7w3dLykT39mL7TlhM6x9'
+			'Af42Rxbu9dUiCjLoMc9rNp3JODNNTpw8llq9hoa08ZvG_qcj1oExQkJnYSHM_Zfl4lwU0ksO1-RBgoME',
+			'EG0jm0p_Fk5ol62uUu1gSeYiZ0hITwNkQNLcTRT-RBIC9vNOZBEEJqthFsehefgTy9821ccqd8_r6Q_-'
+			)
+		);
+
+		$paypal->setConfig(
+			array(
+				'mode' => 'live',
+				'log.LogEnabled' => true,
+				'log.FileName' => '../PayPal.log',
+				'log.LogLevel' => 'DEBUG',
+				'validation.level' => 'log',
+				'cache.enabled' => true,
 			)
 		);
 
