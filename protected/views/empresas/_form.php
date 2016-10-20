@@ -22,7 +22,7 @@
 	),
 )); ?>
 
-	<p class="note">Los campos marcados son <span class="required">*</span> son obligatorios.</p>
+	<p class="note">Los campos marcados con <span class="required">*</span> son obligatorios.</p>
 
 	<?php /*echo $form->errorSummary(array($empresa,$usuario));*/ ?>
 
