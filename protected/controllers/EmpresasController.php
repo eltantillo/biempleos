@@ -40,11 +40,14 @@ class EmpresasController extends Controller
 		$empresa = new empresas;
 		$usuario = new usuarios_empresas('registrar');
         
+        // Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($usuario);
+        
 		if(isset($_POST['empresas'], $_POST['usuarios_empresas']))
 		{
 			$empresa->attributes = $_POST['empresas'];
 			$usuario->attributes = $_POST['usuarios_empresas'];
-
+            
 			$valid = $empresa->validate();
 			$valid = $usuario->validate() && $valid;
 
@@ -128,5 +131,18 @@ class EmpresasController extends Controller
 				throw new CHttpException(404,'The requested page does not exist.');
 		}
 		return $this->_model;
+	}
+    
+    /**
+	 * Performs the AJAX validation.
+	 * @param CModel the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='empresas-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
 	}
 }

@@ -2,13 +2,24 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'empresas-form',
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
     'enableClientValidation'=>true,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
         'errorCssClass'=>'error has-error has-feedback',
         'successCssClass'=>'success has-success has-feedback',
         'afterValidateAttribute'=>"js:
+        function(){
+            if($('div.form-group > span').hasClass('glyphicon')) 
+                $('div.form-group > span:not(div.password > span)').removeAttr('class');
+                
+            if($('div.form-group:not(div.password)').hasClass('success')) 
+                $('div.success > span:not(div.password > span)').addClass('glyphicon glyphicon-ok form-control-feedback');
+                
+            if($('div.form-group').hasClass('error')) 
+                $('div.error > span').addClass('glyphicon glyphicon-remove form-control-feedback');
+        }",
+        'afterValidate'=>"js:
         function(){
             if($('div.form-group > span').hasClass('glyphicon')) 
                 $('div.form-group > span:not(div.password > span)').removeAttr('class');
@@ -66,7 +77,7 @@
     <?php if($empresa->isNewRecord): ?>
     <div class="checkbox required">
         <label><input type="checkbox" name="terminos"> He leido los <a href="#">terminos y condiciones</a> y la <a href="#">politica de privacidad</a> de BIE <span class="required">*</span></label>
-        <span></span>
+        <span style="position: absolute;top: -8px;left: 0;"></span>
     </div>
     <?php endif; ?>
     <br>
@@ -81,6 +92,8 @@
 </div><!-- form -->
 
 <script>
+$(document).ready(function() {
+    
     var valid = false;
     $('div.password > input[type=password]').on('keyup paste',function(){
         $('div.password').removeClass('error has-error success has-success has-feedback');
@@ -112,4 +125,5 @@
         }
         return valid;
     });
+});
 </script>

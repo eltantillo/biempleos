@@ -41,6 +41,11 @@ class UserIdentity extends CUserIdentity
     {
         $identity=new self($username,'');
         $identity->errorCode=self::ERROR_NONE;
+        
+        $user = usuarios_empresas::model()->findByAttributes(array('usuario'=>$identity->username));
+        $identity->_id = $user->id;
+        $identity->setState('usuario', $user);
+        $identity->setState('empresa', empresas::model()->findByPk($user->id_empresa));
         return $identity;
     }
 }
