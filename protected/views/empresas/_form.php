@@ -20,7 +20,7 @@
                 $('div.error > span').addClass('glyphicon glyphicon-remove form-control-feedback');
         }",
         'afterValidate'=>"js:
-        function(){
+        function(form, data, hasError) {
             if($('div.form-group > span').hasClass('glyphicon')) 
                 $('div.form-group > span:not(div.password > span)').removeAttr('class');
                 
@@ -29,7 +29,16 @@
                 
             if($('div.form-group').hasClass('error')) 
                 $('div.error > span').addClass('glyphicon glyphicon-remove form-control-feedback');
-        }",
+                
+            if(!$('input[name=terminos]').is(':checked')) {
+                $('div.checkbox').addClass('has-error');
+                $('div.checkbox > span').addClass('glyphicon glyphicon-exclamation-sign form-control-feedback');
+                return false;
+            }
+            
+            return true;
+        }
+        ",
 	),
 )); ?>
 
@@ -93,8 +102,6 @@
 
 <script>
 $(document).ready(function() {
-    
-    var valid = false;
     $('div.password > input[type=password]').on('keyup paste',function(){
         $('div.password').removeClass('error has-error success has-success has-feedback');
         $('div.password > span').removeClass('glyphicon glyphicon-remove glyphicon-ok form-control-feedback');
@@ -102,11 +109,9 @@ $(document).ready(function() {
         if(/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/g.test($(this).val())) {
             $('div.password').addClass('success has-success has-feedback');
             $('div.password > span').addClass('glyphicon glyphicon-ok form-control-feedback');
-            valid = true;
         } else {
             $('div.password').addClass('error has-error has-feedback');
             $('div.password > span').addClass('glyphicon glyphicon-remove form-control-feedback');
-            valid = false;
         }
     });
     
@@ -114,16 +119,7 @@ $(document).ready(function() {
     $('input[name=terminos]').change(function(){
         $('div.checkbox').removeClass('has-error');
         $('div.checkbox > span').removeClass('glyphicon glyphicon-exclamation-sign form-control-feedback');
-        valid = valid && $(this).is(':checked');
     });
     <?php endif; ?>
-    
-    $('#empresas-form').submit(function() {
-        if(!$('input[name=terminos]').is(':checked')) {
-            $('div.checkbox').addClass('has-error');
-            $('div.checkbox > span').addClass('glyphicon glyphicon-exclamation-sign form-control-feedback');
-        }
-        return valid;
-    });
 });
 </script>

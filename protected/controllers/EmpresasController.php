@@ -41,7 +41,7 @@ class EmpresasController extends Controller
 		$usuario = new usuarios_empresas('registrar');
         
         // Uncomment the following line if AJAX validation is needed
-		$this->performAjaxValidation($usuario);
+		$this->performAjaxValidation($usuario, $empresa);
         
 		if(isset($_POST['empresas'], $_POST['usuarios_empresas']))
 		{
@@ -50,7 +50,7 @@ class EmpresasController extends Controller
             
 			$valid = $empresa->validate();
 			$valid = $usuario->validate() && $valid;
-
+            
 			if ($valid){
                 $exito = true;
 				$exito = $exito && $empresa->save();
@@ -137,11 +137,11 @@ class EmpresasController extends Controller
 	 * Performs the AJAX validation.
 	 * @param CModel the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+	protected function performAjaxValidation($model1, $model2)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='empresas-form')
 		{
-			echo CActiveForm::validate($model);
+			echo CActiveForm::validate(array($model1, $model2));
 			Yii::app()->end();
 		}
 	}
