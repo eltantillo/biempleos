@@ -9153,3 +9153,48 @@ REQUEST_URI=/biempleos/empresas/registro
 HTTP_REFERER=http://localhost/biempleos/empresas/registro
 >>>>>>> origin/master
 ---
+2016/11/08 18:27:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/11/22 19:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2016/12/16 02:28:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2017/01/02 18:58:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---
+2017/01/08 19:53:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp64\www\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+HTTP_REFERER=http://biempleos/
+---

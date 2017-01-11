@@ -114,6 +114,7 @@ $(document).ready(function() {
             $.ajax({
                 url: $(this).data('url'),
                 beforeSend: function() {
+                    $(item).parent().children().last().removeClass('out');
                     $(item).parent().children().last().addClass('in');
                 },
                 success: function(r) {
@@ -150,10 +151,12 @@ $(document).ready(function() {
                             break;
                     }
                     $(item).parent().children().last().removeClass('in');
+                    $(item).parent().children().last().addClass('out');
                 },
                 error: function() {
                     $("<div class='alert alert-danger fade in'><button type='button' class='close' data-dismiss='alert' aria-label='close'>&times;</button>Ocurrio un problema. Intentalo más tarde recargando la página</div>").insertAfter('#temporaryModal');
                     $(item).parent().children().last().removeClass('in');
+                    $(item).parent().children().last().addClass('out');
                 }
             });
         }
@@ -220,7 +223,7 @@ $(document).ready(function() {
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <div class="loading">
+                            <div class="loading out">
                                 <div>
                                     <span class="glyphicon glyphicon-refresh"></span> Cargando...
                                 </div>
@@ -287,7 +290,7 @@ $(document).ready(function() {
                                 <?php echo CHtml::link('Editar', array('localidades/update', 'id'=>$local->id), array('class'=>'btn btn-success')); ?>
                             </div>
                         </div>
-                        <div class="loading">
+                        <div class="loading out">
                             <div>
                                 <span class="glyphicon glyphicon-refresh"></span> Cargando...
                             </div>
