@@ -32,7 +32,7 @@ class VacantesController extends Controller
 	{
         return array(
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('index','view','admin','delete','finalizar','activo'),
+				'actions'=>array('index','view','admin','delete','finalizar','activo','loadLista'),
 				'users'=>array('@'),
 			),
             array('allow',
@@ -184,6 +184,17 @@ class VacantesController extends Controller
         $model->activo = !$model->activo;
         if(!$model->save())
             throw new CHttpException(500,'Ocurrio un problema al guardarlo en la base de datos.');
+    }
+    
+    public function actionLoadLista() {
+        $aspirantes = lista_aspirantes::model()->findAllByAttributes(
+            array('id_vacante'=>$_GET['id']),
+            array(
+                'limit'=>10,
+                'offset'=>$_GET['offset'])
+        );
+        
+        echo CJSON::encode($aspirantes);
     }
 
 	/**

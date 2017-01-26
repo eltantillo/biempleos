@@ -231,6 +231,12 @@ div.search-form
 
 /*
  *
+ *  CSS for Index
+ *
+ */
+
+/*
+ *
  *  CSS for User panel
  *
  */
@@ -327,9 +333,17 @@ div.loading {
     z-index: 2;
 }
 
-.relative .btn-top-right .btn {
+.relative .btn-top-right .btn:not(.relative .btn-group-vertical .btn) {
     width: 100%;
     margin-bottom: 6px;
+}
+
+.choose {
+    background-color: dodgerblue !important;
+}
+
+a[data-toggle=modal].list-group-item {
+    background-color: inherit !important;
 }
 /*
 *
@@ -434,6 +448,16 @@ div.loading {
 .slide-item {
     float: left;
     background-color: white;
+}
+.slide-item.load {
+    position: relative;
+    font-size: 30px;
+}
+.slide-item.load > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 @media (max-width: 767px) {
     .slide-item {

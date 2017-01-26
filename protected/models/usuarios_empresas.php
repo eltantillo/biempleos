@@ -16,6 +16,7 @@ class usuarios_empresas extends CActiveRecord
     public $repeatPassword;
     public $newPassword;
     public $oldPassword;
+    public $secondEmail;
     
 	/**
 	 * @return string the associated database table name

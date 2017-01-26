@@ -1,0 +1,10 @@
+﻿Franklin gothic medium 100px
+
+Olvidar Contraseña
+ - Envia correo para cambiar contraseña
+
+Registro Empresa
+ - Campo verificar correo
+ - Activar cuenta por correo
+
+dropshipear

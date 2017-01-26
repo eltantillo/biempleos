@@ -15,7 +15,9 @@ $lista = lista_aspirantes::model()->findAllByAttributes(
     array(
         'id_vacante'=>$model->id,
         'cita'=>null
-    ));
+    ),
+    array('limit'=>10)
+);
 ?>
 
 <h1>Puesto: <?php echo $model->puesto; ?></h1>
@@ -33,60 +35,78 @@ $lista = lista_aspirantes::model()->findAllByAttributes(
 		'fecha_publicacion',
 	),
 ));*/ ?>
+<?php if(count($lista) > 0): ?>
 <script>
 $(document).ready(function() {
     
     // Funciones de Carga
-    var isLoading = false;
+    var isLoading = false, startPoint = 10;
     function newContent() {
-        var d = '<div class="relative">' +
-        '<a href="#aspirante" class="list-group-item" data-toggle="modal">' +
-            '<div class="media-left media-top">' +
-                '<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">' +
-            '</div>' +
-            '<div class="media-body">' +
-                '<h4 class="list-group-item-heading">Nombre 10</h4>' +
-                '<p class="list-group-item-text">' +
-                    'dato 1<br>' +
-                    'dato 2<br>' +
-                    'dato 3<br>' +
-                    'dato 4<br>' +
-                    'dato 5<br>' +
-                '</p>' +
-            '</div>' +
-        '</a>' +
-        '<button class="btn btn-primary btn-top-right">Citar</button>' +
-    '</div>';
-        $('.list-group').append(d);
-        $('.list-group div.relative').slideDown('slow');
-        $('.list-group').append($('#load').parent());
-        
-        var d2 = '<div class="slide-item" style="margin-left:' + $('.slide-item:not(.slide-item:first)').css('margin-left') + '">' +
-                'slide nuevo' +
-            '</div>';
-        $('.slide-test .slide-item.load').before(d2);
-        setSlideSize();
+        if(startPoint == -1)
+            return false;
+            
+        $.ajax({
+            url: '<?php echo CController::createUrl('vacantes/loadLista'); ?>',
+            dataType: 'json',
+            data: {
+                id: "<?php echo $model->id; ?>",
+                offset: startPoint
+            },
+            type: 'GET',
+            success: function(data) {
+                if(data.length > 9) {
+                    startPoint += 10;
+                } else {
+                    $('.slide-test .slide-item.load > p').text('Fin de la lista');
+                    $('#load').text('Fin de la lista');
+                    startPoint = -1;
+                }
+                
+                $(data).each(function(i, v) {
+                    var foto = this.foto ? this.foto:("<?php echo Yii::app()->request->baseUrl . "/images/logo.png"; ?>");
+                    var listItem = '<div class="relative">' +
+                        '<a href="#aspirante" class="list-group-item" data-toggle="modal">' +
+                            '<div class="media-left media-top">' +
+                                '<img src="' + foto + '" class="media-object" style="width:65px">' +
+                            '</div>' +
+                            '<div class="media-body">' +
+                                '<h4 class="list-group-item-heading">Nombre 10</h4>' +
+                                '<p class="list-group-item-text">' +
+                                    'dato 1<br>' +
+                                    'dato 2<br>' +
+                                    'dato 3<br>' +
+                                    'dato 4<br>' +
+                                    'dato 5<br>' +
+                                '</p>' +
+                            '</div>' +
+                        '</a>' +
+                            '<button class="btn btn-primary btn-top-right">Citar</button>' +
+                        '</div>';
+                    var slideItem = '<div class="slide-item" style="margin-left:' + 
+                        $('.slide-item:not(.slide-item:first)').css('margin-left') + '">' +
+                            'slide nuevo' +
+                        '</div>';
+                    
+                    $('.list-group').append(listItem);
+                    $('.list-group div.relative').slideDown('slow');
+                    $('.list-group').append($('#load').parent());
+                    $('.slide-test .slide-item.load').before(slideItem);
+                    setSlideSize();
+                });
+            },
+            error: function(xhr, status) {
+                
+            },
+            complete: function(xhr, status) {
+                isLoading = false;
+            }
+        });
     }
     
     $(this).scroll(function() {
         if($('#load').offset().top + $('#load').height() <= $(window).scrollTop() + $(window).height() && !isLoading) {
             isLoading = true;
-            /*$.ajax({
-                url: '<?php echo CController::createUrl('vacantes/loadLista'); ?>',
-                data: {},
-                type: 'POST',
-                success: function(data) {
-                    
-                },
-                error: function(xhr, status) {
-                    
-                },
-                complete: function(xhr, status) {
-                    isLoading = false;
-                }
-            });*/
             newContent();
-            isLoading = false;
         }
     });
     
@@ -159,7 +179,6 @@ $(document).ready(function() {
         down = false;
     });
     $('.slide-show').scroll(function(e){
-        
         if($(this).scrollLeft() + $(this).innerWidth() >= $(this)[0].scrollWidth) {
             newContent();
         }
@@ -183,19 +202,22 @@ $(document).ready(function() {
             slideTo('right');
     });
     
-    // Accion Citar
+    // Accion Citar - Falta funcionalidad
     $('.btn-citar').click(function(e) {
         function toogleBtnCitar(btn) {
-            if($(btn).hasClass("btn-primary"))
-                $(btn).removeClass("btn-primary").addClass("btn-danger").text("Omitir");
-            else
-                $(btn).removeClass("btn-danger").addClass("btn-primary").text("Citar");
+            if($(btn).hasClass("btn-info")) {
+                $(btn).removeClass("btn-info").addClass("btn-warning").text("Seleccionado");
+                $(btn).closest('.relative:not(.relative.modal), .slide-item').toggleClass('choose');
+            } else {
+                $(btn).removeClass("btn-warning").addClass("btn-info").text("Seleccionar");
+                $(btn).closest('.relative:not(.relative.modal), .slide-item').toggleClass('choose');
+            }
         }
         
         toogleBtnCitar($(this));
         
         if($(this).parents('.list-group').length) {
-            var index = $('.list-group .relative').index($(this).parent());
+            var index = $('.list-group .relative').index($(this).parent().parent());
             var twinBtn = $(".slide-test .slide-item:eq(" + index + ") .btn-citar");
             toogleBtnCitar(twinBtn);
         }
@@ -231,14 +253,15 @@ $(document).ready(function() {
     <span class="glyphicon glyphicon-chevron-left left-slide"></span>
     <div class="slide-show" style="overflow:auto;width:100vw">
         <div class="slide-test" role="document">
+            <?php foreach($lista as $l): ?>
+            <?php $aspirante = aspirantes::model()->findbyPk($l->id_aspirante); ?>
             <div class="slide-item">
                 <div class="media hidden-xs" style="height:400px;overflow:auto;">
                     <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
+                        <img src="<?php echo $aspirante->foto ? $aspirante->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" class="media-object" style="width:65px">
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">Nombre 1</h4>
+                        <h4 class="media-heading">Nombre</h4>
                         <p class="list-group-item-text">
                             dato 1<br>
                             dato 2<br>
@@ -248,12 +271,15 @@ $(document).ready(function() {
                             dato 6<br>
                             etc
                         </p>
+                        <button class="btn btn-primary">Citar</button>
+                        <button class="btn btn-danger">Rechazar</button>
+                        <button class="btn btn-info btn-citar">Seleccionar</button>
                     </div>
                 </div>
                 <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
                     <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 1</h4>
+                        <img src="<?php echo $aspirante->foto ? $aspirante->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" class="center-block" style="width:65px">
+                        <h4 class="media-heading">Nombre</h4>
                         <p class="list-group-item-text">
                             dato 1<br>
                             dato 2<br>
@@ -267,332 +293,9 @@ $(document).ready(function() {
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 2</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 2</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 3</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 3</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 4</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 4</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 5</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 5</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 6</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 6</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 7</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 7</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 8</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 8</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 9</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 9</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-            <div class="slide-item">
-                <div class="media hidden-xs" style="height:400px;overflow:auto;">
-                    <div class="media-left">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-                        <button class="btn btn-primary btn-citar">Citar</button>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Nombre 10</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
-                    <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre 10</h4>
-                        <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
+            <?php endforeach; ?>
             <div class="slide-item load">
-                Cargando
+                <p class="loading"><span class="glyphicon glyphicon-refresh"></span> Cargando</p>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -605,13 +308,15 @@ $(document).ready(function() {
 </div>
 <div class="clearfix"></div>
 <div class="list-group">
+    <?php foreach($lista as $l): ?>
+    <?php $aspirante = aspirantes::model()->findbyPk($l->id_aspirante); ?>
     <div class="relative">
         <a href="#aspirante" class="media list-group-item" data-toggle="modal">
             <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
+                <img src="<?php echo $aspirante->foto ? $aspirante->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" class="media-object" style="width:65px">
             </div>
             <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 1</h4>
+                <h4 class="list-group-item-heading">Nombre</h4>
                 <p class="list-group-item-text">
                     dato 1<br>
                     dato 2<br>
@@ -621,171 +326,26 @@ $(document).ready(function() {
                 </p>
             </div>
         </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
+        <div class="btn-top-right btn-group-vertical">
+            <button class="btn btn-primary">Citar</button>
+            <button class="btn btn-danger">Rechazar</button>
+            <button class="btn btn-info btn-citar">Seleccionar</button>
+        </div>
     </div>
+    <?php endforeach; ?>
     <div class="relative">
-        <a href="#aspirante" class="list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 2</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="media list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 3</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 4</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="media list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 5</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 6</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="media list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 7</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 8</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="media list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 9</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <a href="#aspirante" class="list-group-item" data-toggle="modal">
-            <div class="media-left media-top">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" class="media-object" style="width:65px">
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Nombre 10</h4>
-                <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
-                </p>
-            </div>
-        </a>
-        <button class="btn btn-primary btn-top-right btn-citar">Citar</button>
-    </div>
-    <div class="relative">
-        <button id="load" class="btn btn-default btn-block loading"><span class="glyphicon glyphicon-refresh"></span> Cargando</button>
+        <button id="load" class="btn btn-default btn-block loading">
+            <?php if(count($lista) < 10): ?>
+            Fin de la lista
+            <?php else: ?>
+            <span class="glyphicon glyphicon-refresh"></span> Cargando
+            <?php endif; ?>
+        </button>
     </div>
 </div>
+<?php else: ?>
+<div class="jumbotron">
+    <h1>Sin solicitudes</h1>
+    <p>Actualmente no han aplicado aspirantes para el puesto solicitado</p>
+</div>
+<?php endif; ?>

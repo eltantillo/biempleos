@@ -8,6 +8,14 @@
     
 [] Pantallas
     [] Inicio
+        PIE DE PAGINA
+            enlaces
+                terminos y condiciones
+                politica de privacidad
+            contacto
+            AGREGAR sigenos en redes sociales
+            CAMBIOS TODO CENTRADO
+            Powered by BOSON SOFTWARE DEVELOPMENT (ABAJO DE BIE 2017)
     [x] Recover
     [x] Login
     [] Empresas
@@ -22,7 +30,7 @@
         [x] Create
         [x] Update
     [] Lista Aspirantes
-        [] Index
+        [x] Index
         [] Ver Citas - nombre provisional
         [] Crear Citas - nombre provisional
     [] Historial
@@ -31,13 +39,15 @@
         
 [] Acciones de Pantallas
     [] Inicio
-        Falta confirmar
+        [x]Iniciar Sesion
     [x] Recover
         [x] Recuperación de Contraseña por correo
     [] Empresas
         [x] Cambiar contraseña
-        [x] Registro
+        [] Registro
             El registro de una empresa con datos de usuario_empresa y empresa, omitir los ids
+            Agregar correo alternativo campo opcional
+            AGREGAR FORMATOS DE POLITICA
         [] Suscripcion
             Cuando se pague paypal habilitar funciones
             Cada que acceda a estas funciones verificar si aun puede utilizarlas
@@ -60,7 +70,7 @@
         [x] Update
             Habilitar si hay pago paypal
     [] Lista Aspirantes
-        [] Index
+        [x] Index
             Visualizar aspirantes de vacantes
                 No es necesario verificar pago
         [] Ver Citas - nombre provisional
