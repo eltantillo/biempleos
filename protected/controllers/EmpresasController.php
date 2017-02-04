@@ -19,7 +19,7 @@ class EmpresasController extends Controller
                 'users'=>array('?'),
 			),
 			array('allow',
-				'actions'=>array('actualizar','index','suscripcion','checkPwd'),
+				'actions'=>array('actualizar','index','suscripcion','procesarsuscripcion','checkPwd'),
 				'users'=>array('@'),
 			),
             array('deny',
@@ -75,6 +75,10 @@ class EmpresasController extends Controller
     public function actionSuscripcion() {
         $this->render('suscripcion',array(
 		));
+    }
+    
+    public function actionProcesarSuscripcion() {
+        PayPal::checkout("Suscripcion", 1);
     }
 
 	public function actionActualizar()
