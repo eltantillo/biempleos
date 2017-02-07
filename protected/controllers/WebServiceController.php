@@ -7,14 +7,14 @@ class WebServiceController extends Controller{
 	public function actionPayPal(){
 		if(isset($_GET['success']) && (bool)$_GET['success'] === true){
 			if (PayPal::process($_GET['paymentId'], $_GET['PayerID'])){
-				echo "Payment was made.";
+				$this->redirect(array('empresas/index'));
 			}
 			else{
 				echo "There was an error with the payment.";
 			}
 		}
 		else{
-			PayPal::checkout('Producto', 10.5);
+			PayPal::checkout('Suscripcion', 1);
 		}
 	}
 

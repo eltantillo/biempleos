@@ -6,7 +6,7 @@
             <div class="caption">
                 <h3>Opción 1</h3>
                 <p>Descripción</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+                <p><a href="procesarsuscripcion" class="btn btn-primary" role="button">Button</a></p>
             </div>
         </div>
     </div>

@@ -9371,6 +9371,7 @@ Stack trace:
 REQUEST_URI=/favicon.ico
 HTTP_REFERER=http://biempleos/
 ---
+<<<<<<< HEAD
 2017/02/02 02:29:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "favicon.ico"' in C:\wamp64\www\yii\framework\web\CWebApplication.php:286
 Stack trace:
 #0 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
@@ -9432,3 +9433,61 @@ Stack trace:
 REQUEST_URI=/favicon.ico
 HTTP_REFERER=http://biempleos/
 ---
+=======
+2017/02/03 12:43:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'biempleos'' in C:\wamp64\www\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\wamp64\www\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\wamp64\www\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\wamp64\www\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\wamp64\www\yii\framework\base\CApplication.php(459): CModule->getComponent('db')
+#4 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(637): CApplication->getDb()
+#5 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(2386): CActiveRecord->getDbConnection()
+#6 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(empresas))
+#7 C:\wamp64\www\yii\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 C:\wamp64\www\biempleos\protected\controllers\EmpresasController.php(40): CActiveRecord->__construct()
+#9 C:\wamp64\www\yii\framework\web\actions\CInlineAction.php(49): EmpresasController->actionRegistro()
+#10 C:\wamp64\www\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\wamp64\www\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('registro')
+#19 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/regist...')
+#20 C:\wamp64\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/biempleos/empresas/registro
+HTTP_REFERER=http://localhost/biempleos/
+---
+2017/02/04 05:48:46 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\wamp64\www\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\wamp64\www\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\wamp64\www\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\wamp64\www\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\wamp64\www\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\wamp64\www\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): CController->run('procesarsuscrip...')
+#8 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('empresas/proces...')
+#9 C:\wamp64\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\wamp64\www\biempleos\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/biempleos/empresas/procesarsuscripcion
+HTTP_REFERER=http://localhost/biempleos/empresas/suscripcion
+---
+2017/02/04 05:51:53 [error] [php] Undefined index: paymentId (C:\wamp64\www\biempleos\protected\controllers\WebServiceController.php:9)
+Stack trace:
+#0 C:\wamp64\www\yii\framework\web\CController.php(286): WebServiceController->runAction()
+#1 C:\wamp64\www\yii\framework\web\CController.php(265): WebServiceController->runActionWithFilters()
+#2 C:\wamp64\www\yii\framework\web\CWebApplication.php(282): WebServiceController->run()
+#3 C:\wamp64\www\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\wamp64\www\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\wamp64\www\biempleos\index.php(13): CWebApplication->run()
+REQUEST_URI=/biempleos/webService/paypal?success=false
+in C:\wamp64\www\biempleos\protected\controllers\WebServiceController.php (9)
+in C:\wamp64\www\biempleos\index.php (13)
+>>>>>>> origin/master
