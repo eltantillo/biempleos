@@ -203,30 +203,19 @@ $(document).ready(function() {
     });
     
     // Accion Citar - Falta funcionalidad
-    $('.btn-citar').click(function(e) {
-        function toogleBtnCitar(btn) {
-            if($(btn).hasClass("btn-info")) {
-                $(btn).removeClass("btn-info").addClass("btn-warning").text("Seleccionado");
-                $(btn).closest('.relative:not(.relative.modal), .slide-item').toggleClass('choose');
-            } else {
-                $(btn).removeClass("btn-warning").addClass("btn-info").text("Seleccionar");
-                $(btn).closest('.relative:not(.relative.modal), .slide-item').toggleClass('choose');
-            }
-        }
+    $('input[type=checkbox].hidden').change(function() {
+        if($(this).is(':checked'))
+            $('.btn-citar[for=altasp' + this.value + '], .btn-citar[for=asp' + this.value + ']').removeClass('btn-info').addClass('btn-warning').text('Seleccionado');
+        else
+            $('.btn-citar[for=altasp' + this.value + '], .btn-citar[for=asp' + this.value + ']').removeClass('btn-warning').addClass('btn-info').text('Seleccionar');
         
-        toogleBtnCitar($(this));
+        $('#altasp' + this.value).prop('checked', $(this).is(':checked'));
+        $('#asp' + this.value).prop('checked', $(this).is(':checked'));
         
-        if($(this).parents('.list-group').length) {
-            var index = $('.list-group .relative').index($(this).parent().parent());
-            var twinBtn = $(".slide-test .slide-item:eq(" + index + ") .btn-citar");
-            toogleBtnCitar(twinBtn);
-        }
-        
-        if($(this).parents('.slide-item').length){
-            var index = $('.slide-test .slide-item').index($(this).parent().parent().parent());
-            var twinBtn = $(".list-group .relative:eq(" + index + ") .btn-citar");
-            toogleBtnCitar(twinBtn);
-        }
+        if($('input[type=checkbox]:checked').length)
+            $('input[type=submit]').removeClass('disabled');
+        else
+            $('input[type=submit]').addClass('disabled');
     });
     
     // Inicializacion de todo
@@ -255,6 +244,7 @@ $(document).ready(function() {
         <div class="slide-test" role="document">
             <?php foreach($lista as $l): ?>
             <?php $aspirante = aspirantes::model()->findbyPk($l->id_aspirante); ?>
+            <input class="hidden" id="altasp<?php echo $aspirante->id; ?>" type="checkbox" value="<?php echo $aspirante->id; ?>">
             <div class="slide-item">
                 <div class="media hidden-xs" style="height:400px;overflow:auto;">
                     <div class="media-left">
@@ -273,7 +263,7 @@ $(document).ready(function() {
                         </p>
                         <button class="btn btn-primary">Citar</button>
                         <button class="btn btn-danger">Rechazar</button>
-                        <button class="btn btn-info btn-citar">Seleccionar</button>
+                        <label class="btn btn-info btn-citar" for="altasp<?php echo $aspirante->id; ?>">Seleccionar</label>
                     </div>
                 </div>
                 <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
@@ -304,12 +294,20 @@ $(document).ready(function() {
 </div>
 
 <div class="pull-left">
-    <button type="button" class="btn btn-primary disabled">Citar seleccionados</button>
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'citar-form',
+    'action'=>Yii::app()->createUrl('vacantes/citar'),
+	'enableAjaxValidation'=>false,
+));
+?>
+    <?php echo CHtml::submitButton('Citar seleccionados',array('class'=>'btn btn-primary disabled')); ?>
+<?php $this->endWidget(); ?>
 </div>
 <div class="clearfix"></div>
 <div class="list-group">
     <?php foreach($lista as $l): ?>
     <?php $aspirante = aspirantes::model()->findbyPk($l->id_aspirante); ?>
+    <input class="hidden" id="asp<?php echo $aspirante->id; ?>" type="checkbox" form="citar-form" name="aspirante[]" value="<?php echo $aspirante->id; ?>">
     <div class="relative">
         <a href="#aspirante" class="media list-group-item" data-toggle="modal">
             <div class="media-left media-top">
@@ -327,9 +325,9 @@ $(document).ready(function() {
             </div>
         </a>
         <div class="btn-top-right btn-group-vertical">
-            <button class="btn btn-primary">Citar</button>
+            <?php echo CHtml::link('Citar', '', array('submit'=>array('citar'), 'params'=>array('aspirante[]'=>$aspirante->id), 'class'=>'btn btn-primary')); ?>
             <button class="btn btn-danger">Rechazar</button>
-            <button class="btn btn-info btn-citar">Seleccionar</button>
+            <label class="btn btn-info btn-citar" for="asp<?php echo $aspirante->id; ?>">Seleccionar</label>
         </div>
     </div>
     <?php endforeach; ?>

@@ -63,6 +63,16 @@
     <div class="form-group">
         <?php echo $form->error($usuario,'usuario',array('class'=>'errorMessage')); ?>
     </div>
+    
+    <div class="form-group">
+		<?php echo $form->labelEx($usuario,'correoAlt'); ?>
+        <?php echo $form->emailField($usuario,'correoAlt',array('maxlength'=>264,'class'=>'form-control')); ?>
+        <span></span>
+        <sub>El correo secundario se utiliza para recuperar tu contraseña en lugar de usar el correo principal</sub>
+	</div>
+    <div class="form-group">
+        <?php echo $form->error($usuario,'correoAlt',array('class'=>'errorMessage')); ?>
+    </div>
 
 	<div class="form-group password">
 		<?php echo $form->labelEx($usuario,'contrasena',array('class'=>'pull-left')); ?>

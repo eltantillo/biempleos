@@ -35,19 +35,21 @@ class VacantesController extends Controller
 				'actions'=>array('index','view','admin','delete','finalizar','activo','loadLista'),
 				'users'=>array('@'),
 			),
+            
             array('allow',
-                'actions'=>array('create','update'),
+                'actions'=>array('create','update','citar'),
 				'expression'=>"localidades::model()->findByAttributes(array('id_empresa'=>Yii::app()->user->empresa->id, 'activa'=>true)) != null",
                 'users'=>array('@'),
 			),
             array('deny',
-                'actions'=>array('create','update'),
+                'actions'=>array('create','update','citar'),
                 'users'=>array('@'),
                 'deniedCallback'=>function(){
-                    Yii::app()->user->setFlash('modal', "Para crear vacantes debes añadir al menos una localidad");
+                    Yii::app()->user->setFlash('modal', "Se debe contar con algún local para acceder");
                     Yii::app()->controller->redirect(array('localidades/create'));
                 }
 			),
+            
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -197,6 +199,12 @@ class VacantesController extends Controller
         echo CJSON::encode($aspirantes);
     }
 
+    public function actionCitar() {
+        $this->render('citar', array(
+            'aspirante'=>isset($_POST['aspirante']) ? $_POST['aspirante']:null,
+        ));
+    }
+    
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
