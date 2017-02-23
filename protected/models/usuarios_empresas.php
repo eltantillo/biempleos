@@ -16,7 +16,6 @@ class usuarios_empresas extends CActiveRecord
     public $repeatPassword;
     public $newPassword;
     public $oldPassword;
-    public $secondEmail;
     
 	/**
 	 * @return string the associated database table name
@@ -45,8 +44,9 @@ class usuarios_empresas extends CActiveRecord
             array('repeatPassword', 'compare', 'compareAttribute'=>'newPassword', 'message'=>"Las contraseñas no coinciden", 'on'=>'actualizar'),
             
 			array('id_empresa', 'length', 'max'=>10),
-			array('usuario', 'length', 'max'=>264),
+			array('usuario, correoAlt', 'length', 'max'=>264),
             array('usuario', 'email', 'allowEmpty'=>false, 'pattern'=>'/^[\w.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/', 'message'=>'Introduce un correo válido'),
+            array('correoAlt', 'email', 'allowEmpty'=>true, 'pattern'=>'/^[\w.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/', 'message'=>'Introduce un correo válido', 'on'=>'registrar'),
             //array('usuario', 'exist', 'allowEmpty'=>false, 'message'=>'Este usuario ya existe. Utiliza otro', 'on'=>'registrar'),
 			array('contrasena, oldPassword, repeatPassword, newPassword', 'length', 'max'=>32),
 			// The following rule is used by search().
@@ -80,6 +80,7 @@ class usuarios_empresas extends CActiveRecord
             'repeatPassword' => 'Confirmar Contraseña',
             'oldPassword' => 'Contraseña Actual',
             'newPassword' => 'Contraseña Nueva',
+            'correoAlt' => 'Correo secundario'
 		);
 	}
 

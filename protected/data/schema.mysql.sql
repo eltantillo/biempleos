@@ -190,6 +190,7 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_empresas` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_empresa` INT UNSIGNED NOT NULL,
   `usuario` VARCHAR(264) NOT NULL,
+  `correoAlt` VARCHAR(264) NULL,
   `contrasena` VARCHAR(32) NOT NULL,
   `activo` TINYINT NOT NULL DEFAULT TRUE,
   PRIMARY KEY (`id`),

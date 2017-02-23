@@ -35,9 +35,7 @@ $this->pageTitle=Yii::app()->name;
                     <?php 
                     $form=$this->beginWidget('CActiveForm', array(
                         'id'=>'login-form',
-                        'clientOptions'=>array(
-                            'validateOnSubmit'=>true,
-                        ),
+                        'action'=>Yii::app()->createUrl('site/login'),
                         'htmlOptions'=>array(
                             'class'=>'navbar-form navbar-left',
                         ),

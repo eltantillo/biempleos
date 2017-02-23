@@ -338,7 +338,7 @@ div.loading {
     margin-bottom: 6px;
 }
 
-.choose {
+input[type=checkbox].hidden:checked + div.relative, input[type=checkbox].hidden:checked + div.slide-item {
     background-color: dodgerblue !important;
 }
 

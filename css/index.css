@@ -137,6 +137,7 @@ footer p:last-of-type {
 
 .form-control {
     background-color: rgba(0,0,0,0.1) !important;
+    color: white !important;
 }
 
 input::-webkit-input-placeholder { /* Safari, Chrome and Opera */

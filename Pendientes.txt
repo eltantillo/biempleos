@@ -38,6 +38,8 @@
         [] Aspirantes
         
 [] Acciones de Pantallas
+
+
     [] Inicio
         [x]Iniciar Sesion
     [x] Recover
@@ -70,9 +72,10 @@
         [x] Update
             Habilitar si hay pago paypal
     [] Lista Aspirantes
-        [x] Index
-            Visualizar aspirantes de vacantes
-                No es necesario verificar pago
+        [] Index
+            [x] Visualizar aspirantes de vacantes
+                    ? No es necesario verificar pago
+            [] Descargar datos del aspirante en pdf (como el oficio)
         [] Ver Citas - nombre provisional
             No es necesario verificar pago
             ? Editar

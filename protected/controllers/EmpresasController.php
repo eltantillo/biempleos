@@ -59,6 +59,7 @@ class EmpresasController extends Controller
                 $usuario->repeatPassword = md5($usuario->repeatPassword);
 				$exito = $exito && $usuario->save();
 				if($exito) {
+                    // CAMBIAR A CONFIRMACION EN CORREO DESDE ALLI SE AUTOLOGUEA
                     //autologin http://www.yiiframework.com/forum/index.php/topic/9525-auto-login-after-registration-fake-login/
                     //Yii::app()->user->login(UserIdentity::createAuthenticatedIdentity($usuario->usuario),0);
                     $this->redirect(array('empresas/suscripcion'));
