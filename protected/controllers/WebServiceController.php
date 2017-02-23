@@ -24,7 +24,7 @@ class WebServiceController extends Controller{
 			$pagina   = Functions::decifrar($_POST['pagina']);
 			$email    = Functions::decifrar($_POST['email']);
 
-			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario   = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 
 			$criteria = new CDbCriteria;
@@ -111,11 +111,11 @@ class WebServiceController extends Controller{
 			$password = md5(Functions::decifrar($_POST['pass']));
 			$gcmKey   = Functions::decifrar($_POST['gcmKey']);
 
-			$usuario = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 
 			if ($usuario == NULL){
 				$aspirante = new aspirantes;
-				$usuario   = new usuarios_aspirantes;
+				$usuario   = new Aspirantes;
 
 				$aspirante->save();
 				$usuario->id_aspirante = $aspirante->id;
@@ -140,7 +140,7 @@ class WebServiceController extends Controller{
 			$solicitud = Functions::decifrar($_POST['solicitud']);
 			$email     = Functions::decifrar($_POST['email']);
 
-			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario   = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 
 			$aspirante->datos = $solicitud;
@@ -165,7 +165,7 @@ class WebServiceController extends Controller{
 			fwrite($file, $foto);
 			fclose($file);
 
-			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario   = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 
 			$aspirante->foto = $fileURI;
@@ -184,7 +184,7 @@ class WebServiceController extends Controller{
 			$password = md5(Functions::decifrar($_POST['pass']));
 			$gcmKey   = Functions::decifrar($_POST['gcmKey']);
 
-			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email, 'contrasena'=> $password, 'activo'=>true));
+			$usuario   = Aspirantes::model()->findByAttributes(array('correo'=>$email, 'contrasena'=> $password, 'activo'=>true));
 
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 
@@ -213,7 +213,7 @@ class WebServiceController extends Controller{
 			$email = Functions::decifrar($_POST['email']);
 			$id    = Functions::decifrar($_POST['id']);
 
-			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario   = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 			$vacante   = vacantes::model()->findByAttributes(array('id'=>$id));
 
@@ -236,7 +236,7 @@ class WebServiceController extends Controller{
 			$email  = Functions::decifrar($_POST['email']);
 			$pagina = Functions::decifrar($_POST['pagina']);
 
-			$usuario      = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario      = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante    = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 			$aplicaciones = lista_aspirantes::model()->findAllByAttributes(array('id_aspirante'=>$aspirante->id, 'activa'=>true));
 
@@ -281,7 +281,7 @@ class WebServiceController extends Controller{
 			$id    = Functions::decifrar($_POST['id']);
 			$email = Functions::decifrar($_POST['email']);
 
-			$usuario    = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario    = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante  = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 			$aplicacion = lista_aspirantes::model()->findByAttributes(array('id'=>$id));
 
@@ -343,7 +343,7 @@ class WebServiceController extends Controller{
 	public function actionRecuperarContrasena(){
 		if (isset($_POST['fallout4'])){
 			$email   = Functions::decifrar($_POST['email']);
-			$usuario = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 
 			if ($usuario != null){
 				Mailer::sendMail(
@@ -376,7 +376,7 @@ class WebServiceController extends Controller{
 			$email     = Functions::decifrar($_POST['email']);
 			$solicitud = Functions::decifrar($_POST['solicitud']);
 
-			$usuario   = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario   = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			$aspirante = aspirantes::model()->findByAttributes(array('id'=>$usuario->id_aspirante));
 
 			if (file_exists($aspirante->foto)){
@@ -403,7 +403,7 @@ class WebServiceController extends Controller{
 	public function actionDesconectarse(){
 		if (isset($_POST['fallout4'])){
 			$email   = Functions::decifrar($_POST['email']);
-			$usuario = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$email));
+			$usuario = Aspirantes::model()->findByAttributes(array('correo'=>$email));
 			
 			$usuario->gcmKey = "NULL";
 

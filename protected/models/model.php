@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This is the model class for table "usuarios_aspirantes".
+ * This is the model class for table "Aspirantes".
  *
- * The followings are the available columns in table 'usuarios_aspirantes':
+ * The followings are the available columns in table 'Aspirantes':
  * @property string $id
  * @property string $id_aspirante
  * @property string $correo
@@ -17,7 +17,7 @@ class model extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'usuarios_aspirantes';
+		return 'Aspirantes';
 	}
 
 	/**

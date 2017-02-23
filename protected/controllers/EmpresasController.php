@@ -60,7 +60,7 @@ class EmpresasController extends Controller
 				$exito = $exito && $usuario->save();
 				if($exito) {
                     //autologin http://www.yiiframework.com/forum/index.php/topic/9525-auto-login-after-registration-fake-login/
-                    Yii::app()->user->login(UserIdentity::createAuthenticatedIdentity($usuario->usuario),0);
+                    //Yii::app()->user->login(UserIdentity::createAuthenticatedIdentity($usuario->usuario),0);
                     $this->redirect(array('empresas/suscripcion'));
                 }
 			}

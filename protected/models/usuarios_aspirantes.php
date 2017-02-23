@@ -9,9 +9,11 @@
  * @property string $correo
  * @property string $contrasena
  * @property string $gcmKey
+ * @property integer $activo
  */
 class usuarios_aspirantes extends CActiveRecord
 {
+    public $repeatPassword;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -28,13 +30,20 @@ class usuarios_aspirantes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_aspirante, correo, contrasena, gcmKey', 'required'),
+
+			array('id_aspirante, correo, contrasena, repeatPassword', 'required'),
+            array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Las contraseñas no coinciden"),
+            array('correo', 'unique', 'message'=>"Esta cuenta ya fue registrada"),
+            array('contrasena', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida'),
+            array('correo', 'email', 'allowEmpty'=>false, 'pattern'=>'/^[\w.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/', 'message'=>'Introduce un correo válido'),
+
+			array('activo', 'numerical', 'integerOnly'=>true),
 			array('id_aspirante', 'length', 'max'=>10),
 			array('correo', 'length', 'max'=>254),
 			array('contrasena', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, id_aspirante, correo, contrasena, gcmKey', 'safe', 'on'=>'search'),
+			array('id, id_aspirante, correo, contrasena, gcmKey, activo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,11 +65,13 @@ class usuarios_aspirantes extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'Id',
-			'id_aspirante' => 'Id Aspirante',
-			'correo' => 'Correo',
-			'contrasena' => 'Contrasena',
-			'gcmKey' => 'Gcm Key',
+			'id'             => 'Id',
+			'id_aspirante'   => 'Id Aspirante',
+			'correo'         => 'Correo',
+			'contrasena'     => 'Contraseña',
+            'repeatPassword' => 'Confirmar Contraseña',
+			'gcmKey'         => 'Gcm Key',
+			'activo'         => 'Activo',
 		);
 	}
 
@@ -91,6 +102,8 @@ class usuarios_aspirantes extends CActiveRecord
 		$criteria->compare('contrasena',$this->contrasena,true);
 
 		$criteria->compare('gcmKey',$this->gcmKey,true);
+
+		$criteria->compare('activo',$this->activo);
 
 		return new CActiveDataProvider('usuarios_aspirantes', array(
 			'criteria'=>$criteria,
