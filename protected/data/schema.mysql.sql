@@ -202,11 +202,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biempleos`.`Aspirantes`
+-- Table `biempleos`.`usuarios_aspirantes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `biempleos`.`Aspirantes` ;
+DROP TABLE IF EXISTS `biempleos`.`usuarios_aspirantes` ;
 
-CREATE TABLE IF NOT EXISTS `biempleos`.`Aspirantes` (
+CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_aspirantes` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_aspirante` INT UNSIGNED NOT NULL,
   `correo` VARCHAR(254) NOT NULL,
@@ -215,8 +215,8 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`Aspirantes` (
   `activo` TINYINT NOT NULL DEFAULT TRUE,
   UNIQUE INDEX (`correo` ASC),
   PRIMARY KEY (`id`),
-  INDEX `fk_Aspirantes_aspirantes_idx` (`id_aspirante` ASC),
-  CONSTRAINT `fk_Aspirantes_aspirantes`
+  INDEX `fk_usuarios_aspirantes_aspirantes_idx` (`id_aspirante` ASC),
+  CONSTRAINT `fk_usuarios_aspirantes_aspirantes`
     FOREIGN KEY (`id_aspirante`)
     REFERENCES `biempleos`.`aspirantes` (`id`))
 ENGINE = InnoDB;

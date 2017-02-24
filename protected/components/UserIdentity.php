@@ -18,17 +18,29 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$user = usuarios_empresas::model()->findByAttributes(array('usuario'=>$this->username));
+		$empresa = usuarios_empresas::model()->findByAttributes(array('usuario'=>$this->username));
+		$aspirante = usuarios_aspirantes::model()->findByAttributes(array('correo'=>$this->username));
 		
-		if ($user===null)
+		if ($empresa===null && $aspirante === null){
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if ($user->contrasena !== md5($this->password))
+		}
+		else if ($empresa!=null && $empresa->contrasena !== md5($this->password) || $aspirante!=null && $aspirante->contrasena !== md5($this->password)){
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		}
 		else{
 			$this->errorCode=self::ERROR_NONE;
-			$this->_id = $user->id;
-            $this->setState('usuario', $user);
-            $this->setState('empresa', empresas::model()->findByPk($user->id_empresa));
+			if ($empresa!=null){
+				$this->_id = $empresa->id;
+	            $this->setState('usuario', $empresa);
+	            $this->setState('empresa', empresas::model()->findByPk($empresa->id_empresa));
+	            $this->setState('tipo', 'empresa');
+			}
+			else{
+				$this->_id = $aspirante->id;
+	            $this->setState('usuario', $aspirante);
+	            $this->setState('aspirante', aspirantes::model()->findByPk($aspirante->id_aspirante));
+	            $this->setState('tipo', 'aspirante');
+			}
 		}
 		return !$this->errorCode;
 	}

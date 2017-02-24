@@ -73,9 +73,11 @@ class AspirantesController extends Controller
 			$model->attributes=$_POST['usuarios_aspirantes'];
 			if ($model->validate() && $data->save()){
 				$model->id_aspirante = $data->id;
+				$model->contrasena = md5($model->contrasena);
+				$model->repeatPassword = md5($model->repeatPassword);
 				if($model->save()){
 					$this->redirect(array('index'));
-					Yii::app()->user->login(UserIdentity::createAuthenticatedIdentityAspirante($model->correo),0);
+					//Yii::app()->user->login(UserIdentity::createAuthenticatedIdentityAspirante($model->correo),0);
 				}
 			}
 		}
