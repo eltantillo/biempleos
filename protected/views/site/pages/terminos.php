@@ -1,3 +1,9 @@
+<?php
+$baseUrl = Yii::app()->baseUrl; 
+$cs = Yii::app()->getClientScript();
+$cs->registerCssFile($baseUrl.'/css/pages.css');
+?>
+
 <h2>Términos y condiciones</h2>
 <h3>Aceptación de los términos de servicios</h3>
 <p>Cuando accede o utiliza los servicios en línea y móviles de BIE. Usted declara que ha leído y entendido la <?php echo CHtml::link('Política de Privacidad', array('site/page/view/politicas')); ?> de nuestro sitio y llega a la conclusión de un acuerdo jurídicamente vinculante basado en estas condiciones de servicio con BIE. Además, usted reconoce totalmente este acuerdo.</p>

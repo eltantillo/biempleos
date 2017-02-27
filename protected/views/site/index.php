@@ -111,8 +111,8 @@ $this->pageTitle=Yii::app()->name;
             </div>
             <div class="col-sm-2">
                 <p class="col-xs-12">Siguenos en</p>
-                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl . "/images/twitter-logo-button.png"; ?>"></a>
-                <a href="#"><img src="<?php echo Yii::app()->request->baseUrl . "/images/facebook-logo-button.png"; ?>"></a>
+                <a href="https://twitter.com/biempleos"><img src="<?php echo Yii::app()->request->baseUrl . "/images/twitter-logo-button.png"; ?>"></a>
+                <a href="https://www.facebook.com/biempleos/?__mref=message_bubble"><img src="<?php echo Yii::app()->request->baseUrl . "/images/facebook-logo-button.png"; ?>"></a>
             </div>
             <p class="col-xs-12">&#169; BIE 2017<br><sub>Powered by BOSON SOFTWARE DEVELOPMENT</sub></p>
         </footer>

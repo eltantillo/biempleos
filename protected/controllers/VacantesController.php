@@ -200,8 +200,56 @@ class VacantesController extends Controller
     }
 
     public function actionCitar() {
+        $model = $this->loadModel();
+        $aspirante = array();
+        $lista = array();
+        
+        if(isset($_POST['aspirante'])) {
+            foreach($_POST['aspirante'] as $id) {
+                $candidato = aspirantes::model()->findbyPk($id);
+                
+                $checkValue = lista_aspirantes::model()->findByAttributes(
+                    array('id_aspirante'=>$id,
+                          'id_vacante'=>$model->id)
+                );
+                
+                if($candidato === null || $checkValue === null)
+                    throw new CHttpException(404,'The requested page does not exist.');
+                
+                array_push($aspirante, $candidato);
+                array_push($lista, $checkValue);
+            }
+        } else {
+            throw new CHttpException(404,'The requested page does not exist.');
+        }
+        
+        if(isset($_POST['date'])) {
+            $time = date_create_from_format("Y-m-d H:i:s", $_POST['date']);
+            if($time === false)
+                throw new CHttpException(404,'The requested page does not exist.');
+            
+            $criteria = new CDbCriteria;
+            $criteria->addInCondition('id_aspirante', $_POST['aspirante']);
+            
+            $compare = lista_aspirantes::model()->updateByPk(
+                array('id_vacante'=>$model->id),
+                array('cita'=>$time),
+                $criteria
+            );
+            
+            //Enviar cita a disp
+            
+            if ($compare == count($aspirante))
+                Yii::app()->user->setFlash('success', "Los aspirantes han sido citados");
+            else
+                Yii::app()->user->setFlash('error', "Ocurrio un error y no se pudo citar a todos o a algunos aspirantes.<br>Intentalo más tarde.");
+            
+            $this->redirect(array('empresas/index'));
+        }
+        
         $this->render('citar', array(
-            'aspirante'=>isset($_POST['aspirante']) ? $_POST['aspirante']:null,
+            'aspirante'=>$aspirante,
+            'model'=>$model,
         ));
     }
     
