@@ -7,12 +7,14 @@ return array(
 		'correo' => '',
 		'contrasena' => '',
 		'gcmKey' => '',
+		'activo' => '',
 	),
 	'sample2'=>array(
 		'id_aspirante' => '',
 		'correo' => '',
 		'contrasena' => '',
 		'gcmKey' => '',
+		'activo' => '',
 	),
 	*/
 );
