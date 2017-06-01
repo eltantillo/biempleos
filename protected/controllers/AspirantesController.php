@@ -37,7 +37,7 @@ class AspirantesController extends Controller
 				'users'=>array('?'),
 			),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','update','pdf'),
+				'actions'=>array('index','view','update','pdf', 'solicitud'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -501,6 +501,23 @@ class AspirantesController extends Controller
         Yii::app()->end();
  
     }
+    
+    public function actionSolicitud(){
+		$model = Yii::app()->user->aspirante;
+
+		if(isset($_POST['aspirantes']))
+		{
+			$model->attributes=$_POST['aspirantes'];
+			Functions::emptyToNull($model);
+			if($model->save())
+				$this->redirect(array('index'));
+		}
+
+		$model = Yii::app()->user->aspirante;
+		$this->render('solicitud',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
