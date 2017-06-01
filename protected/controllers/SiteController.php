@@ -107,6 +107,8 @@ class SiteController extends Controller
 					$this->redirect(array('empresas/index'));
 				}
 				else{
+					Yii::app()->user->usuario->gcmKey = $_POST['GCMKey'];
+					Yii::app()->user->usuario->update();
 					$this->redirect(array('aspirantes/index'));
 				}
 			}

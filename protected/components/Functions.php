@@ -54,5 +54,13 @@ class Functions{
 		mcrypt_module_close($td); 
 		return trim($decrypted_text);
 	}
+
+	public static function emptyToNull($model){
+		foreach ($model->attributes as $key => $value){
+        	if ($value == ''){
+                $model->$key = NULL;
+        	}
+        }
+	}
 }
 ?>

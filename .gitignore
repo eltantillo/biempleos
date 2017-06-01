@@ -1,2 +1,4 @@
 # Config
 /protected/config/database.php
+protected/runtime/application.log
+*.log

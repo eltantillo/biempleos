@@ -73,10 +73,6 @@
 		<?php echo $form->error($model,'repeatPassword',array('class'=>'errorMessage')); ?>
     </div>
 
-	<div class="form-group">
-		<?php echo $form->labelEx($model,'gcmKey'); ?>
-	</div>
-
     <div class="checkbox required">
         <label><input type="checkbox" name="terminos"> He leido los <a href="#">terminos y condiciones</a> y la <a href="#">politica de privacidad</a> de BIE <span class="required">*</span></label>
         <span style="position: absolute;top: -8px;left: 0;"></span>

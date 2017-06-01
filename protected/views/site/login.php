@@ -15,6 +15,10 @@
 )); ?>
 
 	<div class="form-group">
+        <input type="text" name="GCMKey" id="GCMKey">
+	</div>
+
+	<div class="form-group">
         <?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->emailField($model,'username', array('placeholder'=>'Correo', 'class'=>'form-control')); ?>
 		<?php echo $form->error($model,'username'); ?>
