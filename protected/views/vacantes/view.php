@@ -13,6 +13,22 @@ $lista = lista_aspirantes::model()->findAllByAttributes(
 );
 ?>
 
+<script type="text/javascript">
+    var php = {
+        urlLista: <?php echo "'" . CController::createUrl('vacantes/loadLista') . "'"; ?>,
+        modelId: <?php echo $model->id; ?>,
+        urlBase: <?php echo "'" . Yii::app()->request->baseUrl . "'"; ?>,
+        labelAspirante: {<?php
+        $labelAspirante = aspirantes::model()->attributeLabels();
+        foreach($labelAspirante as $key=>$label) {
+            echo "$key: '$label'";
+            if(!(end($labelAspirante) == $label) && !(key($labelAspirante) == $key))
+                echo ", ";
+        }
+        ?>}
+    };
+</script>
+
 <h1>Puesto: <?php echo $model->puesto; ?></h1>
 
 <?php if(count($lista) > 0): ?>
@@ -22,42 +38,48 @@ $lista = lista_aspirantes::model()->findAllByAttributes(
     <span class="glyphicon glyphicon-chevron-left left-slide"></span>
     <div class="slide-show">
         <div class="slide-item-group" role="document">
-            <?php foreach($lista as $l): ?>
-            <?php $aspirante = aspirantes::model()->findbyPk($l->id_aspirante); ?>
-            <input class="hidden" id="altasp<?php echo $aspirante->id; ?>" type="checkbox" value="<?php echo $aspirante->id; ?>">
+            <?php 
+            $ids = array();
+            foreach($lista as $l)
+                $ids = $l->id_aspirante;
+            
+            $aspirante = aspirantes::model()->findAllByAttributes(
+                array('id'=>$ids)
+            );
+            
+            foreach($aspirante as $a):
+            ?>
+            <input class="hidden" id="altasp<?php echo $a->id; ?>" type="checkbox" value="<?php echo $a->id; ?>">
             <div class="slide-item">
                 <div class="media hidden-xs" style="height:400px;overflow:auto;">
                     <div class="media-left">
-                        <img src="<?php echo $aspirante->foto ? $aspirante->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" class="media-object" style="width:65px">
+                        <img src="<?php echo Yii::app()->request->baseUrl . "/images/" . ($a->foto ? ("fotos/" . $a->foto):"logo.png"); ?>" class="media-object" style="width:65px">
                     </div>
                     <div class="media-body">
-                        <h4 class="media-heading">Nombre</h4>
+                        <h4 class="media-heading"><?php echo $a->nombre; ?></h4>
                         <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
+                            <?php
+                            foreach($a as $key=>$datos) {
+                                if($key == "nombre" || $key == "id" || $key == "foto")
+                                    continue;
+                                echo aspirantes::model()->getAttributeLabel("$key") . " " . $datos . "<br>";
+                            }
+                            ?>
                         </p>
-                        <?php echo CHtml::link('Citar', '', array('submit'=>array('citar', 'id'=>$model->id), 'params'=>array('aspirante[]'=>$aspirante->id), 'class'=>'btn btn-primary')); ?>
+                        <button class="btn btn-primary" type="submit" form="citar-form" name="aspirante[]" value="<?php echo $a->id; ?>">Citar</button>
                         <button class="btn btn-danger">Rechazar</button>
-                        <label class="btn btn-info btn-citar" for="altasp<?php echo $aspirante->id; ?>">Seleccionar</label>
+                        <label class="btn btn-info btn-citar" for="altasp<?php echo $a->id; ?>">Seleccionar</label>
                     </div>
                 </div>
-                <div class="visible-xs-12" style="padding: 25% 0;overflow: auto;height: 100vh;">
+                <div class="visible-xs-block" style="padding: 25% 0;overflow: auto;height: 100vh;">
                     <div class="col-xs-offset-2 col-xs-8">
-                        <img src="<?php echo $aspirante->foto ? $aspirante->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" class="center-block" style="width:65px">
-                        <h4 class="media-heading">Nombre</h4>
+                        <img src="<?php echo Yii::app()->request->baseUrl . "/images/" . ($a->foto ? ("fotos/" . $a->foto):"logo.png"); ?>" class="center-block" style="width:65px">
+                        <h4 class="media-heading"><?php echo $a->nombre; ?></h4>
                         <p class="list-group-item-text">
-                            dato 1<br>
-                            dato 2<br>
-                            dato 3<br>
-                            dato 4<br>
-                            dato 5<br>
-                            dato 6<br>
-                            etc
+                            <?php echo $a->fecha_nacimiento; ?><br>
+                            <?php echo $a->sexo; ?><br>
+                            <?php echo $a->calle . " #" . $a->numero; ?><br>
+                            <?php echo $a->estudio; ?>
                         </p>
                     </div>
                     <div class="clearfix"></div>
@@ -85,29 +107,28 @@ $lista = lista_aspirantes::model()->findAllByAttributes(
 </div>
 <div class="clearfix"></div>
 <div class="list-group">
-    <?php foreach($lista as $l): ?>
-    <?php $aspirante = aspirantes::model()->findbyPk($l->id_aspirante); ?>
-    <input class="hidden" id="asp<?php echo $aspirante->id; ?>" type="checkbox" form="citar-form" name="aspirante[]" value="<?php echo $aspirante->id; ?>">
+    <?php foreach($aspirante as $a): ?>
+    <input class="hidden" id="asp<?php echo $a->id; ?>" type="checkbox" form="citar-form" name="aspirante[]" value="<?php echo $a->id; ?>">
     <div class="relative">
+        <?php echo CHtml::link('Descargar', array('aspirantes/pdf', 'id'=>$a->id), array('class'=>'btn btn-link')); ?>
         <a href="#aspirante" class="media list-group-item" data-toggle="modal">
             <div class="media-left media-top">
-                <img src="<?php echo $aspirante->foto ? $aspirante->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" class="media-object" style="width:65px">
+                <img src="<?php echo Yii::app()->request->baseUrl . "/images/" . ($a->foto ? ("fotos/" . $a->foto):"logo.png"); ?>" class="media-object" style="width:65px">
             </div>
             <div class="media-body">
                 <h4 class="list-group-item-heading">Nombre</h4>
                 <p class="list-group-item-text">
-                    dato 1<br>
-                    dato 2<br>
-                    dato 3<br>
-                    dato 4<br>
-                    dato 5<br>
+                    <?php echo "Fecha de nacimiento " . $a->fecha_nacimiento; ?><br>
+                    <?php echo "Genero " . $a->sexo; ?><br>
+                    <?php echo "Domicilio" . $a->calle . " #" . $a->numero; ?><br>
+                    <?php echo "Último grado de estudio" . $a->estudio; ?>
                 </p>
             </div>
         </a>
         <div class="btn-top-right btn-group-vertical">
-            <?php echo CHtml::link('Citar', '', array('submit'=>array('citar', 'id'=>$model->id), 'params'=>array('aspirante[]'=>$aspirante->id), 'class'=>'btn btn-primary')); ?>
+            <button class="btn btn-primary" type="submit" form="citar-form" name="aspirante[]" value="<?php echo $a->id; ?>">Citar</button>
             <button class="btn btn-danger">Rechazar</button>
-            <label class="btn btn-info btn-citar" for="asp<?php echo $aspirante->id; ?>">Seleccionar</label>
+            <label class="btn btn-info btn-citar" for="asp<?php echo $a->id; ?>">Seleccionar</label>
         </div>
     </div>
     <?php endforeach; ?>

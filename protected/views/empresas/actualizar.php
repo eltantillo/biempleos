@@ -1,15 +1,7 @@
 <?php
-/*$this->breadcrumbs=array(
-	$empresa->id=>array('view','id'=>$empresa->id),
-	'Actualizar',
-);
-
-$this->menu=array(
-	array('label'=>'List empresas', 'url'=>array('index')),
-	array('label'=>'Create empresas', 'url'=>array('create')),
-	array('label'=>'View empresas', 'url'=>array('view', 'id'=>$empresa->id)),
-	array('label'=>'Manage empresas', 'url'=>array('admin')),
-);*/
+$baseUrl = Yii::app()->baseUrl; 
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl.'/js/empresas.js');
 ?>
 
 <h1>Cambiar Contraseña</h1>
@@ -75,25 +67,3 @@ $this->menu=array(
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
-<script>
-    var valid = false;
-    $('div.new > input[type=password]').on('keyup paste',function(){
-        $('div.new').removeClass('error has-error success has-success has-feedback');
-        $('div.new > span').removeClass('glyphicon glyphicon-remove glyphicon-ok form-control-feedback');
-        
-        if(/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/g.test($(this).val())) {
-            $('div.new').addClass('success has-success has-feedback');
-            $('div.new > span').addClass('glyphicon glyphicon-ok form-control-feedback');
-            valid = true;
-        } else {
-            $('div.new').addClass('error has-error has-feedback');
-            $('div.new > span').addClass('glyphicon glyphicon-remove form-control-feedback');
-            valid = false;
-        }
-    });
-    
-    $('#cambiar-password-form').submit(function() {
-        return valid;
-    });
-</script>

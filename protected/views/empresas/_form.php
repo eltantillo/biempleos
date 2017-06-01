@@ -1,3 +1,8 @@
+<?php
+$baseUrl = Yii::app()->baseUrl; 
+$cs = Yii::app()->getClientScript();
+$cs->registerScriptFile($baseUrl.'/js/empresas.js');
+?>
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -112,19 +117,6 @@
 
 <script>
 $(document).ready(function() {
-    $('div.password > input[type=password]').on('keyup paste',function(){
-        $('div.password').removeClass('error has-error success has-success has-feedback');
-        $('div.password > span').removeClass('glyphicon glyphicon-remove glyphicon-ok form-control-feedback');
-        
-        if(/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/g.test($(this).val())) {
-            $('div.password').addClass('success has-success has-feedback');
-            $('div.password > span').addClass('glyphicon glyphicon-ok form-control-feedback');
-        } else {
-            $('div.password').addClass('error has-error has-feedback');
-            $('div.password > span').addClass('glyphicon glyphicon-remove form-control-feedback');
-        }
-    });
-    
     <?php if($empresa->isNewRecord): ?>
     $('input[name=terminos]').change(function(){
         $('div.checkbox').removeClass('has-error');

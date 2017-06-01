@@ -1,10 +1,16 @@
-body
-{
+html {
+    height: 100%;
+}
+
+body {
 	margin: 0;
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
 	background: #EFEFEF;
+    position: relative;
+    padding-bottom: 180px;
+    min-height: 100%;
 }
 
 #page
@@ -278,36 +284,6 @@ div.loading {
     animation-timing-function: linear;
 }
 
-.panel p.text-center {
-    cursor: default;
-}
-
-.panel-heading + div {
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-    overflow: auto;
-}
-
-.panel-heading + div::-webkit-scrollbar {
-    display: none;
-}
-
-.panel-heading .panel-agregar {
-    padding: 10px 15px;
-    position: absolute;
-    top: -10px;
-    right: -16px;
-    text-decoration: none !important;
-    border-left: 1px solid #ddd;
-}
-
-.panel-heading .panel-agregar:hover {
-    background-color: rgba(0, 0, 0, 0.12);
-}
-.panel-heading h4 {
-    position: relative;
-}
-
 .relative {
     position: relative;
     margin: 0 !important;
@@ -325,15 +301,6 @@ div.loading {
     top: 13px;
     right: 12px;
     z-index: 2;
-}
-
-.relative .btn-top-right .btn:not(.relative .btn-group-vertical .btn) {
-    width: 100%;
-    margin-bottom: 6px;
-}
-
-input[type=checkbox].hidden:checked + div.relative, input[type=checkbox].hidden:checked + div.slide-item {
-    background-color: dodgerblue !important;
 }
 
 a[data-toggle=modal].list-group-item {
@@ -402,6 +369,39 @@ a[data-toggle=modal].list-group-item {
     #myNavbar ul.dropdown-menu {
         width: 250%;
     }
+}
+
+/*
+ *
+ *  CSS Footer
+ *
+ */
+@media (max-width: 767px) {
+    footer hr {
+        width: 50%;
+        text-align: center;
+    }
+}
+footer {
+    background-color: black;
+    padding-top: 14px;
+    color: white;
+    position: absolute !important;
+    bottom: 0;
+}
+
+footer img {
+    width: 32px;
+}
+footer a {
+    color: white !important;
+    padding: 6px 0px !important;
+}
+footer hr {
+    margin: 5px auto !important;
+}
+footer p:last-of-type {
+    margin-top: 10px;
 }
 
 /*

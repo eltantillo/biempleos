@@ -92,3 +92,8 @@
 
 
 Cada una de las acciones debe mostrar algún mesnaje de éxito o error
+
+
+PDF
+    ireport
+    phptopdf

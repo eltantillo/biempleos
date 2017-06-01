@@ -72,39 +72,38 @@
     <?php endif; ?>
     
 	<?php echo $content; ?>
-    
-    <footer class="row text-center">
-        <div class="col-sm-2">
-            <img src="<?php echo Yii::app()->request->baseUrl . "/images/logo.png"; ?>">
-        </div>
-        <div class="col-sm-8">
-            <div class="col-sm-4">
-                <?php echo CHtml::link('Sobre nosotros',array('/site/page/view/about'), array('class'=>'btn btn-link')); ?>
-            </div>
-            <div class="col-sm-4">
-                <a class="btn btn-link">Información a empresa</a>
-            </div>
-            <div class="col-sm-4">
-                <a class="btn btn-link">Ayuda</a>
-            </div>
-            <div class="col-sm-4 col-sm-offset-2">
-                Enlaces
-                <hr>
-                <?php echo CHtml::link('Términos y Condiciones', array('site/page/view/terminos'))?><br>
-                <?php echo CHtml::link('Política de Privacidad', array('site/page/view/politicas'))?>
-            </div>
-            <div class="col-sm-4">
-                <a class="btn btn-link">Contacto</a>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <p class="col-xs-12">Siguenos en</p>
-            <a href="https://twitter.com/biempleos"><img src="<?php echo Yii::app()->request->baseUrl . "/images/twitter-logo-button.png"; ?>"></a>
-            <a href="https://www.facebook.com/biempleos/?__mref=message_bubble"><img src="<?php echo Yii::app()->request->baseUrl . "/images/facebook-logo-button.png"; ?>"></a>
-        </div>
-        <p class="col-xs-12">&#169; BIE 2017<br><sub>Powered by BOSON SOFTWARE DEVELOPMENT</sub></p>
-    </footer>
 </div><!-- page -->
+<footer class="col-xs-12 text-center">
+    <div class="col-sm-2">
+        <img src="<?php echo Yii::app()->request->baseUrl . "/images/logo.png"; ?>">
+    </div>
+    <div class="col-sm-8">
+        <div class="col-sm-4">
+            <?php echo CHtml::link('Sobre nosotros',array('/site/page/view/about'), array('class'=>'btn btn-link')); ?>
+        </div>
+        <div class="col-sm-4">
+            <a class="btn btn-link">Información a empresa</a>
+        </div>
+        <div class="col-sm-4">
+            <a class="btn btn-link">Ayuda</a>
+        </div>
+        <div class="col-sm-4 col-sm-offset-2">
+            Enlaces
+            <hr>
+            <?php echo CHtml::link('Términos y Condiciones', array('site/page/view/terminos'))?><br>
+            <?php echo CHtml::link('Política de Privacidad', array('site/page/view/politicas'))?>
+        </div>
+        <div class="col-sm-4">
+            <a class="btn btn-link">Contacto</a>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <p class="col-xs-12">Siguenos en</p>
+        <a href="https://twitter.com/biempleos"><img src="<?php echo Yii::app()->request->baseUrl . "/images/twitter-logo-button.png"; ?>"></a>
+        <a href="https://www.facebook.com/biempleos/?__mref=message_bubble"><img src="<?php echo Yii::app()->request->baseUrl . "/images/facebook-logo-button.png"; ?>"></a>
+    </div>
+    <p class="col-xs-12">&#169; BIE 2017<br><sub>Powered by BOSON SOFTWARE DEVELOPMENT</sub></p>
+</footer>
 <?php if(Yii::app()->user->hasFlash('modal')): ?>
 <script>
 $(document).ready(function() {

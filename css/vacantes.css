@@ -12,6 +12,9 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
 }
+input[type=checkbox].hidden:checked + div.relative, input[type=checkbox].hidden:checked + div.slide-item {
+    background-color: dodgerblue !important;
+}
 .slide-show {
     position: absolute !important;
     top: 50% !important;

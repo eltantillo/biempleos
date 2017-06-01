@@ -8,7 +8,7 @@ $cs->registerCssFile($baseUrl.'/css/citar.css');
 <label>Citando</label>
 <?php foreach($aspirante as $candidato): ?>
 <span>
-    <img src="<?php echo $candidato->foto ? $candidato->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" style="width: 32px;"> Nombre<?php /*echo $candidato->datos;*/ ?>
+    <img src="<?php echo $candidato->foto ? $candidato->foto:(Yii::app()->request->baseUrl . "/images/logo.png"); ?>" style="width: 32px;"> Nombre <?php echo $candidato->nombre; ?>
     <span class="glyphicon glyphicon-remove"></span>
     <input type="hidden" name="aspirante[]" form="cita" value="<?php echo $candidato->id; ?>">
 </span>

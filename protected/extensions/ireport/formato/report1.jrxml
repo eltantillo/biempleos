@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="99579a82-147b-4258-8a50-69843c91a8ff">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="790"/>
+	<field name="id_empresa" class="java.lang.String"/>
+	<field name="correo" class="java.lang.String"/>
+	<field name="telefono_ref1" class="java.lang.String"/>
+	<field name="fecha_publicacion" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="sexo" class="java.lang.String"/>
+	<field name="fecha_nacimiento" class="java.lang.String"/>
+	<field name="nacionalidad" class="java.lang.String"/>
+	<field name="estatura" class="java.lang.String"/>
+	<field name="peso" class="java.lang.String"/>
+	<field name="estado_civil" class="java.lang.String"/>
+	<field name="calle" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="colonia" class="java.lang.String"/>
+	<field name="codigo_postal" class="java.lang.String"/>
+	<field name="ciudad" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="rfc" class="java.lang.String"/>
+	<field name="curp" class="java.lang.String"/>
+	<field name="nss" class="java.lang.String"/>
+	<field name="afore" class="java.lang.String"/>
+	<field name="cartilla_militar" class="java.lang.String"/>
+	<field name="pasaporte" class="java.lang.String"/>
+	<field name="licencia" class="java.lang.String"/>
+	<field name="clase_licencia" class="java.lang.String"/>
+	<field name="numero_licencia" class="java.lang.String"/>
+	<field name="deportista" class="java.lang.String"/>
+	<field name="deporte" class="java.lang.String"/>
+	<field name="club" class="java.lang.String"/>
+	<field name="pasatiempo" class="java.lang.String"/>
+	<field name="meta" class="java.lang.String"/>
+	<field name="estudio" class="java.lang.String"/>
+	<field name="escuela" class="java.lang.String"/>
+	<field name="inicio" class="java.lang.String"/>
+	<field name="finalizacion" class="java.lang.String"/>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="idioma" class="java.lang.String"/>
+	<field name="porcentaje" class="java.lang.String"/>
+	<field name="funciones_oficina" class="java.lang.String"/>
+	<field name="maquinaria_oficina" class="java.lang.String"/>
+	<field name="software" class="java.lang.String"/>
+	<field name="otras_funciones" class="java.lang.String"/>
+	<field name="trabajo_anterior" class="java.lang.String"/>
+	<field name="tiempo_trabajo" class="java.lang.String"/>
+	<field name="compania" class="java.lang.String"/>
+	<field name="direccion" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="puesto" class="java.lang.String"/>
+	<field name="sueldo_inicial" class="java.lang.String"/>
+	<field name="sueldo_final" class="java.lang.String"/>
+	<field name="motivo_separacion" class="java.lang.String"/>
+	<field name="nombre_jefe" class="java.lang.String"/>
+	<field name="puesto_jefe" class="java.lang.String"/>
+	<field name="nombre_ref1" class="java.lang.String"/>
+	<field name="domicilio_ref1" class="java.lang.String"/>
+	<field name="ocupacion_ref1" class="java.lang.String"/>
+	<field name="tiempo_ref1" class="java.lang.String"/>
+	<field name="tel_ref1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="178" y="0" width="223" height="34" uuid="93dd6552-8462-4e2a-a52a-a78737c1a66b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[Solicitud de Empleo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="59" width="38" height="20" uuid="188c8e70-2a5a-4500-a24d-d49efdf8c27f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Email:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="143" y="59" width="100" height="20" uuid="947b799d-f8c8-4427-9a1a-866b60f79c41"/>
+				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="12" y="12" width="62" height="79" uuid="7d24034b-cff5-44d7-8392-27effa1f7dd9"/>
+				<imageExpression><![CDATA["C:\\Users\\Adrian\\Desktop\\16684874_1212577065492678_1095942396_n.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="205" y="59" width="59" height="20" uuid="c225550f-5acb-443f-97fa-24748b5e4d87"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Telefono:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="264" y="59" width="100" height="20" uuid="6375526f-0981-492c-bd3e-749b37753849"/>
+				<textFieldExpression><![CDATA[$F{telefono_ref1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="364" y="59" width="59" height="20" uuid="84c98b40-77c0-489a-9d4a-5c70506f2f0c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="423" y="59" width="132" height="20" uuid="1782629b-1538-4257-abfc-5cb476238a49"/>
+				<textFieldExpression><![CDATA[$F{fecha_publicacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="34" width="123" height="20" uuid="e043ef44-795e-43ab-9798-8f50e10fff2c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[www.biempleos.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="143" height="25" uuid="18459c4b-058c-47e7-92c1-075b2363be4d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Datos Personales:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="25" width="572" height="1" uuid="686c0d7f-5a86-43cc-9528-b8f8a83e302e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" uuid="4411979b-67f8-43dd-a7f8-50296b7700f7"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="86" splitType="Stretch">
+			<textField>
+				<reportElement x="51" y="4" width="182" height="17" uuid="e2b81265-8222-4743-912d-f378080f5947"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="51" height="20" uuid="01467afe-01cf-417f-908c-f7b8db050c00"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="1" width="32" height="20" uuid="21b59400-e2e1-4822-aedc-e2f6532217ec"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Sexo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="1" width="72" height="20" uuid="ba07a97e-117b-4ff8-9901-1e67efaf7c73"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nacionalidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="2" width="49" height="19" uuid="c7fcb0e8-a177-4ae6-b914-ddfa198a5f18"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Estatura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="21" width="29" height="20" uuid="ef908807-f0e1-4f28-ae8a-867074b9894f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="107" y="21" width="71" height="20" uuid="2c02729a-d34c-45c3-b21d-876452c4605b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Estado Civil:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="21" width="34" height="20" uuid="a1e0ba26-ec01-42e5-bb77-635812893e05"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Calle:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="21" width="53" height="20" uuid="7f581353-2a07-47b8-98a5-f8aefb3f9cf8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Numero:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="57" height="20" uuid="eb3c5d2c-c2c2-42ad-950a-48b27fa39f73"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Colonia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="41" width="30" height="20" uuid="a51f6070-d564-4e60-8d80-c6245bbae45e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[C.P:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="41" width="45" height="20" uuid="fa7b19da-bcbc-471f-b27b-a316bbab6b5c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Ciudad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="41" width="36" height="20" uuid="e8df313c-4f7d-4bb4-9fb1-794bb209e438"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="61" width="39" height="20" uuid="3e3b4ffa-ef0b-4cec-882e-8df640f92b5b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[R.F.C:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="61" width="57" height="20" uuid="34876926-0ca3-46c5-bf2d-e76571c9e11b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[CURP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="61" width="102" height="20" uuid="3f51992b-3ced-4bb1-9f32-170c5233c6c3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de nacimento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="3" width="57" height="17" uuid="4096e4ba-b248-4e4a-90ec-1f2bd7d53d91"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="398" y="2" width="81" height="20" uuid="786e4e52-5852-48af-89cb-ab7f3bb5440f"/>
+				<textFieldExpression><![CDATA[$F{nacionalidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="529" y="4" width="43" height="18" uuid="59878bf8-c7ee-4f4e-ab11-6d01507c51af"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estatura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="21" width="78" height="20" uuid="d5b788dc-039e-4a3e-89c6-54a9cdd35d34"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{peso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="21" width="86" height="20" uuid="227a8e75-0a62-482f-beac-1900a2ca1231"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado_civil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="20" width="142" height="20" uuid="4ee80620-3d82-4eb3-b4f8-7e931095b3bb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{calle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="495" y="22" width="77" height="20" uuid="b3d59b14-09fd-41e9-83f0-185c188e6a46"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="42" width="146" height="20" uuid="d387237f-33eb-4287-9731-3fe67565acf6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{colonia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="233" y="42" width="65" height="20" uuid="8fe089a8-c69a-494e-abf1-78bf21ddb342"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo_postal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="40" width="80" height="20" uuid="7e1cf459-0437-43d2-b19e-e31f0ed2f5aa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="42" width="113" height="20" uuid="eb5b526b-4426-4482-a6ed-36df21004e3a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="61" width="164" height="20" uuid="3ace80e9-7752-42d5-acb1-321d8cfbaa98"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rfc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="61" width="152" height="20" uuid="8a28c02e-0b61-4cda-adf0-f9072a4c02c1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{curp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="61" width="57" height="20" uuid="900520a1-9137-4a49-9ef4-887e9fd06260"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_nacimiento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="178" y="2" width="100" height="20" uuid="5b692885-be72-4aed-b326-9a8288911938"/>
+				<text><![CDATA[pasatiempo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="2" width="100" height="20" uuid="561a18c5-2b8f-42a4-994f-28fa19d29e7e"/>
+				<text><![CDATA[meta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="210" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="143" height="25" uuid="a1230150-9a98-44bc-80ee-9d075fe3ec0a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Documentación:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="25" width="572" height="1" uuid="f35347fd-f076-44fd-a748-49617b64aa91"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" uuid="3540895e-4292-4de8-976c-0a190632368e"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="27" width="95" height="20" uuid="7a0cd4cf-f9f2-40e0-b781-32b4bbe8420a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[No.Seguro Social:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="27" width="32" height="20" uuid="ebc6941d-d078-48cf-966f-0d173de6dfb1"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Afore:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="27" width="104" height="20" uuid="90e0a05f-8cde-4f6f-89ad-2af7ad70453f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[No.Servicio Militar:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="47" width="74" height="20" uuid="c1696241-a27e-4ef5-835e-698bb31cc29f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[No.Pasaporte:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="47" width="135" height="20" uuid="de9737d3-858e-4749-813a-6be9fd398693"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Tiene licencia de manejo?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="47" width="92" height="20" uuid="d7060130-28d6-46a5-bb96-785f9ee73d13"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Clase de licencia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="67" width="95" height="20" uuid="8dc07f48-b5cf-4fd8-bf12-7ebac4f1e96f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[No. de licencia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="91" width="167" height="25" uuid="4b44b922-3631-44ae-a92a-cc0e9575256a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Habitos Personales:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="90" width="572" height="1" uuid="5e61cfdd-7c52-45b1-b8b0-4a2fd0724523"/>
+			</line>
+			<line>
+				<reportElement x="-2" y="116" width="572" height="1" uuid="e182dcb8-e05b-4fbb-89be-457214479fd2"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="117" width="133" height="20" uuid="642bdeb5-a5b5-46d8-bd3b-1413d829056d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿practica algun deporte?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="117" width="83" height="20" uuid="bf081e1c-496a-4608-8c93-8f7a8ec23d04"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ ¿Cual deporte?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="117" width="214" height="20" uuid="10afebb7-98f9-4f58-b632-16f0036f32af"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Pertenece a algun club social o deportivo?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="137" width="167" height="20" uuid="9b1b50e9-11de-41f4-9a9c-87db47ecbe87"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Cual es su pasatiempo favorito?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="159" width="143" height="20" uuid="4062887c-30c9-4770-b863-c23830c709db"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Cual es su meta de la vida?:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="95" y="27" width="134" height="20" uuid="6983e087-2dc1-4f77-8b3a-c9195188aed2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nss}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="27" width="111" height="20" uuid="3b348baa-00dc-47a7-b7ed-5f6ee6cfc688"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{afore}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="27" width="90" height="20" uuid="7543cf45-8265-40c1-a564-f48baae78176"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cartilla_militar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="74" y="47" width="155" height="20" uuid="8c82ad86-4a2f-4508-a39a-a2378b2fef05"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pasaporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="47" width="49" height="20" uuid="311eabff-58c0-4113-af28-ebf9e1423484"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{licencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="47" width="65" height="20" uuid="221b7fd7-d84c-4a58-9316-9b47c7b1d356"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clase_licencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="67" width="177" height="20" uuid="b68dfc52-944c-469b-abad-8a6a6e9935a4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numero_licencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="117" width="49" height="20" uuid="2ac8f2cd-331f-4c5b-85af-741f9c5802d1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deportista}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="117" width="65" height="20" uuid="7b071cf9-2422-43ce-8c3e-e774339c26e3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deporte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="539" y="117" width="33" height="20" uuid="6ecb1af6-4a10-42b9-95c2-153b3eafb02f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{club}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="137" width="403" height="20" uuid="757824ab-2312-4e8e-80f6-3ed9b0c762a0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pasatiempo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="159" width="427" height="20" uuid="c32fdf7c-55d1-4c70-ba9c-5bfff1059b61"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{meta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="184" width="167" height="25" uuid="2a3eb7ff-ee99-4025-aeb7-7a1c8a72a245"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Escoralidad:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-1" y="181" width="572" height="1" uuid="3d9a242f-6458-4c27-b3bf-872c69e66cb5"/>
+			</line>
+			<line>
+				<reportElement x="0" y="209" width="572" height="1" uuid="e3c40959-03ff-4b77-b269-f2c19c80bb24"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="256" width="572" height="1" uuid="85d2640c-8de4-432a-8389-5cd3039f0257"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="133" height="20" uuid="cf1a3b2f-66af-4ca9-8654-816cd3a4b4fa"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Último grado de estudio?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="0" width="133" height="20" uuid="03a3cc4a-245c-479a-8ed8-8979bb72393b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre de la escuela:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="29" height="20" uuid="d2546dd7-c838-4acd-b66a-7b36b19aa430"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Inicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="138" y="20" width="67" height="20" uuid="fac2e790-867e-4fd3-878f-f69a82eaf5f4"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Finalizacion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="20" width="46" height="20" uuid="700216db-9fed-464f-b020-b48df03283ae"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Titulo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="132" y="0" width="119" height="20" uuid="fe535528-df35-4bd4-82e2-f8b244a62368"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estudio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="186" height="20" uuid="58eff9d1-2917-4468-939a-1749268631c3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{escuela}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="20" width="100" height="20" uuid="4b4c1db9-0d5d-40f8-8343-29c33927acc4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="20" width="100" height="20" uuid="dff56ad6-eb7a-4ccf-af1c-05d0bb7d82ea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalizacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="20" width="227" height="20" uuid="42852f5b-eb14-4d32-9570-7cd32aced992"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="237" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="220" height="25" uuid="662d2c30-a228-4999-b5a8-2765a51b8ae0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Conocimientos Generales:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="25" width="572" height="1" uuid="2f349f4a-ad85-40e3-834b-1461b43daad4"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="26" width="133" height="20" uuid="5900bdc4-783c-4d3a-8d2a-d04cb1a46460"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Otro idioma que domine?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="224" y="25" width="59" height="20" uuid="f3c5003a-a839-4c63-8415-0178b1c0aa94"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Porcentaje:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="26" width="179" height="20" uuid="9f667ec2-bf1a-453b-8e4f-787b306bce0e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Funciones de oficina que domine?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="46" width="249" height="20" uuid="64b0ad68-552f-40cd-a095-2eb82eaff42a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Maquinaria de oficina o taller que sepa manejar?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="66" width="127" height="20" uuid="1b5ea3d9-681e-4f19-888b-3020a4da1629"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Software que conoce?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="86" width="217" height="20" uuid="00139bb8-9623-43b3-aead-56a272334772"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Otros trabajos o funciones que domina?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="106" width="220" height="25" uuid="feed518e-763f-4796-9f4b-21250c731197"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Empleo actual y anteriores:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="105" width="572" height="1" uuid="11e1c9ed-55e7-4af0-9053-dc06642b95f8"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="131" width="572" height="1" uuid="7166c3a7-86c4-4acb-9716-3146a0a0a867"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="132" width="126" height="20" uuid="289e01cc-94ed-42aa-b7a4-c8e3f6c03cca"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Has trabajado antes?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="132" width="150" height="20" uuid="506c5c1b-c5f9-45de-b0d6-add5afa328c9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Tiempo que presto servicio?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="152" width="134" height="20" uuid="01675489-8041-41f6-8c8f-55a347a9a434"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[¿Nombre de la compañia?:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="152" width="59" height="20" uuid="b9cc7904-f09e-40cc-a913-dba8fc2aa031"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Direccion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="152" width="23" height="20" uuid="863d7209-975f-401a-927c-7ea11c1c70e5"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tel:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="172" width="115" height="20" uuid="7ebb081d-b307-4de1-9b38-75576284c3db"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Puesto desempeñado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="172" width="74" height="20" uuid="811e40a6-c119-4775-8bc2-6d6baef83d83"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Sueldo inicial:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="172" width="74" height="20" uuid="49d172f4-9793-4e77-a849-934c9f560c01"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Sueldo final:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="192" width="115" height="20" uuid="09675cf0-2343-43ca-a70f-29269d593ac9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Motivo de separacion: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="192" width="115" height="20" uuid="777f4f88-532a-40c1-92b2-b23c3abe538f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre de jefe directo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="212" width="115" height="20" uuid="14b5366d-5e81-407c-a89b-1488f052b665"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Puesto de jefe directo:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="232" width="572" height="1" uuid="ba2082ba-235a-4225-938e-7995d6ad6b4b"/>
+			</line>
+			<textField>
+				<reportElement x="137" y="26" width="87" height="20" uuid="97ffd20f-a2f8-42c2-8561-329f1a885e20"/>
+				<textFieldExpression><![CDATA[$F{idioma}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="26" width="42" height="20" uuid="950c3476-26af-486d-85e7-ea7ed7ee5ce8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{porcentaje}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="26" width="66" height="20" uuid="d383a693-33c0-4b68-ac5a-c47676a066a3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{funciones_oficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="46" width="319" height="20" uuid="310731ff-547a-4b75-b87b-422ad77e39d0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{maquinaria_oficina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="66" width="441" height="20" uuid="0f5af78d-6ded-4472-b32c-08886eb6f650"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{software}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="86" width="347" height="20" uuid="587ee77e-f303-47e1-a628-8aff3a46ffd2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{otras_funciones}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="132" width="119" height="20" uuid="6bee0df3-bf92-43b3-b130-93d055dfeb27"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{trabajo_anterior}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="132" width="166" height="20" uuid="1b9ec84f-a157-441c-9297-aa6523e298ca"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tiempo_trabajo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="152" width="113" height="20" uuid="c91c5215-0263-4572-908b-e230472f4a23"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compania}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="152" width="126" height="20" uuid="57bde98d-d550-4169-8ccc-6f7a8e619f82"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="459" y="152" width="111" height="20" uuid="ac969683-00b1-42a4-9fcd-41efeac866db"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="172" width="132" height="20" uuid="a2bc8e0f-3525-416a-8d9b-4a5adfbc7b63"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{puesto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="172" width="79" height="20" uuid="e3628bd7-4b76-40f3-af3a-9de5a4dcf1c8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sueldo_inicial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="172" width="91" height="20" uuid="2e31ae48-72b8-4349-ba29-cbcb4861eff5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sueldo_final}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="192" width="131" height="20" uuid="8d37f555-d329-4592-bdc2-f659895f58f7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{motivo_separacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="192" width="198" height="20" uuid="5b338c03-6431-4b83-9e65-20780887d23c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_jefe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="212" width="445" height="20" uuid="4b41840e-5481-459f-b311-6532ecdb7917"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{puesto_jefe}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="0" width="220" height="25" uuid="f2f66a44-1059-42b0-9e65-93f250dc69fe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="20"/>
+				</textElement>
+				<text><![CDATA[Referencias Personales:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="25" width="572" height="1" uuid="adce198a-90b7-465e-80e5-86449bf6241d"/>
+			</line>
+			<staticText>
+				<reportElement x="4" y="26" width="47" height="20" uuid="ae078eb6-d6b7-4ad9-a10c-cb4616c04fc9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="26" width="65" height="20" uuid="6a2495d7-1190-4c1a-8738-e8b6548a6c43"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="46" width="47" height="20" uuid="c3ba7d21-817f-4a12-8466-538f79487592"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Telefono:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="46" width="69" height="20" uuid="484313fe-e8da-4d4a-9878-e83e2c2b647b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Ocupacion:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="46" width="111" height="20" uuid="67309ba2-ca4e-40ba-8bcc-9d89717759eb"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tiempo de conocerlo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="26" width="182" height="20" uuid="182ed092-c3a3-4f8f-9eaa-e5d2c8782173"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_ref1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="26" width="274" height="20" uuid="43e23434-9424-4aad-8010-cabe4d60c9ae"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{domicilio_ref1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="46" width="100" height="20" uuid="5d0efd0b-f951-4c64-88bc-d46e742bdeec"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tel_ref1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="46" width="139" height="20" uuid="27f0fd9c-3482-4e52-8715-c04be9f6d195"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ocupacion_ref1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="46" width="100" height="20" uuid="1b238695-5380-4816-8b43-acd6ecaa7fb7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tiempo_ref1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
