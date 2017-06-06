@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `biempleos`.`usuarios_aspirantes` (
   `id_aspirante` INT UNSIGNED NOT NULL,
   `correo` VARCHAR(254) NOT NULL,
   `contrasena` VARCHAR(32) NOT NULL,
-  `gcmKey` LONGTEXT NOT NULL,
+  `gcmKey` LONGTEXT NULL,
   `activo` TINYINT NOT NULL DEFAULT TRUE,
   UNIQUE INDEX (`correo` ASC),
   PRIMARY KEY (`id`),
