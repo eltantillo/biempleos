@@ -2,11 +2,9 @@
 
 // This is the database connection configuration.
 return array(
-	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-	// uncomment the following lines to use a MySQL database
-	'connectionString' => 'mysql:host=localhost;dbname=biempleos',
+	'connectionString' => 'mysql:host=localhost;dbname=domino99_xempleos',
 	'emulatePrepare' => true,
-	'username' => 'root',
-	'password' => '',
+	'username' => 'domino99_admin',
+	'password' => '@d@m&3V@',
 	'charset' => 'utf8',
 );
