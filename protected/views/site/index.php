@@ -65,7 +65,7 @@ $this->pageTitle=Yii::app()->name;
             <h1 class="col-xs-12">Tú eliges a quien contratar <img src="<?php echo Yii::app()->request->baseUrl . "/images/icon(1).png"; ?>"></h1>
             <h1 class="col-xs-12">Tú eliges donde trabajar <img src="<?php echo Yii::app()->request->baseUrl . "/images/engineer(1).png"; ?>"></h1>
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                <button class="btn btn-lg btn-success col-sm-5">BUSCAR EMPLEO</button>
+                <?php echo CHtml::link('BUSCAR EMPLEO', array('aspirantes/registro'), array('class'=>'btn btn-lg btn-success col-sm-5')); ?>
                 <?php echo CHtml::link('CONTRATAR', array('empresas/registro'), array('class'=>'btn btn-lg btn-danger col-sm-offset-2 col-sm-5')); ?>
             </div>
         </div>

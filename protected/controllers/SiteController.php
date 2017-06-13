@@ -109,6 +109,9 @@ class SiteController extends Controller
 				else{
 					Yii::app()->user->usuario->gcmKey = $_POST['GCMKey'];
 					Yii::app()->user->usuario->update();
+
+					AndroidNotifications::send(Yii::app()->user->usuario->gcmKey, 1, 'Aceptado');
+					
 					$this->redirect(array('aspirantes/index'));
 				}
 			}

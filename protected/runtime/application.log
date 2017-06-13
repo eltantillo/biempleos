@@ -11382,3 +11382,210 @@ REQUEST_URI=/aspirantes/pdf/1
 in C:\wamp64\www\biempleos\protected\extensions\ireport\PDFAspirante.php (6)
 in C:\wamp64\www\biempleos\protected\extensions\ireport\PDFAspirante.php (6)
 in C:\wamp64\www\biempleos\protected\controllers\AspirantesController.php (161)
+2017/06/08 09:47:57 [error] [exception.CException] exception 'CException' with message 'La propiedad "usuarios_empresas"."correoAlt" no se encuentra definida.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('correoAlt')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('correoAlt')
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(usuarios_empresas), 'correoAlt')
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(1594): CHtml::activeInputField('email', Object(usuarios_empresas), 'correoAlt', Array)
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/widgets/CActiveForm.php(632): CHtml::activeEmailField(Object(usuarios_empresas), 'correoAlt', Array)
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/_form.php(74): CActiveForm->emailField(Object(usuarios_empresas), 'correoAlt', Array)
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/registro.php(3): CController->renderPartial('_form', Array)
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#11 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#12 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#13 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(782): CController->renderPartial('registro', Array, true)
+#14 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/controllers/EmpresasController.php(73): CController->render('registro', Array)
+#15 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/actions/CInlineAction.php(49): EmpresasController->actionRegistro()
+#16 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#25 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('empresas/regist...')
+#26 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/empresas/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/login/
+---
+2017/06/08 09:48:59 [error] [exception.CException] exception 'CException' with message 'La propiedad "usuarios_empresas"."correoAlt" no se encuentra definida.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('correoAlt')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('correoAlt')
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(usuarios_empresas), 'correoAlt')
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(1594): CHtml::activeInputField('email', Object(usuarios_empresas), 'correoAlt', Array)
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/widgets/CActiveForm.php(632): CHtml::activeEmailField(Object(usuarios_empresas), 'correoAlt', Array)
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/_form.php(74): CActiveForm->emailField(Object(usuarios_empresas), 'correoAlt', Array)
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/registro.php(3): CController->renderPartial('_form', Array)
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#11 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#12 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#13 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(782): CController->renderPartial('registro', Array, true)
+#14 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/controllers/EmpresasController.php(73): CController->render('registro', Array)
+#15 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/actions/CInlineAction.php(49): EmpresasController->actionRegistro()
+#16 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#25 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('empresas/regist...')
+#26 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/empresas/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/login/
+---
+2017/06/08 09:50:27 [error] [exception.CException] exception 'CException' with message 'La propiedad "usuarios_empresas"."correoAlt" no se encuentra definida.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/db/ar/CActiveRecord.php(145): CComponent->__get('correoAlt')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(2729): CActiveRecord->__get('correoAlt')
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(2452): CHtml::resolveValue(Object(usuarios_empresas), 'correoAlt')
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/helpers/CHtml.php(1594): CHtml::activeInputField('email', Object(usuarios_empresas), 'correoAlt', Array)
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/widgets/CActiveForm.php(632): CHtml::activeEmailField(Object(usuarios_empresas), 'correoAlt', Array)
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/_form.php(74): CActiveForm->emailField(Object(usuarios_empresas), 'correoAlt', Array)
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/registro.php(3): CController->renderPartial('_form', Array)
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#11 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#12 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#13 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(782): CController->renderPartial('registro', Array, true)
+#14 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/controllers/EmpresasController.php(73): CController->render('registro', Array)
+#15 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/actions/CInlineAction.php(49): EmpresasController->actionRegistro()
+#16 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#23 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#25 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('empresas/regist...')
+#26 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#27 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/empresas/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/login/
+---
+2017/06/08 15:29:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "registro" solicitada.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(270): CController->missingAction('registro')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/registro')
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/site/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/login
+---
+2017/06/08 15:45:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('aspirantes/regi...')
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/aspirantes/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/index
+---
+2017/06/08 15:45:51 [error] [exception.CException] exception 'CException' with message 'La propiedad "CWebUser"."empresa" no se encuentra definida.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CWebUser.php(146): CComponent->__get('empresa')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/views/empresas/index.php(7): CWebUser->__get('empresa')
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(126): require('/home1/domino99...')
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/home1/domino99...', Array, true)
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(869): CBaseController->renderFile('/home1/domino99...', Array, true)
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/protected/controllers/EmpresasController.php(120): CController->render('index', Array)
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/actions/CInlineAction.php(49): EmpresasController->actionIndex()
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#15 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#17 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('empresas/index')
+#18 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#19 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/empresas/index
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/index
+---
+2017/06/08 15:46:21 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('aspirantes/regi...')
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/aspirantes/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/index
+---
+2017/06/08 15:46:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('aspirantes/regi...')
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/aspirantes/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/login
+---
+2017/06/08 15:46:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(282): CController->run('registro')
+#8 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('aspirantes/regi...')
+#9 /home1/domino99/public_html/beyondhumanproject.com/boson/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#10 /home1/domino99/public_html/beyondhumanproject.com/boson/biempleos/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/beyondhumanproject.com/boson/biempleos/aspirantes/registro
+HTTP_REFERER=http://beyondhumanproject.com/beyondhumanproject.com/boson/biempleos/site/index
+---

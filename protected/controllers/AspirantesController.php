@@ -507,7 +507,48 @@ class AspirantesController extends Controller
 
 		if(isset($_POST['aspirantes']))
 		{
-			$model->attributes=$_POST['aspirantes'];
+			$model->attributes = $_POST['aspirantes'];
+
+            $model->nombre             = ucwords($model->nombre);
+            $model->nacionalidad       = ucwords($model->nacionalidad);
+            $model->calle              = ucwords($model->calle);
+            $model->colonia            = ucwords($model->colonia);
+            $model->curp               = strtoupper($model->curp);
+            $model->rfc                = strtoupper($model->rfc);
+            $model->nss                = strtoupper($model->nss);
+            $model->afore              = strtoupper($model->afore);
+            $model->cartilla_militar   = strtoupper($model->cartilla_militar);
+            $model->pasaporte          = strtoupper($model->pasaporte);
+            $model->clase_licencia     = ucwords($model->clase_licencia);
+            $model->numero_licencia    = strtoupper($model->numero_licencia);
+            $model->deporte            = ucwords($model->deporte);
+            $model->pasatiempo         = ucwords($model->pasatiempo);
+            $model->meta               = ucwords($model->meta);
+            $model->escuela            = ucwords($model->escuela);
+            $model->idioma             = ucwords($model->idioma);
+            $model->funciones_oficina  = ucfirst($model->funciones_oficina);
+            $model->maquinaria_oficina = ucfirst($model->maquinaria_oficina);
+            $model->software           = ucfirst($model->software);
+            $model->otras_funciones    = ucfirst($model->otras_funciones);
+            $model->compania           = ucfirst($model->otras_funciones);
+            $model->direccion          = ucwords($model->otras_funciones);
+            $model->puesto             = ucwords($model->puesto);
+            $model->motivo_separacion  = ucwords($model->motivo_separacion);
+            $model->nombre_jefe        = ucwords($model->nombre_jefe);
+            $model->puesto_jefe        = ucwords($model->puesto_jefe);
+            $model->nombre_ref1        = ucwords($model->nombre_ref1);
+            $model->domicilio_ref1     = ucwords($model->domicilio_ref1);
+            $model->ocupacion_ref1     = ucwords($model->ocupacion_ref1);
+            $model->tiempo_ref1        = ucwords($model->tiempo_ref1);
+            $model->nombre_ref2        = ucwords($model->nombre_ref1);
+            $model->domicilio_ref2     = ucwords($model->domicilio_ref1);
+            $model->ocupacion_ref2     = ucwords($model->ocupacion_ref1);
+            $model->tiempo_ref2        = ucwords($model->tiempo_ref1);
+            $model->nombre_ref3        = ucwords($model->nombre_ref1);
+            $model->domicilio_ref3     = ucwords($model->domicilio_ref1);
+            $model->ocupacion_ref3     = ucwords($model->ocupacion_ref1);
+            $model->tiempo_ref3        = ucwords($model->tiempo_ref1);
+
 			Functions::emptyToNull($model);
 			if($model->save())
 				$this->redirect(array('index'));
