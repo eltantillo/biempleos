@@ -15,7 +15,7 @@
 )); ?>
 
 	<div class="form-group">
-        <input type="text" name="GCMKey" id="GCMKey">
+        <input type="text" name="GCMKey" id="GCMKey" hidden="true">
 	</div>
 
 	<div class="form-group">
@@ -37,20 +37,22 @@
             <?php echo $form->error($model,'rememberMe'); ?>
         </div>
         <div class="col-xs-6">
-            <?php echo CHtml::link('Olvide mi contraseña',array('site/recover'), array('class'=>'pull-right')); ?>
+            <?php echo CHtml::link('Olvidé mi contraseña',array('site/recover'), array('class'=>'pull-right')); ?>
         </div>
         <div class="clearfix"></div>
 	</div>
 
 	<div class="form-group">
-        <div class="col-xs-6">
-            <?php echo CHtml::link('Registrarme',array('empresas/registro'), array('class'=>'btn btn-default')); ?>
+        <div class="col-xs-8">
+            <?php echo CHtml::link('Registrarme como Empresa',array('empresas/registro'), array('class'=>'pull-left')); ?><br>
+            <?php echo CHtml::link('Registrarme como Aspirante',array('aspirantes/registro'), array('class'=>'pull-left')); ?>
         </div>
-        <div class="col-xs-6">
-            <?php echo CHtml::submitButton('Iniciar Sesión', array('class'=>'btn btn-default pull-right')); ?>
+        <div class="col-xs-4">
+            <?php echo CHtml::submitButton('Iniciar Sesión', array('class'=>'btn btn-success pull-right')); ?>
         </div>
 		<div class="clearfix"></div>
 	</div>
 
 <?php $this->endWidget(); ?>
 </div><!-- form -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

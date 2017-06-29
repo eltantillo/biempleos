@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'aspirantes':
  * @property string $id
+ * @property string $fecha_actualizacion
  * @property string $foto
  * @property string $nombre
  * @property string $fecha_nacimiento
@@ -57,17 +58,17 @@
  * @property string $domicilio_ref1
  * @property string $telefono_ref1
  * @property string $ocupacion_ref1
- * @property double $tiempo_ref1
+ * @property string $tiempo_ref1
  * @property string $nombre_ref2
  * @property string $domicilio_ref2
  * @property string $telefono_ref2
  * @property string $ocupacion_ref2
- * @property double $tiempo_ref2
+ * @property string $tiempo_ref2
  * @property string $nombre_ref3
  * @property string $domicilio_ref3
  * @property string $telefono_ref3
  * @property string $ocupacion_ref3
- * @property double $tiempo_ref3
+ * @property string $tiempo_ref3
  * @property integer $parientes
  * @property integer $afianzado
  * @property integer $sindicato
@@ -109,11 +110,11 @@ class aspirantes extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('sexo, estado_civil, licencia, clase_licencia, deportista, club, estudio, titulo, porcentaje, trabajo_anterior, parientes, afianzado, sindicato, seguro_vida, viajar, cambiar_residencia, otros_ingresos, conyuge_trabaja, casa_propia, paga_renta, dependientes, automovil, deudas', 'numerical', 'integerOnly'=>true),
-			array('estatura, peso, tiempo_trabajo, sueldo_inicial, sueldo_final, tiempo_ref1, tiempo_ref2, tiempo_ref3, importe_ingresos, percepcion, valor_casa, renta, importe_deudas, abono_mensual, gastos_mensuales', 'numerical'),
-			array('foto, nombre, fecha_nacimiento, nacionalidad, calle, numero, colonia, codigo_postal, curp, rfc, nss, afore, cartilla_militar, pasaporte, numero_licencia, deporte, pasatiempo, meta, escuela, inicio, finalizacion, idioma, funciones_oficina, maquinaria_oficina, software, otras_funciones, compania, direccion, telefono, puesto, motivo_separacion, nombre_jefe, puesto_jefe, nombre_ref1, domicilio_ref1, telefono_ref1, ocupacion_ref1, nombre_ref2, domicilio_ref2, telefono_ref2, ocupacion_ref2, nombre_ref3, domicilio_ref3, telefono_ref3, ocupacion_ref3, acreedor', 'safe'),
+			array('estatura, peso, tiempo_trabajo, sueldo_inicial, sueldo_final, importe_ingresos, percepcion, valor_casa, renta, importe_deudas, abono_mensual, gastos_mensuales', 'numerical'),
+			array('fecha_actualizacion, foto, nombre, fecha_nacimiento, nacionalidad, calle, numero, colonia, codigo_postal, curp, rfc, nss, afore, cartilla_militar, pasaporte, numero_licencia, deporte, pasatiempo, meta, escuela, inicio, finalizacion, idioma, funciones_oficina, maquinaria_oficina, software, otras_funciones, compania, direccion, telefono, puesto, motivo_separacion, nombre_jefe, puesto_jefe, nombre_ref1, domicilio_ref1, telefono_ref1, ocupacion_ref1, tiempo_ref1, nombre_ref2, domicilio_ref2, telefono_ref2, ocupacion_ref2, tiempo_ref2, nombre_ref3, domicilio_ref3, telefono_ref3, ocupacion_ref3, tiempo_ref3, acreedor', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, foto, nombre, fecha_nacimiento, sexo, nacionalidad, estatura, peso, estado_civil, calle, numero, colonia, codigo_postal, curp, rfc, nss, afore, cartilla_militar, pasaporte, licencia, clase_licencia, numero_licencia, deportista, deporte, club, pasatiempo, meta, estudio, escuela, inicio, finalizacion, titulo, idioma, porcentaje, funciones_oficina, maquinaria_oficina, software, otras_funciones, trabajo_anterior, tiempo_trabajo, compania, direccion, telefono, puesto, sueldo_inicial, sueldo_final, motivo_separacion, nombre_jefe, puesto_jefe, nombre_ref1, domicilio_ref1, telefono_ref1, ocupacion_ref1, tiempo_ref1, nombre_ref2, domicilio_ref2, telefono_ref2, ocupacion_ref2, tiempo_ref2, nombre_ref3, domicilio_ref3, telefono_ref3, ocupacion_ref3, tiempo_ref3, parientes, afianzado, sindicato, seguro_vida, viajar, cambiar_residencia, otros_ingresos, importe_ingresos, conyuge_trabaja, percepcion, casa_propia, valor_casa, paga_renta, renta, dependientes, automovil, deudas, importe_deudas, acreedor, abono_mensual, gastos_mensuales', 'safe', 'on'=>'search'),
+			array('id, fecha_actualizacion, foto, nombre, fecha_nacimiento, sexo, nacionalidad, estatura, peso, estado_civil, calle, numero, colonia, codigo_postal, curp, rfc, nss, afore, cartilla_militar, pasaporte, licencia, clase_licencia, numero_licencia, deportista, deporte, club, pasatiempo, meta, estudio, escuela, inicio, finalizacion, titulo, idioma, porcentaje, funciones_oficina, maquinaria_oficina, software, otras_funciones, trabajo_anterior, tiempo_trabajo, compania, direccion, telefono, puesto, sueldo_inicial, sueldo_final, motivo_separacion, nombre_jefe, puesto_jefe, nombre_ref1, domicilio_ref1, telefono_ref1, ocupacion_ref1, tiempo_ref1, nombre_ref2, domicilio_ref2, telefono_ref2, ocupacion_ref2, tiempo_ref2, nombre_ref3, domicilio_ref3, telefono_ref3, ocupacion_ref3, tiempo_ref3, parientes, afianzado, sindicato, seguro_vida, viajar, cambiar_residencia, otros_ingresos, importe_ingresos, conyuge_trabaja, percepcion, casa_propia, valor_casa, paga_renta, renta, dependientes, automovil, deudas, importe_deudas, acreedor, abono_mensual, gastos_mensuales', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -125,7 +126,7 @@ class aspirantes extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'Aspirantes' => array(self::HAS_MANY, 'UsuariosAspirantes', 'id_aspirante'),
+			'usuarios_aspirantes' => array(self::HAS_MANY, 'UsuariosAspirantes', 'id_aspirante'),
 		);
 	}
 
@@ -135,91 +136,92 @@ class aspirantes extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id'                 => 'Id',
-			'foto'               => 'Foto',
-			'nombre'             => 'Nombre',
-			'fecha_nacimiento'   => 'Fecha de Nacimiento',
-			'sexo'               => 'Sexo',
-			'nacionalidad'       => 'Nacionalidad',
-			'estatura'           => 'Estatura',
-			'peso'               => 'Peso',
-			'estado_civil'       => 'Estado Civil',
-			'calle'              => 'Calle',
-			'numero'             => 'Numero',
-			'colonia'            => 'Colonia',
-			'codigo_postal'      => 'Codigo Postal',
-			'curp'               => 'CURP',
-			'rfc'                => 'RFC',
-			'nss'                => 'Número de Seguro Social',
-			'afore'              => 'AFORE',
-			'cartilla_militar'   => 'Número de Cartilla del Servicio Militar',
-			'pasaporte'          => 'Número de Pasaporte',
-			'licencia'           => '¿Tiene licencia de manejo?',
-			'clase_licencia'     => 'Clase de Licencia',
-			'numero_licencia'    => 'Numero de Licencia',
-			'deportista'         => '¿Practica algún deporte?',
-			'deporte'            => '¿Cuál deporte?',
-			'club'               => '¿Pertenece a algun club social o deportivo?',
-			'pasatiempo'         => '¿Cuál es su pasatiempo favorito?',
-			'meta'               => '¿Cuál es su meta en la vida?',
-			'estudio'            => 'Último grado de estudios',
-			'escuela'            => 'Nombre de la escuela',
-			'inicio'             => 'Fecha de inicio',
-			'finalizacion'       => 'Fecha de finalizacion',
-			'titulo'             => 'Título recibido',
-			'idioma'             => 'Otro idioma que domine hablar',
-			'porcentaje'         => '¿En qué porcentaje?',
-			'funciones_oficina'  => 'Funciones de oficina que domina',
-			'maquinaria_oficina' => 'Maquinaria de oficina o taller que sepa manejar',
-			'software'           => 'Software que conoce',
-			'otras_funciones'    => 'Otros trabajos o funciones que domina',
-			'trabajo_anterior'   => '¿Ha trabajado antes?',
-			'tiempo_trabajo'     => 'Tiempo que prestó sus servicios',
-			'compania'           => 'Nombre de la compañía',
-			'direccion'          => 'Direccion',
-			'telefono'           => 'Teléfono',
-			'puesto'             => 'Puesto desempeñado',
-			'sueldo_inicial'     => 'Sueldo Mensual Inicial',
-			'sueldo_final'       => 'Sueldo Mensual Final',
-			'motivo_separacion'  => 'Motivo de su Separacion',
-			'nombre_jefe'        => 'Nombre de su jefe directo',
-			'puesto_jefe'        => 'Puesto de su jefe directo',
-			'nombre_ref1'        => 'Nombre completo',
-			'domicilio_ref1'     => 'Domicilio',
-			'telefono_ref1'      => 'Telefono',
-			'ocupacion_ref1'     => 'Ocupacion',
-			'tiempo_ref1'        => 'Tiempo de conocerlo',
-			'nombre_ref2'        => 'Nombre completo',
-			'domicilio_ref2'     => 'Domicilio',
-			'telefono_ref2'      => 'Telefono',
-			'ocupacion_ref2'     => 'Ocupacion',
-			'tiempo_ref2'        => 'Tiempo de conocerlo',
-			'nombre_ref3'        => 'Nombre completo',
-			'domicilio_ref3'     => 'Domicilio',
-			'telefono_ref3'      => 'Telefono',
-			'ocupacion_ref3'     => 'Ocupacion',
-			'tiempo_ref3'        => 'Tiempo de conocerlo',
-			'parientes'          => '¿Tiene parientes trabajando en esta empresa?',
-			'afianzado'          => '¿Ha estado afianzado?',
-			'sindicato'          => '¿Ha estado afiliado a algun sindicato?',
-			'seguro_vida'        => '¿Tiene seguro de vida?',
-			'viajar'             => '¿Puede viajar?',
-			'cambiar_residencia' => '¿Está dispuesto a cambiar su lugar de residencia?',
-			'otros_ingresos'     => '¿Tiene usted otros ingresos?',
-			'importe_ingresos'   => 'Importe Mensual',
-			'conyuge_trabaja'    => '¿Su conyuge trabaja?',
-			'percepcion'         => 'Percepcion Mensual',
-			'casa_propia'        => '¿Vive en casa propia?',
-			'valor_casa'         => 'Valor Aproximado',
-			'paga_renta'         => '¿Paga renta?',
-			'renta'              => 'Renta Mensual',
-			'dependientes'       => 'Número de personas que dependen de usted',
-			'automovil'          => '¿Tiene automovil propio?',
-			'deudas'             => '¿Tiene deudas?',
-			'importe_deudas'     => 'Importe',
-			'acreedor'           => 'Acreedor',
-			'abono_mensual'      => '¿Cuánto abona mensualmente?',
-			'gastos_mensuales'   => '¿A cuanto ascienden sus gastos mensuales?',
+			'id'                  => 'Id',
+			'fecha_actualizacion' => 'Fecha Actualizacion',
+			'foto'                => 'Foto',
+			'nombre'              => 'Nombre',
+			'fecha_nacimiento'    => 'Fecha de Nacimiento',
+			'sexo'                => 'Sexo',
+			'nacionalidad'        => 'Nacionalidad',
+			'estatura'            => 'Estatura',
+			'peso'                => 'Peso',
+			'estado_civil'        => 'Estado Civil',
+			'calle'               => 'Calle',
+			'numero'              => 'Numero',
+			'colonia'             => 'Colonia',
+			'codigo_postal'       => 'Codigo Postal',
+			'curp'                => 'CURP',
+			'rfc'                 => 'RFC',
+			'nss'                 => 'Número de Seguro Social',
+			'afore'               => 'AFORE',
+			'cartilla_militar'    => 'Número de Cartilla del Servicio Militar',
+			'pasaporte'           => 'Número de Pasaporte',
+			'licencia'            => '¿Tiene licencia de manejo?',
+			'clase_licencia'      => 'Clase de Licencia',
+			'numero_licencia'     => 'Numero de Licencia',
+			'deportista'          => '¿Practica algún deporte?',
+			'deporte'             => '¿Cuál deporte?',
+			'club'                => '¿Pertenece a algun club social o deportivo?',
+			'pasatiempo'          => '¿Cuál es su pasatiempo favorito?',
+			'meta'                => '¿Cuál es su meta en la vida?',
+			'estudio'             => 'Último grado de estudios',
+			'escuela'             => 'Nombre de la escuela',
+			'inicio'              => 'Fecha de inicio',
+			'finalizacion'        => 'Fecha de finalizacion',
+			'titulo'              => 'Título recibido',
+			'idioma'              => 'Otro idioma que domine hablar',
+			'porcentaje'          => '¿En qué porcentaje?',
+			'funciones_oficina'   => 'Funciones de oficina que domina',
+			'maquinaria_oficina'  => 'Maquinaria de oficina o taller que sepa manejar',
+			'software'            => 'Software que conoce',
+			'otras_funciones'     => 'Otros trabajos o funciones que domina',
+			'trabajo_anterior'    => '¿Ha trabajado antes?',
+			'tiempo_trabajo'      => 'Tiempo que prestó sus servicios',
+			'compania'            => 'Nombre de la compañía',
+			'direccion'           => 'Direccion',
+			'telefono'            => 'Teléfono',
+			'puesto'              => 'Puesto desempeñado',
+			'sueldo_inicial'      => 'Sueldo Mensual Inicial',
+			'sueldo_final'        => 'Sueldo Mensual Final',
+			'motivo_separacion'   => 'Motivo de su Separacion',
+			'nombre_jefe'         => 'Nombre de su jefe directo',
+			'puesto_jefe'         => 'Puesto de su jefe directo',
+			'nombre_ref1'         => 'Nombre completo',
+			'domicilio_ref1'      => 'Domicilio',
+			'telefono_ref1'       => 'Telefono',
+			'ocupacion_ref1'      => 'Ocupacion',
+			'tiempo_ref1'         => 'Tiempo de conocerlo',
+			'nombre_ref2'         => 'Nombre completo',
+			'domicilio_ref2'      => 'Domicilio',
+			'telefono_ref2'       => 'Telefono',
+			'ocupacion_ref2'      => 'Ocupacion',
+			'tiempo_ref2'         => 'Tiempo de conocerlo',
+			'nombre_ref3'         => 'Nombre completo',
+			'domicilio_ref3'      => 'Domicilio',
+			'telefono_ref3'       => 'Telefono',
+			'ocupacion_ref3'      => 'Ocupacion',
+			'tiempo_ref3'         => 'Tiempo de conocerlo',
+			'parientes'           => '¿Tiene parientes trabajando en esta empresa?',
+			'afianzado'           => '¿Ha estado afianzado?',
+			'sindicato'           => '¿Ha estado afiliado a algun sindicato?',
+			'seguro_vida'         => '¿Tiene seguro de vida?',
+			'viajar'              => '¿Puede viajar?',
+			'cambiar_residencia'  => '¿Está dispuesto a cambiar su lugar de residencia?',
+			'otros_ingresos'      => '¿Tiene usted otros ingresos?',
+			'importe_ingresos'    => 'Importe Mensual',
+			'conyuge_trabaja'     => '¿Su conyuge trabaja?',
+			'percepcion'          => 'Percepcion Mensual',
+			'casa_propia'         => '¿Vive en casa propia?',
+			'valor_casa'          => 'Valor Aproximado',
+			'paga_renta'          => '¿Paga renta?',
+			'renta'               => 'Renta Mensual',
+			'dependientes'        => 'Número de personas que dependen de usted',
+			'automovil'           => '¿Tiene automovil propio?',
+			'deudas'              => '¿Tiene deudas?',
+			'importe_deudas'      => 'Importe',
+			'acreedor'            => 'Acreedor',
+			'abono_mensual'       => '¿Cuánto abona mensualmente?',
+			'gastos_mensuales'    => '¿A cuanto ascienden sus gastos mensuales?',
 		);
 	}
 
@@ -242,6 +244,8 @@ class aspirantes extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
+
+		$criteria->compare('fecha_actualizacion',$this->fecha_actualizacion,true);
 
 		$criteria->compare('foto',$this->foto,true);
 
@@ -347,7 +351,7 @@ class aspirantes extends CActiveRecord
 
 		$criteria->compare('ocupacion_ref1',$this->ocupacion_ref1,true);
 
-		$criteria->compare('tiempo_ref1',$this->tiempo_ref1);
+		$criteria->compare('tiempo_ref1',$this->tiempo_ref1,true);
 
 		$criteria->compare('nombre_ref2',$this->nombre_ref2,true);
 
@@ -357,7 +361,7 @@ class aspirantes extends CActiveRecord
 
 		$criteria->compare('ocupacion_ref2',$this->ocupacion_ref2,true);
 
-		$criteria->compare('tiempo_ref2',$this->tiempo_ref2);
+		$criteria->compare('tiempo_ref2',$this->tiempo_ref2,true);
 
 		$criteria->compare('nombre_ref3',$this->nombre_ref3,true);
 
@@ -367,7 +371,7 @@ class aspirantes extends CActiveRecord
 
 		$criteria->compare('ocupacion_ref3',$this->ocupacion_ref3,true);
 
-		$criteria->compare('tiempo_ref3',$this->tiempo_ref3);
+		$criteria->compare('tiempo_ref3',$this->tiempo_ref3,true);
 
 		$criteria->compare('parientes',$this->parientes);
 
