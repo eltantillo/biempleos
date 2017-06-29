@@ -64,7 +64,7 @@ class LocalidadesController extends Controller
 
 		if(isset($_POST['localidades']))
 		{
-			$usuario = Yii::app()->user->id->usuario;
+			$usuario = Yii::app()->user->usuario;
 			$model->attributes=$_POST['localidades'];
             $model->id_empresa = $usuario->id_empresa;
 			if($model->save())

@@ -35,12 +35,12 @@ class usuarios_empresas extends CActiveRecord
 		return array(
 			array('usuario, contrasena, repeatPassword', 'required', 'on'=>'registrar'),
             array('usuario', 'unique', 'message'=>"Esta cuenta ya fue registrada", 'on'=>'registrar'),
-            array('contrasena', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida', 'on'=>'registrar'),
+            array('contrasena', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida, debe contener mayúsculas y minúsculas', 'on'=>'registrar'),
             array('repeatPassword', 'compare', 'compareAttribute'=>'contrasena', 'message'=>"Las contraseñas no coinciden", 'on'=>'registrar'),
             
 			array('oldPassword, newPassword, repeatPassword', 'required', 'on'=>'actualizar'),
             array('oldPassword', 'application.components.validator.checkPassword', 'on'=>'actualizar'),
-            array('newPassword', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida', 'on'=>'actualizar'),
+            array('newPassword', 'match', 'allowEmpty'=>false, 'pattern'=>'/^((?!.*\s)(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[a-z]).{8,})$|^((?!.*\s)(?=.*\d)(?=.*[A-Z]).{8,})$|^((?!.*\s)(?=.*[a-z])(?=.*[A-Z]).{8,})$/', 'message'=>'Contraseña inválida, debe contener mayúsculas y minúsculas', 'on'=>'actualizar'),
             array('repeatPassword', 'compare', 'compareAttribute'=>'newPassword', 'message'=>"Las contraseñas no coinciden", 'on'=>'actualizar'),
             
 			array('id_empresa', 'length', 'max'=>10),

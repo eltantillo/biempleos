@@ -25,9 +25,7 @@ $this->pageTitle=Yii::app()->name;
             <div class="navbar-header">
                 <img class="img-logo-index" src="<?php echo Yii::app()->request->baseUrl . "/images/logo.png"; ?>">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icon2.png" width="44px">
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="menu">
@@ -71,18 +69,18 @@ $this->pageTitle=Yii::app()->name;
         </div>
         <div class="section2 row">
             <div class="col-sm-offset-5 col-sm-7 col-xs-12">
-                <h1>Es fácil.</h1>
-                <p>En BIE tenemos las mejores ofertas, visualiza de forma sencilla pero detallada cada ofert, seguro tenemos algo para ti</p>
+                <h1>Es fácil</h1>
+                <p>En BIE tenemos las mejores ofertas, visualiza de forma sencilla pero detallada cada oferta, seguro encuentras algo para ti.</p>
                 
                 <h1>Encuentra Empleo</h1>
-                <p>Evita las contingencias de la ciudad y todo el agotamiento de buscar trabajo, selecciona las ofertas que mas te gusten y envia tu solicitud</p>
+                <p>Evita las contingencias de la ciudad y todo el agotamiento de buscar trabajo, selecciona las ofertas que mas te gusten y envia tu solicitud.</p>
                 
-                <h1>Adiós papel.</h1>
-                <p>En BIE podras visualizar las solicitudes de empleo y elegir el empleo que se adecue a sus necesidades ademas de guardar solicitudes en formato digital para una mejor administración</p>
+                <h1>Adiós papel</h1>
+                <p>En BIE, como empleador, podras visualizar las solicitudes de empleo, además de guardar solicitudes en formato digital para una mejor administración.</p>
             </div>
         </div>
         <div class="section3 row text-center">
-            <h2 class="col-xs-12">Disfruta de BIE en tus dispositivos.</h2>
+            <h2 class="col-xs-12">Disfruta de BIE en tus dispositivos</h2>
             <img src="<?php echo Yii::app()->request->baseUrl . "/images/google-play-badge.png"; ?>">
         </div>
         <footer class="row text-center">
